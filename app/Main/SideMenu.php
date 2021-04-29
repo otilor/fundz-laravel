@@ -38,7 +38,7 @@ class SideMenu
                         'params' => [
                             'layout' => 'side-menu'
                         ],
-                        'title' => 'Data List'
+                        'title' => 'Fundz wallet'
                     ],
                     'crud-form' => [
                         'icon' => '',
@@ -46,7 +46,7 @@ class SideMenu
                         'params' => [
                             'layout' => 'side-menu'
                         ],
-                        'title' => 'Form'
+                        'title' => 'Safe lock'
                     ]
                 ]
             ],
