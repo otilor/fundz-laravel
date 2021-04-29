@@ -14,20 +14,6 @@ class SideMenu
     {
         return [
             'dashboard' => [
-                'icon' => 'home',
-                'title' => 'Dashboard',
-                'sub_menu' => [
-                    'dashboard-overview-1' => [
-                        'icon' => '',
-                        'route_name' => 'dashboard-overview-1',
-                        'params' => [
-                            'layout' => 'side-menu',
-                        ],
-                        'title' => 'As E dey go 👀'
-                    ],
-                ]
-            ],
-            'dashboard' => [
                 'icon' => 'inbox',
                 'route_name' => 'dashboard-overview-1',
                 'params' => [
