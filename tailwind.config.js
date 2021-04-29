@@ -53,6 +53,7 @@ module.exports = {
             },
             fontFamily: {
                 roboto: ["Roboto"],
+                karla: ["Karla"]
             },
             container: {
                 center: true,
