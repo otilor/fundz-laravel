@@ -14,7 +14,7 @@ class SideMenu
     {
         return [
             'dashboard' => [
-                'icon' => 'inbox',
+                'icon' => 'home',
                 'route_name' => 'dashboard-overview-1',
                 'params' => [
                     'layout' => 'side-menu'
@@ -28,29 +28,6 @@ class SideMenu
                     'layout' => 'side-menu'
                 ],
                 'title' => 'Savings'
-            ],
-            'devider',
-            'crud' => [
-                'icon' => 'dollar-sign',
-                'title' => 'Topup',
-                'sub_menu' => [
-                    'crud-data-list' => [
-                        'icon' => '',
-                        'route_name' => 'crud-data-list',
-                        'params' => [
-                            'layout' => 'side-menu'
-                        ],
-                        'title' => 'Fundz wallet'
-                    ],
-                    'crud-form' => [
-                        'icon' => '',
-                        'route_name' => 'crud-form',
-                        'params' => [
-                            'layout' => 'side-menu'
-                        ],
-                        'title' => 'Safe lock'
-                    ]
-                ]
             ],
         ];
     }
