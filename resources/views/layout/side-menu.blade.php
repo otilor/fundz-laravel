@@ -37,7 +37,7 @@
                             </a>
                             @if (isset($menu['sub_menu']))
                                 <ul class="{{ $first_level_active_index == $menuKey ? 'side-menu__sub-open' : '' }}">
-                                    @foreach ($menu['sub_menu'] as $subMenuKey => $subMenu) 
+                                    @foreach ($menu['sub_menu'] as $subMenuKey => $subMenu)
                                         <li>
                                             <a href="{{ isset($subMenu['route_name']) ? route($subMenu['route_name'], $subMenu['params']) : 'javascript:;' }}" class="{{ $second_level_active_index == $subMenuKey ? 'side-menu side-menu--active' : 'side-menu' }}">
                                                 <div class="side-menu__icon">

@@ -25,14 +25,6 @@ class SideMenu
                         ],
                         'title' => 'Overview 1'
                     ],
-                    'dashboard-overview-2' => [
-                        'icon' => '',
-                        'route_name' => 'dashboard-overview-2',
-                        'params' => [
-                            'layout' => 'side-menu',
-                        ],
-                        'title' => 'Overview 2'
-                    ]
                 ]
             ],
             'menu-layout' => [
