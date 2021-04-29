@@ -10,7 +10,9 @@
         <!-- BEGIN: Side Menu -->
         <nav class="side-nav">
             <a href="" class="intro-x flex items-center pl-5 pt-4">
-                <img alt="Fundz temporary logo" class="w-6" src="{{ asset('dist/images/logo.svg') }}">
+                <div class="side-menu__icon text-white">
+                    <i data-feather="dollar-sign"></i>
+                </div>
                 <span class="hidden xl:block text-white text-lg ml-3">
                     Fu<span class="font-medium">ndz</span>
                 </span>
