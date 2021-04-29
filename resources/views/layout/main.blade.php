@@ -1,7 +1,7 @@
 @extends('../layout/base')
 
 @section('body')
-    <body class="main">
+    <body class="main font-sans">
         @yield('content')
 
         <!-- BEGIN: JS Assets-->
