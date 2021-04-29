@@ -50,7 +50,6 @@ class SideMenu
                     ]
                 ]
             ],
-            'devider',
         ];
     }
 }
