@@ -77,7 +77,7 @@
                                         </div>
                                     </div>
                                     <div class="text-3xl font-bold leading-8 mt-6">152.040</div>
-                                    <div class="text-base text-gray-600 mt-1">Unique Visitor</div>
+                                    <div class="text-base text-gray-600 mt-1">Flex Naira</div>
                                 </div>
                             </div>
                         </div>
