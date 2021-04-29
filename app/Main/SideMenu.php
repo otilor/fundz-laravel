@@ -21,13 +21,13 @@ class SideMenu
                 ],
                 'title' => 'Home'
             ],
-            'inbox' => [
-                'icon' => 'inbox',
+            'savings' => [
+                'icon' => 'lock',
                 'route_name' => 'inbox',
                 'params' => [
                     'layout' => 'side-menu'
                 ],
-                'title' => 'Inbox'
+                'title' => 'Savings'
             ],
             'devider',
             'crud' => [
