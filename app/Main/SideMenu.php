@@ -27,6 +27,22 @@ class SideMenu
                     ],
                 ]
             ],
+            'dashboard' => [
+                'icon' => 'inbox',
+                'route_name' => 'dashboard-overview-1',
+                'params' => [
+                    'layout' => 'side-menu'
+                ],
+                'title' => 'Home'
+            ],
+            'inbox' => [
+                'icon' => 'inbox',
+                'route_name' => 'inbox',
+                'params' => [
+                    'layout' => 'side-menu'
+                ],
+                'title' => 'Inbox'
+            ],
             'devider',
             'crud' => [
                 'icon' => 'dollar-sign',
