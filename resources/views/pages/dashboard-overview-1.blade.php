@@ -29,7 +29,7 @@
                                         </div>
                                     </div>
                                     <div class="text-3xl font-bold leading-8 mt-6">4.710</div>
-                                    <div class="text-base text-gray-600 mt-1">Item Sales</div>
+                                    <div class="text-base text-gray-600 mt-1">Total Savings</div>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                                         </div>
                                     </div>
                                     <div class="text-3xl font-bold leading-8 mt-6">3.721</div>
-                                    <div class="text-base text-gray-600 mt-1">New Orders</div>
+                                    <div class="text-base text-gray-600 mt-1">Total Investments</div>
                                 </div>
                             </div>
                         </div>
