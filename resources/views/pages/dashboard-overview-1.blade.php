@@ -61,7 +61,7 @@
                                         </div>
                                     </div>
                                     <div class="text-3xl font-bold leading-8 mt-6">2.149</div>
-                                    <div class="text-base text-gray-600 mt-1">Total Products</div>
+                                    <div class="text-base text-gray-600 mt-1">Flex Dollar</div>
                                 </div>
                             </div>
                         </div>
