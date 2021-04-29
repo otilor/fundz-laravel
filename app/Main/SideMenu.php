@@ -29,8 +29,8 @@ class SideMenu
             ],
             'devider',
             'crud' => [
-                'icon' => 'edit',
-                'title' => 'Crud',
+                'icon' => 'dollar-sign',
+                'title' => 'Topup',
                 'sub_menu' => [
                     'crud-data-list' => [
                         'icon' => '',
