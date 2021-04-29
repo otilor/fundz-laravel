@@ -23,7 +23,7 @@ class SideMenu
                         'params' => [
                             'layout' => 'side-menu',
                         ],
-                        'title' => 'Overview 1'
+                        'title' => 'As E dey go 👀'
                     ],
                 ]
             ],
