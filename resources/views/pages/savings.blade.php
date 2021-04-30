@@ -13,8 +13,8 @@
             <!-- BEGIN: Form Layout -->
             <div class="intro-y box p-5">
                 <div>
-                    <label for="crud-form-1" class="form-label">Product Name</label>
-                    <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Input text">
+                    <label for="crud-form-1" class="form-label">Amount (₦)</label>
+                    <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Example 2000">
                 </div>
                 <div class="mt-3">
                     <label for="crud-form-2" class="form-label">Category</label>
