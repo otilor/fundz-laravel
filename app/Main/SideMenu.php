@@ -16,9 +16,6 @@ class SideMenu
             'dashboard' => [
                 'icon' => 'home',
                 'route_name' => 'dashboard-overview-1',
-                'params' => [
-                    'layout' => 'side-menu'
-                ],
                 'title' => 'Home'
             ],
             'savings' => [
