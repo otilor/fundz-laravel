@@ -10,9 +10,11 @@
         <!-- BEGIN: Side Menu -->
         <nav class="side-nav">
             <a href="" class="intro-x flex items-center pl-5 pt-4">
-                <img alt="Rubick Tailwind HTML Admin Template" class="w-6" src="{{ asset('dist/images/logo.svg') }}">
+                <div class="side-menu__icon text-white">
+                    <i data-feather="dollar-sign"></i>
+                </div>
                 <span class="hidden xl:block text-white text-lg ml-3">
-                    Ru<span class="font-medium">bick</span>
+                    Fu<span class="font-medium">ndz</span>
                 </span>
             </a>
             <div class="side-nav__devider my-6"></div>
@@ -37,7 +39,7 @@
                             </a>
                             @if (isset($menu['sub_menu']))
                                 <ul class="{{ $first_level_active_index == $menuKey ? 'side-menu__sub-open' : '' }}">
-                                    @foreach ($menu['sub_menu'] as $subMenuKey => $subMenu) 
+                                    @foreach ($menu['sub_menu'] as $subMenuKey => $subMenu)
                                         <li>
                                             <a href="{{ isset($subMenu['route_name']) ? route($subMenu['route_name'], $subMenu['params']) : 'javascript:;' }}" class="{{ $second_level_active_index == $subMenuKey ? 'side-menu side-menu--active' : 'side-menu' }}">
                                                 <div class="side-menu__icon">

@@ -1,9 +1,8 @@
 @extends('../layout/base')
 
 @section('body')
-    <body class="main">
+    <body class="main font-karla">
         @yield('content')
-        @include('../layout/components/dark-mode-switcher')
 
         <!-- BEGIN: JS Assets-->
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
