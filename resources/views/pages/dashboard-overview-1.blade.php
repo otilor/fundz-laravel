@@ -28,7 +28,7 @@
 {{--                                            </div>--}}
                                         </div>
                                     </div>
-                                    <div class="text-3xl font-bold leading-8 mt-6">{{ $balance }}</div>
+                                    <div class="text-3xl font-bold leading-8 mt-6">₦{{ $balance }}</div>
                                     <div class="text-base text-gray-600 mt-1">Total Savings</div>
                                 </div>
                             </div>
