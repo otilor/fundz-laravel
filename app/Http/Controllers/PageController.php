@@ -15,17 +15,13 @@ class PageController extends Controller
      * Show specified view.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function dashboardOverview1()
     {
-        dd($this->user->getWalletBalance(auth()->id()));
+        $balance = $this->user->getWalletBalance(userId: auth()->id())['balance'];
         return view('pages/dashboard-overview-1', [
-            // Specify the base layout.
-            // Eg: 'side-menu', 'simple-menu', 'top-menu', 'login'
-            // The default value is 'side-menu'
-
-            // 'layout' => 'side-menu'
+            'balance' => $balance
         ]);
     }
 
