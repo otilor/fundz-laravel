@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\UserRepository;
 
 class PageController extends Controller
 {
+    public function __construct(public UserRepository $user)
+    {
+    }
+
     /**
      * Show specified view.
      *
@@ -14,6 +19,7 @@ class PageController extends Controller
      */
     public function dashboardOverview1()
     {
+        dd($this->user->getWalletBalance(auth()->id()));
         return view('pages/dashboard-overview-1', [
             // Specify the base layout.
             // Eg: 'side-menu', 'simple-menu', 'top-menu', 'login'
