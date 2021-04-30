@@ -13,30 +13,10 @@
             <!-- BEGIN: Form Layout -->
             <div class="intro-y box p-5">
                 <div>
-                    <label for="crud-form-1" class="form-label">Amount (₦)</label>
-                    <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Example 2000">
-                </div>
-                <div class="mt-3">
-                    <label for="crud-form-2" class="form-label">Category</label>
-                    <select data-placeholder="Select your favorite actors" class="tail-select w-full" id="crud-form-2" multiple>
-                        <option value="1" selected>Sport & Outdoor</option>
-                        <option value="2">PC & Laptop</option>
-                        <option value="3" selected>Smartphone & Tablet</option>
-                        <option value="4">Photography</option>
-                    </select>
-                </div>
-                <div class="mt-3">
-                    <label for="crud-form-3" class="form-label">Quantity</label>
+                    <label for="crud-form-1" class="form-label">Amount</label>
                     <div class="input-group">
-                        <input id="crud-form-3" type="text" class="form-control" placeholder="Quantity" aria-describedby="input-group-1">
-                        <div id="input-group-1" class="input-group-text">pcs</div>
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <label for="crud-form-4" class="form-label">Weight</label>
-                    <div class="input-group">
-                        <input id="crud-form-4" type="text" class="form-control" placeholder="Weight" aria-describedby="input-group-2">
-                        <div id="input-group-2" class="input-group-text">grams</div>
+                        <div id="input-group-3" class="input-group-text">₦</div>
+                        <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Example 2000">
                     </div>
                 </div>
                 <div class="mt-3">
