@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SavingsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
@@ -28,6 +29,7 @@ Route::middleware('loggedin')->group(function() {
 Route::middleware('auth')->group(function() {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
+    Route::get('savings', [SavingsController::class, 'index'])->name('savings');
     Route::get('dashboard-overview-2-page', [PageController::class, 'dashboardOverview2'])->name('dashboard-overview-2');
     Route::get('inbox-page', [PageController::class, 'inbox'])->name('inbox');
     Route::get('file-manager-page', [PageController::class, 'fileManager'])->name('file-manager');
