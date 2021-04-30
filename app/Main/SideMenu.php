@@ -16,11 +16,17 @@ class SideMenu
             'dashboard' => [
                 'icon' => 'home',
                 'route_name' => 'dashboard-overview-1',
+                'params' => [
+                    'layout' => 'side-menu'
+                ],
                 'title' => 'Home'
             ],
             'savings' => [
                 'icon' => 'lock',
                 'route_name' => 'savings',
+                'params' => [
+                    'layout' => 'side-menu'
+                ],
                 'title' => 'Savings'
             ],
         ];
