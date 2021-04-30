@@ -8,6 +8,6 @@ class SavingsController extends Controller
 {
     public function index()
     {
-        return 'Try dey save small small';
+        return view('pages/savings');
     }
 }
