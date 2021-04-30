@@ -23,10 +23,7 @@ class SideMenu
             ],
             'savings' => [
                 'icon' => 'lock',
-                'route_name' => 'inbox',
-                'params' => [
-                    'layout' => 'side-menu'
-                ],
+                'route_name' => 'savings',
                 'title' => 'Savings'
             ],
         ];
