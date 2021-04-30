@@ -19,39 +19,7 @@
                         <input id="crud-form-1" type="text" class="form-control w-full" placeholder="Example 2000">
                     </div>
                 </div>
-                <div class="mt-3">
-                    <label class="form-label">Price</label>
-                    <div class="sm:grid grid-cols-3 gap-2">
-                        <div class="input-group">
-                            <div id="input-group-3" class="input-group-text">Unit</div>
-                            <input type="text" class="form-control" placeholder="Unit" aria-describedby="input-group-3">
-                        </div>
-                        <div class="input-group mt-2 sm:mt-0">
-                            <div id="input-group-4" class="input-group-text">Wholesale</div>
-                            <input type="text" class="form-control" placeholder="Wholesale" aria-describedby="input-group-4">
-                        </div>
-                        <div class="input-group mt-2 sm:mt-0">
-                            <div id="input-group-5" class="input-group-text">Bulk</div>
-                            <input type="text" class="form-control" placeholder="Bulk" aria-describedby="input-group-5">
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <label>Active Status</label>
-                    <div class="mt-2">
-                        <input type="checkbox" class="form-check-switch">
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <label>Description</label>
-                    <div class="mt-2">
-                        <div data-simple-toolbar="true" class="editor">
-                            <p>Content of the editor.</p>
-                        </div>
-                    </div>
-                </div>
                 <div class="text-right mt-5">
-                    <button type="button" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
                     <button type="button" class="btn btn-primary w-24">Save</button>
                 </div>
             </div>
