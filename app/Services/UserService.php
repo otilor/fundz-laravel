@@ -17,4 +17,12 @@ class UserService implements UserRepository
 
         return ['user' => $user, 'balance' => $user->balance];
     }
+
+    public function topupWallet($amount, $userId)
+    {
+        $user = User::find($userId);
+        $user->deposit((int) $amount);
+
+        return ['message' => 'Successfully topped up wallet', 'status' => true];
+    }
 }
