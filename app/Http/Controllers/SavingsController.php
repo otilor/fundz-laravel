@@ -34,8 +34,8 @@ class SavingsController extends Controller
             'redirect_url' => route('callback'),
             'customer' => [
                 'email' => auth()->user()->email,
-                "phonenumber" => 's',
-                "name" => 'gab'
+                "phonenumber" => 'I never get',
+                "name" => auth()->user()->name
             ],
 
             "customizations" => [
