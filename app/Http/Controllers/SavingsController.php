@@ -39,8 +39,8 @@ class SavingsController extends Controller
             ],
 
             "customizations" => [
-                "title" => 'Movie Ticket',
-                "description" => "20th October"
+                "description" => "Fundz dey na",
+                "title" => 'Topup your wallet 🤑, no go dull'
             ]
         ];
 
