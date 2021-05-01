@@ -21,8 +21,39 @@ class SavingsController extends Controller
 
     public function save(SaveMoneyRequest $request)
     {
-        $this->user->topupWallet(userId: auth()->id(), amount: $request->amount);
-        return redirect(route('dashboard-overview-1'));
+        //This generates a payment reference
+        $reference = Flutterwave::generateReference();
+
+        // Enter the details of the payment
+        $data = [
+            'payment_options' => 'card,banktransfer',
+            'amount' => 500,
+            'email' => auth()->user()->email,
+            'tx_ref' => $reference,
+            'currency' => "NGN",
+            'redirect_url' => route('callback'),
+            'customer' => [
+                'email' => auth()->user()->email,
+                "phonenumber" => 's',
+                "name" => 'gab'
+            ],
+
+            "customizations" => [
+                "title" => 'Movie Ticket',
+                "description" => "20th October"
+            ]
+        ];
+
+        $payment = Flutterwave::initializePayment($data);
+
+        if ($payment['status'] !== 'success') {
+            // notify something went wrong
+            return;
+        }
+
+        return redirect($payment['data']['link']);
+//        $this->user->topupWallet(userId: auth()->id(), amount: $request->amount);
+//        return redirect(route('dashboard-overview-1'));
     }
 
     public function callback()
