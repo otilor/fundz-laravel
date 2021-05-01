@@ -40,7 +40,7 @@ class SavingsController extends Controller
 
             "customizations" => [
                 "description" => "Fundz dey na",
-                "title" => 'Topup your wallet 🤑, no go dull'
+                "title" => 'Topup your wallet 🤑. E sure for you👊'
             ]
         ];
 
