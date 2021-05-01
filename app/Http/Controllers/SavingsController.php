@@ -27,7 +27,7 @@ class SavingsController extends Controller
         // Enter the details of the payment
         $data = [
             'payment_options' => 'card,banktransfer',
-            'amount' => 500,
+            'amount' => $request->amount,
             'email' => auth()->user()->email,
             'tx_ref' => $reference,
             'currency' => "NGN",
