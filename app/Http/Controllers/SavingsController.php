@@ -59,8 +59,10 @@ class SavingsController extends Controller
     public function callback()
     {
         $transactionID = Flutterwave::getTransactionIDFromCallback();
+        if (!$transactionID) {
+                dd("Something odd happened");
+        }
         $data = Flutterwave::verifyTransaction($transactionID);
-
         dd($data);
         // Get the transaction from your DB using the transaction reference (txref)
         // Check if you have previously given value for the transaction. If you have, redirect to your successpage else, continue
