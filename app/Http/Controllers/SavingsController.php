@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Request\SaveMoneyRequest;
 use App\Repositories\UserRepository;
-use KingFlamez\Rave\Facades\Rave as Flutterwave;
+use App\Facades\UpdatedRave as Flutterwave;
 
 class SavingsController extends Controller
 {
