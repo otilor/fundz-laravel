@@ -63,7 +63,9 @@ class SavingsController extends Controller
                 dd("Something odd happened");
         }
         $data = Flutterwave::verifyTransaction($transactionID);
-        dd($data);
+        notify()->success('Successfully topped up⚡️', 'Fundz');
+        return redirect('/');
+//        dd($data);
         // Get the transaction from your DB using the transaction reference (txref)
         // Check if you have previously given value for the transaction. If you have, redirect to your successpage else, continue
         // Confirm that the $data['data']['status'] is 'successful'
