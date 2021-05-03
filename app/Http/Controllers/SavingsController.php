@@ -64,7 +64,7 @@ class SavingsController extends Controller
             return redirect('/');
         }
         $data = Flutterwave::verifyTransaction($transactionID);
-        notify()->success('Successfully topped up⚡️', 'Fundz');
+        \session()->flash('notification', 'Gabriel');
         return redirect('/');
 //        dd($data);
         // Get the transaction from your DB using the transaction reference (txref)
