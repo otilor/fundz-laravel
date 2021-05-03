@@ -5,13 +5,17 @@
 @endsection
 
 @section('subcontent')
+    <!-- BEGIN: Notification Content -->
+
+
     <div class="grid grid-cols-12 gap-6">
         <div class="col-span-12 xxl:col-span-9">
             <div class="grid grid-cols-12 gap-6">
                 <!-- BEGIN: General Report -->
                 <div class="col-span-12 mt-8">
+                    <h1 class="text-3xl font-bold truncate mr-6">{{ auth()->user()->name }}</h1>
                     <div class="intro-y flex items-center h-10">
-                        <h2 class="text-lg font-medium truncate mr-5">As E dey go</h2>
+                        <h2 class="text-lg font-medium truncate mr-5">Hello, wash your hands regularly🧼🧴</h2>
                         <a href="" class="ml-auto flex text-theme-1 dark:text-theme-10">
                             <i data-feather="refresh-ccw" class="w-4 h-4 mr-3"></i> Reload Data
                         </a>
