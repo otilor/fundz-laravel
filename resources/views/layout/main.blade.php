@@ -14,7 +14,7 @@
 
     <!-- BEGIN: Notification Content -->
     <div id="basic-non-sticky-notification-content" class="toastify-content hidden flex">
-        <div id="error-description" class="font-medium"></div>
+        <div id="notification-description" class="font-medium"></div>
     </div>
     <!-- END: Notification Content --> <!-- BEGIN: Notification Toggle -->
     <button style="display: none" id="basic-non-sticky-notification-toggle" class="btn btn-primary mr-1">Show Non Sticky Notification</button>
@@ -27,12 +27,10 @@
         <!-- END: JS Assets-->
         <script>
             @if(\Illuminate\Support\Facades\Session::has('success'))
-                document.getElementById('success-title').innerText = "Payment successful!";
-                document.getElementById('success-description').innerText = "Your account has been credited!🎉";
-                document.getElementById('success-notification-toggle').click();
+                document.getElementById('notification-description').innerText = "Wallet has been credited!✅🎉🥳";
+                document.getElementById('basic-non-sticky-notification-toggle').click();
             @elseif(\Illuminate\Support\Facades\Session::has('error'))
-                    alert('fadfd')
-                document.getElementById('error-description').innerText = "The transaction was cancelled😒";
+                document.getElementById('notification-description').innerText = "The transaction was cancelled😒";
                 document.getElementById('basic-non-sticky-notification-toggle').click();
             @endif
         </script>
