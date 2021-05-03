@@ -13,7 +13,6 @@ License: You must have a valid license purchased only from themeforest(the above
 <head>
     <meta charset="utf-8">
     <link href="{{ asset('dist/images/logo.svg') }}" rel="shortcut icon">
-    @notifyCss
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Rubick admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
@@ -28,7 +27,6 @@ License: You must have a valid license purchased only from themeforest(the above
 </head>
 <!-- END: Head -->
 
-@notifyJs
 @yield('body')
 
 </html>
