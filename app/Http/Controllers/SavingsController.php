@@ -60,7 +60,6 @@ class SavingsController extends Controller
     {
         $transactionID = Flutterwave::getTransactionIDFromCallback();
         if (!$transactionID) {
-            notify()->error('You cancelled the transaction 😒️', 'Fundz');
             return redirect('/');
         }
         $data = Flutterwave::verifyTransaction($transactionID);
