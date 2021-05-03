@@ -13,7 +13,7 @@
             <div class="text-gray-600 mt-1">Your account has been credited!🎉</div>
         </div>
     </div> <!-- END: Notification Content --> <!-- BEGIN: Notification Toggle -->
-    <button id="success-notification-toggle" class="btn btn-primary">Show Notification
+    <button style="display: none" type="hidden" name="success-alert" id="success-notification-toggle" class="btn btn-primary">Show Notification
     </button> <!-- END: Notification Toggle -->
 
 
@@ -71,5 +71,4 @@
 @endsection
 <script>
     var type = '{{ json_encode(\Illuminate\Support\Facades\Session::get('name')) }}';
-    console.log(type)
 </script>
