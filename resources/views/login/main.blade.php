@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('head')
-    <title>Login - Rubick - Tailwind HTML Admin Template</title>
+    <title>Fundz by Gabriel</title>
 @endsection
 
 @section('content')
@@ -53,7 +53,7 @@
             </div>
             <!-- END: Login Form -->
         </div>
-    </div>    
+    </div>
 @endsection
 
 @section('script')
@@ -68,7 +68,7 @@
                 let email = cash('#email').val()
                 let password = cash('#password').val()
                 let rememberMe = cash('#remember-me').val()
-                
+
                 // Loading state
                 cash('#btn-login').html('<i data-loading-icon="oval" data-color="white" class="w-5 h-5 mx-auto"></i>').svgLoader()
                 await helper.delay(1500)
@@ -98,7 +98,7 @@
                     login()
                 }
             })
-            
+
             cash('#btn-login').on('click', function() {
                 login()
             })
