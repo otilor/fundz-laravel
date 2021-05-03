@@ -15,8 +15,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "kingflamez/laravelrave": "^4.2",
         "laravel/framework": "^8.12",
-        "laravel/tinker": "^2.5",
-        "mckenziearts/laravel-notify": "^2.1"
+        "laravel/tinker": "^2.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
