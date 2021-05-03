@@ -63,13 +63,14 @@ class SavingsController extends Controller
             session()->flash('error', 'O ti fuck up!');
             return redirect('/');
         }
-        $data = Flutterwave::verifyTransaction($transactionID);
+        $transactionDetails = Flutterwave::verifyTransaction($transactionID);
+        $this->user->topupWallet(amount: $transactionDetails['data']['amount'], userId: auth()->user());
         \session()->flash('success', 'Payment compeleted successfully!');
         return redirect('/');
-//        dd($data);
+//        dd($transactionDetails);
         // Get the transaction from your DB using the transaction reference (txref)
         // Check if you have previously given value for the transaction. If you have, redirect to your successpage else, continue
-        // Confirm that the $data['data']['status'] is 'successful'
+        // Confirm that the $transactionDetails['transactionDetails']['status'] is 'successful'
         // Confirm that the currency on your db transaction is equal to the returned currency
         // Confirm that the db transaction amount is equal to the returned amount
         // Update the db transaction record (including parameters that didn't exist before the transaction is completed. for audit purpose)
