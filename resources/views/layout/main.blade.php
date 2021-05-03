@@ -12,7 +12,14 @@
     <button style="display: none" type="hidden" name="success-alert" id="success-notification-toggle" class="btn btn-primary">Show Notification
     </button> <!-- END: Notification Toggle -->
 
-        @yield('content')
+    <!-- BEGIN: Notification Content -->
+    <div id="basic-non-sticky-notification-content" class="toastify-content hidden flex">
+        <div id="error-description" class="font-medium"></div>
+    </div>
+    <!-- END: Notification Content --> <!-- BEGIN: Notification Toggle -->
+    <button id="basic-non-sticky-notification-toggle" class="btn btn-primary mr-1">Show Non Sticky Notification</button>
+
+    @yield('content')
         <!-- BEGIN: JS Assets-->
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=["your-google-map-api"]&libraries=places"></script>
@@ -24,7 +31,8 @@
                 document.getElementById('success-description').innerText = "Your account has been credited!🎉";
                 document.getElementById('success-notification-toggle').click();
                 @elseif(\Illuminate\Support\Facades\Session::has('error'))
-
+                document.getElementById('error-description').innerText = "The transaction was cancelled😒";
+                document.getElementById('basic-non-sticky-notification-toggle').click();
             @endif
         </script>
         @yield('script')

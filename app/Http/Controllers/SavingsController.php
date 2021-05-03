@@ -60,6 +60,7 @@ class SavingsController extends Controller
     {
         $transactionID = Flutterwave::getTransactionIDFromCallback();
         if (!$transactionID) {
+            session()->now('error', 'O ti fuck up!');
             return redirect('/');
         }
         $data = Flutterwave::verifyTransaction($transactionID);
