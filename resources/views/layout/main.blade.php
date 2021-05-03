@@ -30,7 +30,8 @@
                 document.getElementById('success-title').innerText = "Payment successful!";
                 document.getElementById('success-description').innerText = "Your account has been credited!🎉";
                 document.getElementById('success-notification-toggle').click();
-                @elseif(\Illuminate\Support\Facades\Session::has('error'))
+            @elseif(\Illuminate\Support\Facades\Session::has('error'))
+                    alert('fadfd')
                 document.getElementById('error-description').innerText = "The transaction was cancelled😒";
                 document.getElementById('basic-non-sticky-notification-toggle').click();
             @endif
