@@ -1,9 +1,6 @@
 @extends('../layout/base')
 @section('body')
 
-    <div class="absolute bottom-0 right-0 h-16 w-16 z-50">
-        <x:notify-messages />
-    </div>
     <body class="main font-karla">
 
 
