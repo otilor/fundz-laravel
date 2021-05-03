@@ -11,8 +11,7 @@
         <script src="{{ mix('dist/js/app.js') }}"></script>
         <!-- END: JS Assets-->
         <script>
-            @if(\Illuminate\Support\Facades\Session::has('notification'))
-                console.log('Yikes')
+            @if(\Illuminate\Support\Facades\Session::has('success'))
                 document.getElementById('success-notification-toggle').click();
             @endif
         </script>
