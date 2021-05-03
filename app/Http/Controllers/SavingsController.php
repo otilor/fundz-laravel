@@ -64,7 +64,7 @@ class SavingsController extends Controller
             return redirect('/');
         }
         $transactionDetails = Flutterwave::verifyTransaction($transactionID);
-        $this->user->topupWallet(amount: $transactionDetails['data']['amount'], userId: auth()->user());
+        $this->user->topupWallet(amount: $transactionDetails['data']['amount'], userId: auth()->id());
         \session()->flash('success', 'Payment compeleted successfully!');
         return redirect('/');
 //        dd($transactionDetails);
