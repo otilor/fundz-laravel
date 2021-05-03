@@ -69,6 +69,3 @@
 
     </div>
 @endsection
-<script>
-    var type = '{{ json_encode(\Illuminate\Support\Facades\Session::get('name')) }}';
-</script>
