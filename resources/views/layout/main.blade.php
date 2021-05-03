@@ -17,7 +17,7 @@
         <div id="error-description" class="font-medium"></div>
     </div>
     <!-- END: Notification Content --> <!-- BEGIN: Notification Toggle -->
-    <button id="basic-non-sticky-notification-toggle" class="btn btn-primary mr-1">Show Non Sticky Notification</button>
+    <button style="display: none" id="basic-non-sticky-notification-toggle" class="btn btn-primary mr-1">Show Non Sticky Notification</button>
 
     @yield('content')
         <!-- BEGIN: JS Assets-->
