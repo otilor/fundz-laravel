@@ -5,8 +5,8 @@
     <div id="success-notification-content" class="toastify-content hidden flex"><i class="text-theme-9"
                                                                                    data-feather="check-circle"></i>
         <div class="ml-4 mr-4">
-            <div class="font-medium">Payment successful!</div>
-            <div class="text-gray-600 mt-1">Your account has been credited!🎉</div>
+            <div id="success-title" class="font-medium"></div>
+            <div id="success-description" class="text-gray-600 mt-1"></div>
         </div>
     </div> <!-- END: Notification Content --> <!-- BEGIN: Notification Toggle -->
     <button style="display: none" type="hidden" name="success-alert" id="success-notification-toggle" class="btn btn-primary">Show Notification
@@ -20,6 +20,8 @@
         <!-- END: JS Assets-->
         <script>
             @if(\Illuminate\Support\Facades\Session::has('success'))
+                document.getElementById('success-title').innerText = "Payment successful!";
+                document.getElementById('success-description').innerText = "Your account has been credited!🎉";
                 document.getElementById('success-notification-toggle').click();
             @endif
         </script>
