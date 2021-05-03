@@ -20,7 +20,6 @@ class PageController extends Controller
      */
     public function dashboardOverview1()
     {
-        \session()->flash('name', 'Gabriel');
         $balance = $this->user->getWalletBalance(userId: auth()->id())['balance'];
         return view('pages/dashboard-overview-1', [
             'balance' => $balance
