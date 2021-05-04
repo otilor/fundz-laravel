@@ -17,6 +17,8 @@ use App\Http\Controllers\DarkModeController;
 |
 */
 
+Route::post('/webhook/flutterwave', [FlutterwaveController::class, 'webhook'])->name('webhook.flutterwave');
+
 Route::get('dark-mode-switcher', [DarkModeController::class, 'switch'])->name('dark-mode-switcher');
 
 Route::middleware('loggedin')->group(function() {
