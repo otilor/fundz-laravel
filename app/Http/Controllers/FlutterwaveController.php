@@ -30,7 +30,7 @@ class FlutterwaveController extends Controller
             $transfer = Flutterwave::transfers()->fetch($request->data['id']);
 
             if ($transfer['data']['status'] === 'SUCCESSFUL') {
-                // update transfer status to successful in your db
+                auth()->user()->deposit($transfer['data']['amount']);
             } else if ($transfer['data']['status'] === 'FAILED') {
                 // update transfer status to failed in your db
                 // revert customer balance back
