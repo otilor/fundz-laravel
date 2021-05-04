@@ -27,6 +27,7 @@ Route::middleware('loggedin')->group(function() {
 });
 
 Route::middleware('auth')->group(function() {
+    Route::get('test', [SavingsController::class, 'transferFundz']);
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
     Route::get('savings', [SavingsController::class, 'index'])->name('savings');

@@ -79,4 +79,22 @@ class SavingsController extends Controller
         // You can also redirect to your success page from here
 
     }
+
+    public function transferFundz()
+    {
+        $reference = Flutterwave::generateReference();
+
+        $data = [
+            'account_bank'=> '044',
+            'account_number'=> '0690000040',
+            'amount' => 23,
+            'narration' => 'Test transfer to Client ' . auth()->user()->name,
+            'currency' => 'NGN',
+            'reference' => $reference
+        ];
+
+        $transfer = Flutterwave::transfers()->initiate($data);
+
+        dd($transfer);
+    }
 }
