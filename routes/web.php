@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FlutterwaveController;
 use App\Http\Controllers\SavingsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
