@@ -53,8 +53,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="text-3xl font-bold leading-8 mt-6">3.721</div>
-                                    <div class="text-base text-gray-600 mt-1">New Orders</div>
+                                    <div class="text-3xl font-bold leading-8 mt-6">₦{{ $balance }}</div>
+                                    <div class="text-base text-gray-600 mt-1">Safelock</div>
                                 </div>
                             </div>
                         </div>
