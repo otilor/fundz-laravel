@@ -31,7 +31,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
     Route::get('savings', [SavingsController::class, 'index'])->name('savings');
     Route::post('savings', [SavingsController::class, 'save'])->name('savings');
-    Route::post('withdraw', [SavingsController::class, 'withdraw'])->name('withdraw');
+    Route::get('withdraw', [SavingsController::class, 'withdraw'])->name('withdraw');
     Route::get('/rave/callback', [SavingsController::class, 'callback'])->name('callback');
 
     Route::get('dashboard-overview-2-page', [PageController::class, 'dashboardOverview2'])->name('dashboard-overview-2');
