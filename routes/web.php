@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function() {
     Route::get('withdraw', [SavingsController::class, 'withdraw'])->name('withdraw');
     Route::get('/rave/callback', [SavingsController::class, 'callback'])->name('callback');
 
-    Route::get('safelock', [NamedWalletsController::class]);
+    Route::get('safelock', [NamedWalletsController::class, 'index']);
     Route::get('dashboard-overview-2-page', [PageController::class, 'dashboardOverview2'])->name('dashboard-overview-2');
     Route::get('inbox-page', [PageController::class, 'inbox'])->name('inbox');
     Route::get('file-manager-page', [PageController::class, 'fileManager'])->name('file-manager');
