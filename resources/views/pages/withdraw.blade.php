@@ -49,7 +49,7 @@
                         <br>
                         <label for="crud-form-1" class="form-label">Account Number</label>
                         <div class="input-group">
-                            <input minlength="10" name="accountNumber" id="crud-form-1" type="text" class="form-control w-full" placeholder="3324245342">
+                            <input minlength="10" maxlength="10" name="accountNumber" id="crud-form-1" type="text" class="form-control w-full" placeholder="3324245342">
                         </div>
                         <br>
                         <div hidden id="accountName">
