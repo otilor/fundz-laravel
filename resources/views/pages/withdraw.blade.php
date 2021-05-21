@@ -23,7 +23,7 @@
                         <br>
                         <label for="crud-form-1" class="form-label">Bank Name</label>
                         <div class="input-group">
-                            <input name="bankName" id="crud-form-1" type="text" class="form-control w-full" list="bankList">
+                            <input name="bank_name" id="crud-form-1" type="text" class="form-control w-full" list="bankList">
                             <datalist id="bankList">
                                 <option value="First Bank of Nigeria Limiteda">
                                 <option value="Access Bank Plc">
@@ -49,7 +49,7 @@
                         <br>
                         <label for="crud-form-1" class="form-label">Account Number</label>
                         <div class="input-group">
-                            <input minlength="10" maxlength="10" name="accountNumber" id="crud-form-1" type="text" class="form-control w-full" placeholder="3324245342">
+                            <input minlength="10" maxlength="10" name="account_number" id="crud-form-1" type="text" class="form-control w-full" placeholder="3324245342">
                         </div>
                         <br>
                         <div hidden id="accountName">
