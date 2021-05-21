@@ -9,7 +9,7 @@ class DarkModeController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Htt`p\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function switch()
