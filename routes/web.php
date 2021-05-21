@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\NamedWalletsController;
+use App\Http\Controllers\SafelockController;
 use App\Http\Controllers\SavingsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -30,6 +31,7 @@ Route::middleware('loggedin')->group(function() {
 Route::middleware('auth')->group(function() {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
+    Route::get('safelock', [SafelockController::class, 'index']);
     Route::get('savings', [SavingsController::class, 'index'])->name('savings');
     Route::post('savings', [SavingsController::class, 'save'])->name('savings');
     Route::get('withdraw', [SavingsController::class, 'withdraw'])->name('withdraw');
