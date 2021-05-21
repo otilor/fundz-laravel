@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Http\Request\SaveMoneyRequest;
 use App\Repositories\UserRepository;
 use App\Facades\UpdatedRave as Flutterwave;
+use Illuminate\Http\Request;
 
 class SavingsController extends Controller
 {
@@ -59,7 +60,13 @@ class SavingsController extends Controller
 
     public function withdraw()
     {
-        return "Withdrawing...";
+        $balance = $this->user->getWalletBalance(userId: auth()->id())['balance'];
+        return view('pages.withdraw',compact('balance'));
+    }
+
+    public function withdrawFundz(Request $request)
+    {
+       return $request;
     }
     public function callback()
     {
