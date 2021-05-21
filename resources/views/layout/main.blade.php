@@ -27,7 +27,7 @@
         <!-- END: JS Assets-->
         <script>
             @if(\Illuminate\Support\Facades\Session::has('success'))
-                document.getElementById('notification-description').innerText = "Wallet has been credited!✅🎉🥳";
+                document.getElementById('notification-description').innerText = "{{ session()->get('success') }}";
                 document.getElementById('basic-non-sticky-notification-toggle').click();
             @elseif(\Illuminate\Support\Facades\Session::has('error'))
                 document.getElementById('notification-description').innerText = "The transaction was cancelled😒";
