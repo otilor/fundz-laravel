@@ -53,7 +53,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="text-3xl font-bold leading-8 mt-6">₦{{ number_format($balance * 1000, 3, '.', ',')}}</div>
+                                    <div class="text-3xl break-all font-bold leading-8 mt-6">₦{{ number_format($balance * 1000, 3, '.', ',')}}</div>
                                     <div class="text-base text-gray-600 mt-1">Safelock</div>
                                 </div>
                             </div>
