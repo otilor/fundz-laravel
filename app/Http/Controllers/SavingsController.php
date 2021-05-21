@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Request\SaveMoneyRequest;
+use App\Http\Requests\WithdrawRequest;
 use App\Repositories\UserRepository;
 use App\Facades\UpdatedRave as Flutterwave;
 use Illuminate\Http\Request;
@@ -64,7 +65,7 @@ class SavingsController extends Controller
         return view('pages.withdraw',compact('balance'));
     }
 
-    public function withdrawFundz(Request $request)
+    public function withdrawFundz(WithdrawRequest $request)
     {
        if ($this->user->withdraw($request->amount, auth()->id())) {
            session()->flash('success', 'Withdrawal successful🙌🏻');
