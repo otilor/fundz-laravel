@@ -31,6 +31,7 @@ class UserService implements UserRepository
         if ((int)$amount > (int)$balance) {
             return false;
         }
+        User::find($userId)->withdraw($amount);
         return true;
     }
 }
