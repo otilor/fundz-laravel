@@ -24,4 +24,13 @@ class UserService implements UserRepository
 
         return ['message' => 'Successfully topped up wallet', 'status' => true];
     }
+
+    public function withdraw($amount, $userId)
+    {
+        $balance = $this->getWalletBalance($userId)['balance'];
+        if ((int)$amount > (int)$balance) {
+            return false;
+        }
+        return true;
+    }
 }

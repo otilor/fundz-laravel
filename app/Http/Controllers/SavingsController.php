@@ -66,8 +66,13 @@ class SavingsController extends Controller
 
     public function withdrawFundz(Request $request)
     {
-       return $request;
+       if ($this->user->withdraw($request->amount, auth()->id())) {
+           session()->flash('success', 'Withdrawal successful🙌🏻');
+           return redirect(route('dashboard-overview-1'));
+       }
+       return back();
     }
+
     public function callback()
     {
         $transactionID = Flutterwave::getTransactionIDFromCallback();
