@@ -29,7 +29,7 @@ class WithdrawRequest extends FormRequest
             'bank_name' => 'required',
             'account_number' => 'required',
             'comment' => 'nullable',
-            'password' => \Illuminate\Validation\Rules\Password::min(8),
+            'password' => 'required',
         ];
     }
 }
