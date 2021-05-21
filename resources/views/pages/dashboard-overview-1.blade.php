@@ -42,7 +42,7 @@
                             </div>
                         </div>
 
-                        <a class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y" href="/savings">
+                        <a class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y" href="/safelock">
                             <div>
                                 <div class="report-box zoom-in">
                                     <div class="box p-5">
