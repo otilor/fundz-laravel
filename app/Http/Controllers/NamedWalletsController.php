@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class NamedWalletsController extends Controller
 {
-    public function inde()
+    public function index()
     {
         return RetrieveSafeLocks::class;
     }
