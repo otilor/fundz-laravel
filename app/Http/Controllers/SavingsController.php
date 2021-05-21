@@ -71,7 +71,7 @@ class SavingsController extends Controller
            session()->flash('success', 'Withdrawal successful🙌🏻');
            return redirect(route('dashboard-overview-1'));
        }
-        session()->flash('error', 'Fundz you no get!');
+        session()->flash('error', 'Fundz you no get!😕');
        return back();
     }
 
