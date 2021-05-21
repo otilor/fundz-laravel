@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Savings - Fundz by Gabriel</title>
+    <title>Withdraw - Fundz by Gabriel</title>
 @endsection
 
 @section('subcontent')
@@ -25,7 +25,7 @@
                         <div class="input-group">
                             <input name="bankName" id="crud-form-1" type="text" class="form-control w-full" list="bankList">
                             <datalist id="bankList">
-                                <option value="First Bank of Nigeria Limiteda">
+                                <option value="First Bank of Nigeria Limited">
                                 <option value="Access Bank Plc">
                                 <option value="Fidelity Bank Plc">
                                 <option value="First City Monument Bank Limited">

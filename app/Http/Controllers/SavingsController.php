@@ -8,6 +8,7 @@ use App\Http\Request\SaveMoneyRequest;
 use App\Repositories\UserRepository;
 use App\Facades\UpdatedRave as Flutterwave;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class SavingsController extends Controller
 {
@@ -66,7 +67,19 @@ class SavingsController extends Controller
 
     public function withdrawFundz(Request $request)
     {
-       return $request;
+    //    return $request;
+        $response = Http::post('https://api.flutterwave.com/v3/transfers' , [
+            "account_bank" => "044",
+            "account_number" => "$request->accountNumber",
+            "amount" => $request->amount,
+            "narration" => $request->comment,
+            "currency" => "NGN",
+            "reference" => "akhlm-pstmnpyt-rfxx007_PMCKDU_1",
+            "callback_url" => "https://webhook.site/b3e505b0-fe02-430e-a538-22bbbce8ce0d",
+            "debit_currency" => "NGN"
+        ]);
+
+        dd($response);
     }
     public function callback()
     {
