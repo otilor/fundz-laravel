@@ -18,7 +18,7 @@
                         <label for="crud-form-1" class="form-label">Amount(minimum of ₦{{$balance}})</label>
                         <div class="input-group">
                             <div id="input-group-3" class="input-group-text">₦</div>
-                            <input name="amount" id="crud-form-1" type="text" class="form-control w-full" placeholder="Example 2000">
+                            <input name="amount" id="crud-form-1" type="number" class="form-control w-full" placeholder="Example 2000">
                         </div>
                         <br>
                         <label for="crud-form-1" class="form-label">Bank Name</label>
