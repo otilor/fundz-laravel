@@ -56,6 +56,11 @@ class SavingsController extends Controller
 //        return redirect(route('dashboard-overview-1'));
     }
 
+
+    public function withdraw()
+    {
+        return "Withdrawing...";
+    }
     public function callback()
     {
         $transactionID = Flutterwave::getTransactionIDFromCallback();

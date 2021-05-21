@@ -8,7 +8,7 @@ class SideMenu
      * List of side menu items.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return array[]
      */
     public static function menu()
     {
@@ -28,6 +28,14 @@ class SideMenu
                     'layout' => 'side-menu'
                 ],
                 'title' => 'Savings'
+            ],
+            'withdraw' => [
+                'icon' => 'dollar-sign',
+                'route_name' => 'withdraw',
+                'params' => [
+                    'layout' => 'side-menu'
+                ],
+                'title' => 'Withdraw'
             ],
         ];
     }
