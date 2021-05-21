@@ -18,12 +18,12 @@
                         <label for="crud-form-1" class="form-label">Amount(minimum of ₦{{$balance}})</label>
                         <div class="input-group">
                             <div id="input-group-3" class="input-group-text">₦</div>
-                            <input name="amount" id="crud-form-1" type="text" class="form-control w-full" placeholder="Example 2000">
+                            <input name="amount" id="crud-form-1" type="number" class="form-control w-full" placeholder="Example 2000">
                         </div>
                         <br>
                         <label for="crud-form-1" class="form-label">Bank Name</label>
                         <div class="input-group">
-                            <input name="bankName" id="crud-form-1" type="text" class="form-control w-full" list="bankList">
+                            <input name="bank_name" id="crud-form-1" type="text" class="form-control w-full" list="bankList">
                             <datalist id="bankList">
                                 <option value="First Bank of Nigeria Limiteda">
                                 <option value="Access Bank Plc">
@@ -49,7 +49,7 @@
                         <br>
                         <label for="crud-form-1" class="form-label">Account Number</label>
                         <div class="input-group">
-                            <input name="accountNumber" id="crud-form-1" type="text" class="form-control w-full" placeholder="3324245342">
+                            <input minlength="10" maxlength="10" name="account_number" id="crud-form-1" type="text" class="form-control w-full" placeholder="3324245342">
                         </div>
                         <br>
                         <div hidden id="accountName">

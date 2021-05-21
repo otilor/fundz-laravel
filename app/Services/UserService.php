@@ -6,6 +6,7 @@ namespace App\Services;
 
 use App\Models\User;
 use App\Repositories\UserRepository;
+use App\Facades\UpdatedRave as Flutterwave;
 use Bavix\Wallet\Models\Wallet;
 
 class UserService implements UserRepository
@@ -31,6 +32,23 @@ class UserService implements UserRepository
         if ((int)$amount > (int)$balance) {
             return false;
         }
+
+        $reference = Flutterwave::generateReference();
+
+        $data = [
+            "account_bank"=>"044",
+            "account_number"=>"0690000040",
+            "amount"=>$amount,
+            "narration"=>"Transfer from Fundz",
+            "currency"=>"NGN",
+            "debit_currency"=>"NGN",
+            'reference' => $reference
+];
+
+        $transfer = Flutterwave::transfers()->initiate($data);
+
+        dd($transfer);
+        User::find($userId)->withdraw($amount);
         return true;
     }
 }

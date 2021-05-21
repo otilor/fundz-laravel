@@ -30,7 +30,7 @@
                 document.getElementById('notification-description').innerText = "{{ session()->get('success') }}";
                 document.getElementById('basic-non-sticky-notification-toggle').click();
             @elseif(\Illuminate\Support\Facades\Session::has('error'))
-                document.getElementById('notification-description').innerText = "The transaction was cancelled😒";
+                document.getElementById('notification-description').innerText = "{{ session()->get('error') }}";
                 document.getElementById('basic-non-sticky-notification-toggle').click();
             @endif
         </script>
