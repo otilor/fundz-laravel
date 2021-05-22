@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SafelockController;
 use App\Http\Controllers\SavingsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -19,16 +20,17 @@ use App\Http\Controllers\DarkModeController;
 
 Route::get('dark-mode-switcher', [DarkModeController::class, 'switch'])->name('dark-mode-switcher');
 
-Route::middleware('loggedin')->group(function() {
+Route::middleware('loggedin')->group(function () {
     Route::get('login', [AuthController::class, 'loginView'])->name('login-view');
     Route::post('login', [AuthController::class, 'login'])->name('login');
     Route::get('register', [AuthController::class, 'registerView'])->name('register-view');
     Route::post('register', [AuthController::class, 'register'])->name('register');
 });
 
-Route::middleware('auth')->group(function() {
+Route::middleware('auth')->group(function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
+    Route::get('safelock', [SafelockController::class, 'index']);
     Route::get('savings', [SavingsController::class, 'index'])->name('savings');
     Route::post('savings', [SavingsController::class, 'save'])->name('savings');
     Route::get('withdraw', [SavingsController::class, 'withdraw'])->name('withdraw');

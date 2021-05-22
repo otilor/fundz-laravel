@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Request\SaveMoneyRequest;
+use App\Http\Requests\WithdrawRequest;
 use App\Repositories\UserRepository;
 use App\Facades\UpdatedRave as Flutterwave;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 
 class SavingsController extends Controller
@@ -65,22 +67,31 @@ class SavingsController extends Controller
         return view('pages.withdraw',compact('balance'));
     }
 
-    public function withdrawFundz(Request $request)
+    public function withdrawFundz(WithdrawRequest $request)
     {
-    //    return $request;
-        $response = Http::post('https://api.flutterwave.com/v3/transfers' , [
-            "account_bank" => "044",
-            "account_number" => "$request->accountNumber",
-            "amount" => $request->amount,
-            "narration" => $request->comment,
-            "currency" => "NGN",
-            "reference" => "akhlm-pstmnpyt-rfxx007_PMCKDU_1",
-            "callback_url" => "https://webhook.site/b3e505b0-fe02-430e-a538-22bbbce8ce0d",
-            "debit_currency" => "NGN"
-        ]);
 
-        dd($response);
+       if ($this->user->withdraw($request->amount, auth()->id())) {
+           $response = Http::post('https://api.flutterwave.com/v3/transfers',[
+            "account_bank" => $request->bank_code,
+            "account_number" => $request->account_number,
+            "amount" => $request->amount,
+            "narration" => $request->comment ?? '',
+            "currency" => "NGN",
+            "reference" => Flutterwave::generateReference(),
+            // "callback_url" => "https://webhook.site/b3e505b0-fe02-430e-a538-22bbbce8ce0d",
+            "debit_currency" => "NGN"
+           ]);
+
+           return $response->json()['status'];
+
+           return
+           session()->flash('success', 'Withdrawal successful🙌🏻');
+           return redirect(route('dashboard-overview-1'));
+       }
+        session()->flash('error', 'Fundz you no get!😕');
+       return back();
     }
+
     public function callback()
     {
         $transactionID = Flutterwave::getTransactionIDFromCallback();

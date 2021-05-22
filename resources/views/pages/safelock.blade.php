@@ -18,12 +18,6 @@
                             <i data-feather="refresh-ccw" class="w-4 h-4 mr-3"></i> Reload Data
                         </a>
                     </div>
-                    <div class="alert alert-dismissible show box bg-theme-3 text-white flex items-center mb-6" role="alert">
-                        <span>Introducing named wallets! Personalize your wallets.</span>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x w-4 h-4"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                        </button>
-                    </div>
                     <div class="grid grid-cols-12 gap-6 mt-5">
                         <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
                             <div class="report-box zoom-in">
@@ -36,7 +30,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="text-3xl font-bold leading-8 mt-6">₦{{ $balance }}</div>
+                                    <div class="text-3xl font-bold leading-8 mt-6">₦12</div>
                                     <div class="text-base text-gray-600 mt-1">Total Savings</div>
                                 </div>
                             </div>
@@ -69,7 +63,8 @@
                                             </div>
                                         </div>
                                         <div class="text-3xl break-all font-bold leading-8 mt-6">
-                                            ₦{{ number_format($balance * 1000, 3, '.', ',')}}</div>
+                                            3343
+                                        </div>
                                         <div class="text-base text-gray-600 mt-1">Safelock</div>
                                     </div>
                                 </div>
@@ -91,26 +86,26 @@
                                 {{--                        </div>--}}
                             </div>
                         </a>
+                    </div>
+                    <!-- END: General Report -->
+                    <!-- BEGIN: Sales Report -->
+
+                    <!-- END: Sales Report -->
+                    <!-- BEGIN: Weekly Top Seller -->
+                    <!-- END: Weekly Top Seller -->
+                    <!-- BEGIN: Sales Report -->
+                    <!-- END: Sales Report -->
+                    <!-- BEGIN: Official Store -->
+                    <!-- END: Official Store -->
+                    <!-- BEGIN: Weekly Best Sellers -->
+                    <!-- END: Weekly Best Sellers -->
+                    <!-- BEGIN: General Report -->
+                    <!-- END: General Report -->
+                    <!-- BEGIN: Weekly Top Products -->
+
+                    <!-- END: Weekly Top Products -->
                 </div>
-                <!-- END: General Report -->
-                <!-- BEGIN: Sales Report -->
-
-                <!-- END: Sales Report -->
-                <!-- BEGIN: Weekly Top Seller -->
-                <!-- END: Weekly Top Seller -->
-                <!-- BEGIN: Sales Report -->
-                <!-- END: Sales Report -->
-                <!-- BEGIN: Official Store -->
-                <!-- END: Official Store -->
-                <!-- BEGIN: Weekly Best Sellers -->
-                <!-- END: Weekly Best Sellers -->
-                <!-- BEGIN: General Report -->
-                <!-- END: General Report -->
-                <!-- BEGIN: Weekly Top Products -->
-
-                <!-- END: Weekly Top Products -->
             </div>
-        </div>
 
-    </div>
+        </div>
 @endsection
