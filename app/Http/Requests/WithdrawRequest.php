@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\ValidatePassword;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Password;
 
@@ -25,11 +26,11 @@ class WithdrawRequest extends FormRequest
     public function rules()
     {
         return [
-            'amount' => 'required',
-            'bank_name' => 'required',
-            'account_number' => 'required',
+            'amount' => 'required|numeric',
+            'bank_code' => 'required',
+            'account_number' => 'required|numeric',
             'comment' => 'nullable',
-            'password' => 'required',
+            'password' => ['required', new ValidatePassword],
         ];
     }
 }

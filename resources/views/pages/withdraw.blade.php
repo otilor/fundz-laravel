@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Savings - Fundz by Gabriel</title>
+    <title>Withdraw - Fundz by Gabriel</title>
 @endsection
 
 @section('subcontent')
@@ -16,40 +16,41 @@
                 <div class="intro-y box p-5">
                     <div>
                         <label for="crud-form-1" class="form-label">Amount(minimum of ₦{{$balance}})</label>
+                        @error('amount')
+                            <span style="color: red">Enter a valid amount</span>
+                        @enderror
                         <div class="input-group">
                             <div id="input-group-3" class="input-group-text">₦</div>
-                            <input name="amount" id="crud-form-1" type="number" class="form-control w-full" placeholder="Example 2000">
+                            <input name="amount" id="crud-form-1" type="number" class="form-control w-full" placeholder="Example 2000" value="{{old('amount')}}">
                         </div>
                         <br>
                         <label for="crud-form-1" class="form-label">Bank Name</label>
                         <div class="input-group">
-                            <input name="bank_name" id="crud-form-1" type="text" class="form-control w-full" list="bankList">
-                            <datalist id="bankList">
-                                <option value="First Bank of Nigeria Limiteda">
-                                <option value="Access Bank Plc">
-                                <option value="Fidelity Bank Plc">
-                                <option value="First City Monument Bank Limited">
-                                <option value="Guaranty Trust Bank Plc">
-                                <option value="Union Bank of Nigeria Plc">
-                                <option value="United Bank for Africa Plc">
-                                <option value="Zenith Bank Plc">
-                                <option value="Citibank Nigeria Limited">
-                                <option value="Ecobank Nigeria">
-                                <option value="Heritage Bank Plc">
-                                <option value="Keystone Bank Limited">
-                                <option value="Polaris Bank Limited">
-                                <option value="Stanbic IBTC Bank Plc">
-                                <option value="Standard Chartered">
-                                <option value="Sterling Bank Plc">
-                                <option value="Titan Trust Bank Limited">
-                                <option value="Unity Bank Plc">
-                                <option value="Wema Bank Plc">
-                            </datalist>
+                            <select name="bank_code" id="" class="form-control w-full">
+                                <option value="" active><--- Select Your Bank ----></option>
+                                <option value="011" {{ old('bank_code') == '011' ? 'selected' : '' }}>First Bank of Nigeria Limited</option>
+                                <option value="044" {{ old('bank_code') == '044' ? 'selected' : '' }}>Access Bank Plc</option>
+                                <option value="070" {{ old('bank_code') == '070' ? 'selected' : '' }}>Fidelity Bank Plc</option>
+                                <option value="058" {{ old('bank_code') == '058' ? 'selected' : '' }}>Guaranty Trust Bank Plc</option>
+                                <option value="032" {{ old('bank_code') == '032' ? 'selected' : '' }}>Union Bank of Nigeria Plc</option>
+                                <option value="033" {{ old('bank_code') == '033' ? 'selected' : '' }}>United Bank for Africa Plc</option>
+                                <option value="057" {{ old('bank_code') == '057' ? 'selected' : '' }}>Zenith Bank Plc</option>
+                                <option value="023" {{ old('bank_code') == '023' ? 'selected' : '' }}>Citibank Nigeria Limited</option>
+                                <option value="050" {{ old('bank_code') == '050' ? 'selected' : '' }}>Ecobank Nigeria</option>
+                                <option value="221" {{ old('bank_code') == '221' ? 'selected' : '' }}>Stanbic IBTC Bank Plc</option>
+                                <option value="068" {{ old('bank_code') == '068' ? 'selected' : '' }}>Standard Chartered Bank</option>
+                                <option value="232" {{ old('bank_code') == '232' ? 'selected' : '' }}>Sterling Bank Plc</option>
+                                <option value="057" {{ old('bank_code') == '057' ? 'selected' : '' }}>Unity Bank Plc</option>
+                                <option value="035" {{ old('bank_code') == '035' ? 'selected' : '' }}>Wema Bank Plc </option>
+                            </select>
                         </div>
                         <br>
                         <label for="crud-form-1" class="form-label">Account Number</label>
+                        @error('account_number')
+                            <span style="color: red">Enter a valid Account Number</span>
+                        @enderror
                         <div class="input-group">
-                            <input minlength="10" maxlength="10" name="account_number" id="crud-form-1" type="text" class="form-control w-full" placeholder="3324245342">
+                            <input minlength="10" maxlength="10" name="account_number" id="crud-form-1" type="text" class="form-control w-full" placeholder="3324245342" value="{{old('account_number')}}">
                         </div>
                         <br>
                         <div hidden id="accountName">
@@ -61,9 +62,12 @@
                         <br>
                         <label for="crud-form-1" class="form-label">Comment (Optional)</label>
                         <div class="input-group">
-                            <textarea name="comment" id="crud-form-1" type="text" class="form-control w-full" placeholder="Thank you for helping my save....."></textarea>
+                            <textarea name="comment" id="crud-form-1" type="text" class="form-control w-full" placeholder="Thank you for helping my save.....">{{old('comment')}}</textarea>
                         </div>
                         <br>
+                        @error('password')
+                            <span style="color: red">Password Incorrect</span>
+                        @enderror
                         <label for="crud-form-1" class="form-label">For Security reasons, Kindly enter your password</label>
                         <div class="input-group">
                             <input name="password" id="crud-form-1" type="password" class="form-control w-full" placeholder="************">
