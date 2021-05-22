@@ -69,27 +69,26 @@ class SavingsController extends Controller
 
     public function withdrawFundz(WithdrawRequest $request)
     {
-
-       if ($this->user->withdraw($request->amount, auth()->id())) {
-           $response = Http::post('https://api.flutterwave.com/v3/transfers',[
+        $withdraw_data = [
             "account_bank" => $request->bank_code,
             "account_number" => $request->account_number,
             "amount" => $request->amount,
             "narration" => $request->comment ?? '',
             "currency" => "NGN",
+            "debit_currency"=>"NGN",
             "reference" => Flutterwave::generateReference(),
-            // "callback_url" => "https://webhook.site/b3e505b0-fe02-430e-a538-22bbbce8ce0d",
-            "debit_currency" => "NGN"
-           ]);
+        ];
+        $transfer = Flutterwave::transfers()->initiate($withdraw_data);
+        if($transfer['status'] == 'success')
+        {
+            session()->flash('success', 'Withdrawal successful🙌🏻');
+            return redirect(route('dashboard-overview-1'));
+        }
+        else {
+            session()->flash('error','Withdraw failed, Contact us for more info!!!');
+            return redirect()->back();
 
-           return $response->json()['status'];
-
-           return
-           session()->flash('success', 'Withdrawal successful🙌🏻');
-           return redirect(route('dashboard-overview-1'));
-       }
-        session()->flash('error', 'Fundz you no get!😕');
-       return back();
+        }
     }
 
     public function callback()
