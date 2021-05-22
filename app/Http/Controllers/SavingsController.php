@@ -75,7 +75,7 @@ class SavingsController extends Controller
             "account_bank" => $request->bank_code,
             "account_number" => $request->account_number,
             "amount" => $request->amount,
-            "narration" => $request->comment ?? '',
+            "narration" => $request->comment ?? 'Transfer from Fundz',
             "currency" => "NGN",
             "reference" => Flutterwave::generateReference(),
             // "callback_url" => "https://webhook.site/b3e505b0-fe02-430e-a538-22bbbce8ce0d",
@@ -83,8 +83,6 @@ class SavingsController extends Controller
            ]);
 
            return $response->json()['status'];
-
-           return
            session()->flash('success', 'Withdrawal successful🙌🏻');
            return redirect(route('dashboard-overview-1'));
        }
