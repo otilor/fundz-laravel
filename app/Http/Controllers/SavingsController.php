@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Request\SaveMoneyRequest;
 use App\Http\Requests\WithdrawRequest;
+use App\Models\User;
 use App\Repositories\UserRepository;
 use App\Facades\UpdatedRave as Flutterwave;
 use Illuminate\Http\Request;
@@ -69,23 +70,30 @@ class SavingsController extends Controller
 
     public function withdrawFundz(WithdrawRequest $request)
     {
+        $balance = User::find(auth()->id())->balance;
+        if ((int)$request->amount > (int)$balance) {
+            return back();
+        }
 
-       if ($this->user->withdraw($request->amount, auth()->id())) {
-           $response = Http::post('https://api.flutterwave.com/v3/transfers',[
-            "account_bank" => $request->bank_code,
-            "account_number" => $request->account_number,
-            "amount" => $request->amount,
-            "narration" => $request->comment ?? 'Transfer from Fundz',
-            "currency" => "NGN",
-            "reference" => Flutterwave::generateReference(),
-            // "callback_url" => "https://webhook.site/b3e505b0-fe02-430e-a538-22bbbce8ce0d",
-            "debit_currency" => "NGN"
-           ]);
+        $reference = Flutterwave::generateReference();
 
-           return $response->json()['status'];
-           session()->flash('success', 'Withdrawal successful🙌🏻');
-           return redirect(route('dashboard-overview-1'));
-       }
+        $data = [
+            "account_bank"=>$request->bank_code,
+            "account_number"=>$request->account_number,
+            "amount"=>$request->amount,
+            "narration"=>"Transfer from Fundz",
+            "currency"=>"NGN",
+            "debit_currency"=>"NGN",
+            'reference' => $reference
+        ];
+
+        $transfer = Flutterwave::transfers()->initiate($data);
+
+        User::find(auth()->id())->withdraw($request->amount);
+
+       dd($transfer);
+       session()->flash('success', 'Withdrawal successful🙌🏻');
+       return redirect(route('dashboard-overview-1'));
         session()->flash('error', 'Fundz you no get!😕');
        return back();
     }
