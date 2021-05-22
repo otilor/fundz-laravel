@@ -47,7 +47,6 @@ class UserService implements UserRepository
 
         $transfer = Flutterwave::transfers()->initiate($data);
 
-        dd($transfer);
         User::find($userId)->withdraw($amount);
         return true;
     }

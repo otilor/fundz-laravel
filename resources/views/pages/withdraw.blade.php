@@ -15,7 +15,8 @@
                 <!-- BEGIN: Form Layout -->
                 <div class="intro-y box p-5">
                     <div>
-                        <label for="crud-form-1" class="form-label">Amount(minimum of ₦{{$balance}})</label>
+                        <p class="mb-4 text-bold text-blue-600 text-xl">Wallet balance: ₦{{ $balance }}</p>
+                        <label for="crud-form-1" class="form-label">Amount(minimum of ₦1000)</label>
                         @error('amount')
                             <span style="color: red">Enter a valid amount</span>
                         @enderror
