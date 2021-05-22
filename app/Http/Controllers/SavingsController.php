@@ -72,7 +72,8 @@ class SavingsController extends Controller
     {
         $balance = User::find(auth()->id())->balance;
         if ((int)$request->amount > (int)$balance) {
-            return back();
+            session()->flash('error', 'Fundz you no get! 😕');
+            return redirect()->back();
         }
 
         $reference = Flutterwave::generateReference();
@@ -90,12 +91,16 @@ class SavingsController extends Controller
         $transfer = Flutterwave::transfers()->initiate($data);
 
         User::find(auth()->id())->withdraw($request->amount);
-
-       dd($transfer);
-       session()->flash('success', 'Withdrawal successful🙌🏻');
-       return redirect(route('dashboard-overview-1'));
-        session()->flash('error', 'Fundz you no get!😕');
-       return back();
+        if($transfer['status'] == 'success')
+        {
+            session()->flash('success', 'Withdrawal successful🙌🏻');
+            return redirect(route('dashboard-overview-1'));
+        }
+        else
+        {
+            session()->flash('error', 'Withdrawal Failed, No vex boss!😕');
+            return redirect()->back();
+        }
     }
 
     public function callback()
