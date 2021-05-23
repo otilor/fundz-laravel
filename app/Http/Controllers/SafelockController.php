@@ -4,7 +4,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Http\Requests\CreateSafeolockRequest;
+use App\Http\Requests\CreateSafelockRequest;
 use Illuminate\Support\Str;
 
 class SafelockController
@@ -20,7 +20,7 @@ class SafelockController
         return view('pages.safelock.create');
     }
 
-    public function store(CreateSafeolockRequest $request)
+    public function store(CreateSafelockRequest $request)
     {
         auth()->user()->createWallet([
             'name' => $request->wallet_name,
