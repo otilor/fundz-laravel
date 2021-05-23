@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('head')
-    <title>Fundz by Gabriel</title>
+    <title>Fundz</title>
 @endsection
 
 @section('content')
