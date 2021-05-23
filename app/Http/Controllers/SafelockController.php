@@ -11,13 +11,13 @@ class SafelockController
 {
     public function index()
     {
-        return view('pages.safelock');
+        return view('pages.safelock.index');
     }
 
 
     public function create()
     {
-        return view('pages.create');
+        return view('pages.safelock.create');
     }
 
     public function store(CreateSafeolockRequest $request)
