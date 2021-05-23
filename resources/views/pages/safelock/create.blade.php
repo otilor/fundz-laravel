@@ -14,13 +14,13 @@
                 <div class="intro-y box p-5">
                     <div>
                         <p class="mb-4 text-bold text-blue-600 text-xl">Create a safelock</p>
-                        <label for="crud-form-1" class="form-label">Amount(minimum of ₦1000)</label>
+                        <label for="safelock_amount" class="form-label">Enter an amount</label>
                         @error('amount')
                         <span style="color: red">Enter a valid amount</span>
                         @enderror
                         <div class="input-group">
                             <div id="input-group-3" class="input-group-text">₦</div>
-                            <input name="amount" id="crud-form-1" type="number" class="form-control w-full"
+                            <input name="amount" id="safelock_amount" type="number" class="form-control w-full"
                                    placeholder="Example 2000" value="{{old('amount')}}">
                         </div>
                         <label for="crud-form-1" class="mt-2 form-label">Source of fundz</label>
