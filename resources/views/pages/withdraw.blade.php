@@ -11,7 +11,7 @@
     <form method="post" action="/withdraw">
         @csrf
         <div class="grid grid-cols-12 gap-6 mt-5">
-            <div class="intro-y col-span-12 lg:col-span-6">
+            <div class="intro-y col-span-12 lg:col-span-12">
                 <!-- BEGIN: Form Layout -->
                 <div class="intro-y box p-5">
                     <div>
