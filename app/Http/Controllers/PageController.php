@@ -192,10 +192,7 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function profileOverview3()
-    {
-        return view('pages/profile-overview-3');
-    }
+    
 
     /**
      * Show specified view.
