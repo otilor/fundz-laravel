@@ -37,6 +37,14 @@ class SideMenu
                 ],
                 'title' => 'Withdraw'
             ],
+            'safelock' => [
+                'icon' => 'lock',
+                'route_name' => 'safelock.create',
+                'params' => [
+                    'layout' => 'side-menu'
+                ],
+                'title' => 'Safelock'
+            ],
         ];
     }
 }
