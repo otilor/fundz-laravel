@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\DarkModeController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,9 +53,12 @@ Route::middleware('auth')->group(function () {
     Route::get('users-layout-1-page', [PageController::class, 'usersLayout1'])->name('users-layout-1');
     Route::get('users-layout-2-page', [PageController::class, 'usersLayout2'])->name('users-layout-2');
     Route::get('users-layout-3-page', [PageController::class, 'usersLayout3'])->name('users-layout-3');
-    Route::get('profile-overview-1-page', [PageController::class, 'profileOverview1'])->name('profile-overview-1');
-    Route::get('profile-overview-2-page', [PageController::class, 'profileOverview2'])->name('profile-overview-2');
-    Route::get('profile-overview-3-page', [PageController::class, 'profileOverview3'])->name('profile-overview-3');
+
+    // Profile Routes Begins
+    Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
+    Route::post('PersonalInfomation', [ProfileController::class, 'updatePersonalInformation'])->name('updatePersonalInformation');
+    Route::post('changePassword', [ProfileController::class, 'changePassword'])->name('changePassword');
+    // Profile routes ends
     Route::get('wizard-layout-1-page', [PageController::class, 'wizardLayout1'])->name('wizard-layout-1');
     Route::get('wizard-layout-2-page', [PageController::class, 'wizardLayout2'])->name('wizard-layout-2');
     Route::get('wizard-layout-3-page', [PageController::class, 'wizardLayout3'])->name('wizard-layout-3');

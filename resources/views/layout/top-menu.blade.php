@@ -121,8 +121,8 @@
                             <div class="text-xs text-theme-28 mt-0.5 dark:text-gray-600">{{ $fakers[0]['jobs'][0] }}</div>
                         </div>
                         <div class="p-2">
-                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md">
-                                <i data-feather="user" class="w-4 h-4 mr-2"></i> Profile
+                            <a href="/profile" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md">
+                                <i data-feather="user" class="w-4 h-4 mr-2"></i> Profilew
                             </a>
                             <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md">
                                 <i data-feather="edit" class="w-4 h-4 mr-2"></i> Add Account
@@ -156,7 +156,7 @@
                             <i data-feather="{{ $menu['icon'] }}"></i>
                         </div>
                         <div class="top-menu__title">
-                            {{ $menu['title'] }}  
+                            {{ $menu['title'] }}
                             @if (isset($menu['sub_menu']))
                                 <i data-feather="chevron-down" class="top-menu__sub-icon"></i>
                             @endif
@@ -171,7 +171,7 @@
                                             <i data-feather="activity"></i>
                                         </div>
                                         <div class="top-menu__title">
-                                            {{ $subMenu['title'] }} 
+                                            {{ $subMenu['title'] }}
                                             @if (isset($subMenu['sub_menu']))
                                                 <i data-feather="chevron-down" class="top-menu__sub-icon"></i>
                                             @endif
@@ -190,7 +190,7 @@
                                                 </li>
                                             @endforeach
                                         </ul>
-                                    @endif                                
+                                    @endif
                                 </li>
                             @endforeach
                         </ul>
