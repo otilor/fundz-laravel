@@ -27,7 +27,7 @@
                         <div class="input-group">
                             <label for="fundz_source"></label>
                             <select id="fundz_source" name="bank_code" class="form-control w-full">
-                                <option value="" active><--- Select Your Bank ----></option>
+                                <option value="" active><--- Where you keep 'em Fundz?----></option>
                                 <option>Your main wallet balance {{ auth()->user()->balance }}</option>
                             </select>
                         </div>
