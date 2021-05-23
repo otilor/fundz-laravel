@@ -32,10 +32,10 @@
                             </select>
                         </div>
 
-                        <label for="crud-form-1" class="mt-2 form-label">Comment (Optional)</label>
+                        <label for="crud-form-1" class="mt-2 form-label">Description</label>
                         <div class="input-group">
                             <textarea name="comment" id="crud-form-1" type="text" class="form-control w-full"
-                                      placeholder="Thank you for helping my save.....">{{old('comment')}}</textarea>
+                                      placeholder="Some Christmas fundz🎄🎅🏽">{{old('comment')}}</textarea>
                         </div>
                         <br>
                     </div>
