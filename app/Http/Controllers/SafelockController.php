@@ -11,6 +11,7 @@ class SafelockController
 {
     public function index()
     {
+
         return view('pages.safelock.index');
     }
 
