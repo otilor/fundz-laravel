@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
     Route::group(['prefix' => 'safelock'], function () {
         Route::get('/', [SafelockController::class, 'index'])->name('safelock.index');
-        Route::get('/create', [SafelockController::class, 'index'])->name('safelock.create');
+        Route::get('/create', [SafelockController::class, 'create'])->name('safelock.create');
     });
     Route::get('savings', [SavingsController::class, 'index'])->name('savings');
     Route::post('savings', [SavingsController::class, 'save'])->name('savings');
