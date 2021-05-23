@@ -90,9 +90,9 @@ class SavingsController extends Controller
 
         $transfer = Flutterwave::transfers()->initiate($data);
 
-        User::find(auth()->id())->withdraw($request->amount);
         if($transfer['status'] == 'success')
         {
+            User::find(auth()->id())->withdraw($request->amount);
             session()->flash('success', 'Withdrawal successful🙌🏻');
             return redirect(route('dashboard-overview-1'));
         }
