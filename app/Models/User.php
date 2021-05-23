@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Bavix\Wallet\Interfaces\Wallet;
 use Bavix\Wallet\Traits\HasWallet;
+use Bavix\Wallet\Traits\HasWallets;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,7 +13,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable implements Wallet
 {
-    use HasFactory, Notifiable, SoftDeletes, HasWallet;
+    use HasFactory, Notifiable, SoftDeletes, HasWallet, HasWallets;
 
     /**
      * The attributes that are mass assignable.
