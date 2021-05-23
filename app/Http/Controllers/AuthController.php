@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Request\LoginRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -20,6 +23,13 @@ class AuthController extends Controller
         ]);
     }
 
+    public function RegisterView()
+    {
+        return view('register/main', [
+            'layout' => 'login',
+        ]);
+    }
+
     /**
      * Authenticate login user.
      *
@@ -29,12 +39,13 @@ class AuthController extends Controller
     public function login(LoginRequest $request)
     {
         if (!\Auth::attempt([
-            'email' => $request->email, 
+            'email' => $request->email,
             'password' => $request->password
         ])) {
             throw new \Exception('Wrong email or password.');
         }
     }
+
 
     /**
      * Logout user.
@@ -46,5 +57,26 @@ class AuthController extends Controller
     {
         \Auth::logout();
         return redirect('login');
+    }
+
+    public function register(RegisterRequest $request)
+    {
+        $register = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'gender' => $request->gender,
+            'active' => 1,
+        ]);
+
+        if($register)
+        {
+            session()->flash('success', 'Registration successful, Now Login');
+            return redirect('/login');
+        }
+        else{
+            session()->flash('error','Registration Failed');
+            return redirect()->back();
+        }
     }
 }

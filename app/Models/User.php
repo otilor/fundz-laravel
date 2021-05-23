@@ -20,7 +20,7 @@ class User extends Authenticatable implements Wallet
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'gender', 'active'
     ];
 
     /**
