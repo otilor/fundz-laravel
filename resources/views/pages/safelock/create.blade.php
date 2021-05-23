@@ -23,6 +23,14 @@
                             <input name="amount" id="crud-form-1" type="number" class="form-control w-full"
                                    placeholder="Example 2000" value="{{old('amount')}}">
                         </div>
+                        <label for="crud-form-1" class="mt-2 form-label">Source of fundz</label>
+                        <div class="input-group">
+                            <select name="bank_code" id="" class="form-control w-full">
+                                <option value="" active><--- Select Your Bank ----></option>
+                                <option value="011" {{ old('bank_code') == '011' ? 'selected' : '' }}>Your main wallet balance {{ auth()->user()->balance }}</option>
+                            </select>
+                        </div>
+
                         <label for="crud-form-1" class="mt-2 form-label">Comment (Optional)</label>
                         <div class="input-group">
                             <textarea name="comment" id="crud-form-1" type="text" class="form-control w-full"
