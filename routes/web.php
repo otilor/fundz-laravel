@@ -54,6 +54,7 @@ Route::middleware('auth')->group(function () {
     // Profile Routes Begins
     Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
     Route::post('PersonalInfomation', [ProfileController::class, 'updatePersonalInformation'])->name('updatePersonalInformation');
+    Route::post('changePassword', [ProfileController::class, 'changePassword'])->name('changePassword');
     // Profile routes ends
     Route::get('wizard-layout-1-page', [PageController::class, 'wizardLayout1'])->name('wizard-layout-1');
     Route::get('wizard-layout-2-page', [PageController::class, 'wizardLayout2'])->name('wizard-layout-2');

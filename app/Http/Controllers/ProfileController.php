@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ChangePasswordRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -38,5 +41,25 @@ class ProfileController extends Controller
 
         session()->flash('sussess','Profile Updated Successfully!!!');
         return redirect()->back();
+    }
+
+    public function changePassword(ChangePasswordRequest $request)
+    {
+        $newPassword = Hash::make($request->new_pass);
+        $changePassword = auth()->user()->update([
+            'password' => $newPassword,
+        ]);
+
+        if($changePassword == true)
+        {
+            session()->flash('success',"Password Changed successfully!!!, Now Re-login");
+            Auth::logout();
+            return redirect('/login');
+        }
+        else
+        {
+            session()->flash('error',"Password failed to change");
+            return back();
+        }
     }
 }
