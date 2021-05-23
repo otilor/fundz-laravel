@@ -25,7 +25,8 @@
                         </div>
                         <label for="crud-form-1" class="mt-2 form-label">Source of fundz</label>
                         <div class="input-group">
-                            <select name="bank_code" id="" class="form-control w-full">
+                            <label for="fundz_source"></label>
+                            <select id="fundz_source" name="bank_code" class="form-control w-full">
                                 <option value="" active><--- Select Your Bank ----></option>
                                 <option>Your main wallet balance {{ auth()->user()->balance }}</option>
                             </select>
