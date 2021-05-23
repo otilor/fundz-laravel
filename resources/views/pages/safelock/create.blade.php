@@ -27,7 +27,7 @@
                         <div class="input-group">
                             <select name="bank_code" id="" class="form-control w-full">
                                 <option value="" active><--- Select Your Bank ----></option>
-                                <option value="011" {{ old('bank_code') == '011' ? 'selected' : '' }}>Your main wallet balance {{ auth()->user()->balance }}</option>
+                                <option>Your main wallet balance {{ auth()->user()->balance }}</option>
                             </select>
                         </div>
 
