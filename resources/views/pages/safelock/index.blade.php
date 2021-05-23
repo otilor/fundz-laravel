@@ -18,7 +18,7 @@
                             <i data-feather="refresh-ccw" class="w-4 h-4 mr-3"></i> Reload Data
                         </a>
                     </div>
-                        <button type="submit" class="btn btn-primary w-27 text-xl">Create a safelock</button>
+                        <a href="{{ route('safelock.create') }}" type="submit" class="btn btn-primary w-27 text-xl">Create a safelock</a>
 
                     <!-- END: General Report -->
                     <!-- BEGIN: Sales Report -->

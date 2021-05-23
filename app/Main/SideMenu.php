@@ -39,7 +39,7 @@ class SideMenu
             ],
             'safelock' => [
                 'icon' => 'lock',
-                'route_name' => 'safelock',
+                'route_name' => 'safelock.create',
                 'params' => [
                     'layout' => 'side-menu'
                 ],
