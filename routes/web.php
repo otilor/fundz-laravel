@@ -63,6 +63,9 @@ Route::middleware('auth')->group(function () {
 
     // Transfer Routes Begins
     Route::get('transfer',[TransferController::class, 'index'])->name('transfer');
+
+    Route::post('transfer',[TransferController::class, 'transfer'])->name('transfer');
+
     // Transfer Routes end
     Route::get('wizard-layout-1-page', [PageController::class, 'wizardLayout1'])->name('wizard-layout-1');
     Route::get('wizard-layout-2-page', [PageController::class, 'wizardLayout2'])->name('wizard-layout-2');
