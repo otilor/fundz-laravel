@@ -15,9 +15,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <link href="{{ asset('dist/images/logo.svg') }}" rel="shortcut icon">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Fundz by Gabriel">
-    <meta name="keywords" content="admin template, Rubick admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="LEFT4CODE">
+    <meta name="description" content="Fundz">
 
     @yield('head')
 
