@@ -9,14 +9,6 @@ use App\Models\User;
 
 class TransferController extends Controller
 {
-    public function __construct(public UserRepository $user)
-    {
-    }
-
-use Illuminate\Http\Request;
-
-class TransferController extends Controller
-{
 
     public function index()
     {
