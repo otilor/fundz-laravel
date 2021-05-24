@@ -15,6 +15,7 @@
             <!-- BEGIN: Form Layout -->
             <div class="intro-y box p-5">
                 <div>
+
                     @error('email')
                         <span style="color: red">{{$message}}</span>
                     @enderror
@@ -43,6 +44,24 @@
                     <div class="input-group">
                         <div id="input-group-3" class="input-group-text">#</div>
                         <input name="password" id="crud-form-1" type="password" class="form-control w-full" placeholder="**************"  required>
+
+                    <label for="crud-form-1" class="form-label">Email Address of Reciever</label>
+                    <div class="input-group">
+                        <div id="input-group-3" class="input-group-text">✉</div>
+                        <input name="email" id="crud-form-1" type="email" class="form-control w-full" placeholder="example@email.com" required>
+                    </div>
+                    <br>
+                    <label for="crud-form-1" class="form-label">Amount</label>
+                    <div class="input-group">
+                        <div id="input-group-3" class="input-group-text">₦</div>
+                        <input name="amount" id="crud-form-1" type="text" class="form-control w-full" placeholder="Example 2000" required>
+                    </div>
+                    <br>
+                    <label for="crud-form-1" class="form-label">For Security Reasons, Kindly enter your Password</label>
+                    <div class="input-group">
+                        <div id="input-group-3" class="input-group-text">#</div>
+                        <input name="password" id="crud-form-1" type="password" class="form-control w-full" placeholder="**************" required>
+
                     </div>
                 </div>
                 <div class="text-right mt-5">
