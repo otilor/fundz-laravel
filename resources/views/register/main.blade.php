@@ -41,6 +41,10 @@
                 @enderror
                 <input type="text" name="email" class="intro-x login__input form-control py-3 px-4 border-gray-300 block mt-4" placeholder="Email" value="{{old('email')}}" required>
                 <small style="color: blueviolet">Email verification required*</small>
+                @error('phone_number')
+                    <span style="color: red">Enter a Valid Phone number</span>
+                @enderror
+                <input type="text" min="11" max="11" name="phone_number" class="intro-x login__input form-control py-3 px-4 border-gray-300 block mt-4" placeholder="Phone Number E.g 08139576890" value="{{old('phone_number')}}" required>
                 @error('gender')
                     <span style="color: red">Select a Gender</span>
                 @enderror
@@ -53,13 +57,7 @@
                     <span style="color: red">Password Do not match</span>
                 @enderror
                 <input type="password" name="password" value="{{old('password')}}" class="intro-x login__input form-control py-3 px-4 border-gray-300 block mt-4" placeholder="Password" required>
-                <div class="intro-x w-full grid grid-cols-12 gap-4 h-1 mt-3">
-                    <div class="col-span-3 h-full rounded bg-theme-9"></div>
-                    <div class="col-span-3 h-full rounded bg-theme-9"></div>
-                    <div class="col-span-3 h-full rounded bg-theme-9"></div>
-                    <div class="col-span-3 h-full rounded bg-gray-200 dark:bg-dark-2"></div>
-                </div>
-                <a href="" class="intro-x text-gray-600 block mt-2 text-xs sm:text-sm">What is a secure password?</a>
+
                 <input type="password" name="confirm_password" class="intro-x login__input form-control py-3 px-4 border-gray-300 block mt-4" placeholder="Password Confirmation" required>
             </div>
             <div class="intro-x flex items-center text-gray-700 dark:text-gray-600 mt-4 text-xs sm:text-sm">

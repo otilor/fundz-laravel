@@ -12,8 +12,7 @@ class ProfileController extends Controller
 {
     public function profile()
     {
-        $user = auth()->user();
-        return view('pages/profile', compact('user'));
+        return view('pages/profile');
     }
 
     public function updatePersonalInformation(Request $request)
