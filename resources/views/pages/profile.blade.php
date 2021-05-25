@@ -14,7 +14,11 @@
             <div class="intro-y box mt-5 lg:mt-0">
                 <div class="relative flex items-center p-5">
                     <div class="w-12 h-12 image-fit">
-                        <img alt="Picture" class="rounded-full" src="{{asset('storage/image/'.auth()->user()->photo)}}">
+                        @if (auth()->user()->photo !== null)
+                            <img alt="Picture" class="rounded-full" src="{{asset('storage/image/'.auth()->user()->photo)}} ">
+                        @else
+                            <img alt="Picture" class="rounded-full" src="{{asset('storage/image/default.jpeg')}} ">
+                        @endif
                     </div>
                     <div class="ml-4 mr-auto">
                         <div class="font-medium text-base">{{ auth()->user()->name }}</div>
@@ -63,20 +67,24 @@
                             <div class="col-span-12 xl:col-span-6">
                                 <div>
                                     <label for="update-profile-form-6" class="form-label">Email</label>
-                                    <input id="update-profile-form-6" name="email" type="email" class="form-control" placeholder="Input text" value="{{$user->email}}" disabled="">
+                                    <input id="update-profile-form-6" name="email" type="email" class="form-control" placeholder="Input text" value="{{auth()->user()->email}}" disabled="">
                                 </div>
                                 <div class="mt-3">
                                     <label for="update-profile-form-7" class="form-label">Name</label>
-                                    <input id="update-profile-form-7" name="name" type="text" class="form-control" placeholder="Input text" value="{{$user->name}}" disabled="">
+                                    <input id="update-profile-form-7" name="name" type="text" class="form-control" placeholder="Input text" value="{{auth()->user()->name}}" disabled="">
                                 </div>
                                 <div class="mt-3 xl:mt-0">
                                     <label for="update-profile-form-10" class="form-label">Phone Number</label>
-                                    <input id="update-profile-form-10" name="phone_number" type="number" class="form-control" placeholder="Phone Number" value="{{$user->phone_number ?? ''}}" disabled>
+                                    <input id="update-profile-form-10" name="phone_number" type="number" class="form-control" placeholder="Phone Number" value="{{auth()->user()->phone_number ?? ''}}" disabled>
                                 </div>
                             </div>
                             <div class="col-span-12 xl:col-span-6">
                                 <div class="h-40 relative image-fit cursor-pointer zoom-in mx-auto">
-                                    <img class="rounded-md" alt="{{$user->name. ' picture'}}" src="{{asset('storage/image/'.auth()->user()->photo) ?? 'dist/images/profile-15.jpg'}}">
+                                    @if (auth()->user()->photo !== null)
+                                        <img alt="{{auth()->user()->name. ' picture'}}" class="rounded-full" src="{{asset('storage/image/'.auth()->user()->photo)}} ">
+                                    @else
+                                        <img alt="Picture" class="rounded-full" src="{{asset('storage/image/default.jpeg')}} ">
+                                    @endif
                                     <div class="tooltip w-5 h-5 flex items-center justify-center absolute rounded-full text-white bg-theme-6 right-0 top-0 -mr-2 -mt-2"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x w-4 h-4"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> </div>
                                 </div>
                                 <div class="mx-auto cursor-pointer relative mt-5">

@@ -95,7 +95,11 @@
     <!-- BEGIN: Account Menu -->
     <div class="intro-x dropdown w-8 h-8">
         <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in" role="button" aria-expanded="false">
-            <img alt="Rubick Tailwind HTML Admin Template" src="{{asset('storage/image/'.auth()->user()->photo) ?? 'dist/images/profile-15.jpg'}}">
+            @if (auth()->user()->photo !== null)
+                <img alt="{{auth()->user()->name. ' picture'}}" class="rounded-full" src="{{asset('storage/image/'.auth()->user()->photo)}} ">
+            @else
+                <img alt="Picture" class="rounded-full" src="{{asset('storage/image/default.jpeg')}} ">
+            @endif
         </div>
         <div class="dropdown-menu w-56">
             <div class="dropdown-menu__content box bg-theme-26 dark:bg-dark-6 text-white">
