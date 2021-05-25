@@ -54,12 +54,4 @@ class User extends Authenticatable implements Wallet
      *
      * @var array
      */
-    public function getPhotoAttribute()
-    {
-        if ($this->foto !== null) {
-            return url('media/user/' . $this->id . '/' . $this->foto);
-        } else {
-            return url('media-example/no-image.png');
-        }
-    }
 }
