@@ -40,7 +40,7 @@ class ProfileController extends Controller
         ]);
 
         session()->flash('sussess','Profile Updated Successfully!!!');
-        return redirect()->back();
+        return back();
     }
 
     public function changePassword(ChangePasswordRequest $request)
