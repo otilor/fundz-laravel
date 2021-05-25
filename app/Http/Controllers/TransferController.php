@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Http\Requests\TransferRequest;
 use App\Repositories\UserRepository;
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class TransferController extends Controller
 {
+    public function __construct(public UserRepository $user)
+    {
+    }
 
     public function index()
     {
         return view('pages.transfer.index');
     }
-
 
     public function transfer(TransferRequest $request)
     {
@@ -38,5 +40,4 @@ class TransferController extends Controller
             return back();
         }
     }
-
 }

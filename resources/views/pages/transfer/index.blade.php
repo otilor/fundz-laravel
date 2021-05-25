@@ -15,7 +15,6 @@
             <!-- BEGIN: Form Layout -->
             <div class="intro-y box p-5">
                 <div>
-
                     @error('email')
                         <span style="color: red">{{$message}}</span>
                     @enderror
