@@ -20,7 +20,7 @@
                         <span style="color: red">{{$message}}</span>
                     @enderror
                     <br>
-                    <label for="crud-form-1" class="form-label">Email Address of Recipient</label>
+                    <label for="crud-form-1" class="form-label">Email Address of Sender</label>
                     <div class="input-group">
                         <div id="input-group-3" class="input-group-text">✉</div>
                         <input name="email" id="crud-form-1" type="email" class="form-control w-full" placeholder="example@email.com" value="{{old('email')}}" required>

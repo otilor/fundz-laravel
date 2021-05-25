@@ -37,6 +37,6 @@ class IfEmailExist implements Rule
      */
     public function message()
     {
-        return 'Recipient Not Found!!';
+        return 'Sender Not Found!!';
     }
 }
