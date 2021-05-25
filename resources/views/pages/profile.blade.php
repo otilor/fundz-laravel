@@ -14,10 +14,10 @@
             <div class="intro-y box mt-5 lg:mt-0">
                 <div class="relative flex items-center p-5">
                     <div class="w-12 h-12 image-fit">
-                        <img alt="Picture" class="rounded-full" src="{{asset('storage/image/'.$user->photo) ?? 'dist/images/profile-15.jpg'}}">
+                        <img alt="Picture" class="rounded-full" src="{{asset('storage/image/'.auth()->user()->photo)}}">
                     </div>
                     <div class="ml-4 mr-auto">
-                        <div class="font-medium text-base">{{ $user->name }}</div>
+                        <div class="font-medium text-base">{{ auth()->user()->name }}</div>
                         <div class="text-gray-600">Your Story</div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                                 </div>
                                 <div class="mt-3 xl:mt-0">
                                     <label for="update-profile-form-10" class="form-label">Phone Number</label>
-                                    <input id="update-profile-form-10" name="phone_number" type="number" class="form-control" placeholder="Phone Number" value="{{$user->phone_number ?? ''}}">
+                                    <input id="update-profile-form-10" name="phone_number" type="number" class="form-control" placeholder="Phone Number" value="{{$user->phone_number ?? ''}}" disabled>
                                 </div>
                             </div>
                             <div class="col-span-12 xl:col-span-6">
