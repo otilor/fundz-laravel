@@ -70,7 +70,7 @@ Route::middleware('auth')->group(function () {
     // Transfer Routes end
 
     // Referral Routes Begin
-    Route::get('referral',[ReferralController::class,'referral_link'])->name('referral');
+    Route::get('referral',[ReferralController::class,'index'])->name('referral');
     // Route::get('/referral-link', 'HomeController@referral');
     // Referral route end
     Route::get('wizard-layout-1-page', [PageController::class, 'wizardLayout1'])->name('wizard-layout-1');
