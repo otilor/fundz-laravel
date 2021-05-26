@@ -10,10 +10,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Questocat\Referral\Traits\UserReferral;
 
 class User extends Authenticatable implements Wallet
 {
-    use HasFactory, Notifiable, SoftDeletes, HasWallet, HasWallets;
+    use HasFactory, Notifiable, SoftDeletes, HasWallet, HasWallets, UserReferral;
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +22,7 @@ class User extends Authenticatable implements Wallet
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'gender', 'active', 'phone_number'
+        'name', 'email', 'password', 'gender', 'active', 'phone_number','referred_by'
     ];
 
     /**

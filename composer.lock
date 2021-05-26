@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb3f18e7184c89d8063145fc30955913",
+    "content-hash": "ed7ad625e1bbffa017ba0d0e96253be6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2673,6 +2673,63 @@
                 "source": "https://github.com/bobthecow/psysh/tree/v0.10.8"
             },
             "time": "2021-04-10T16:23:39+00:00"
+        },
+        {
+            "name": "questocat/laravel-referral",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/questocat/laravel-referral.git",
+                "reference": "3e7fc5cec5afe9ba76dca531b4722c800a8f4e1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/questocat/laravel-referral/zipball/3e7fc5cec5afe9ba76dca531b4722c800a8f4e1a",
+                "reference": "3e7fc5cec5afe9ba76dca531b4722c800a8f4e1a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "laravel/laravel": "^5.5",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0|~5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Questocat\\Referral\\ReferralServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Questocat\\Referral\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "questocat",
+                    "email": "zhengchaopu@gmail.com"
+                }
+            ],
+            "description": "A Referral System With Laravel",
+            "keywords": [
+                "affiliate-tracking",
+                "referral",
+                "referral-system"
+            ],
+            "support": {
+                "issues": "https://github.com/questocat/laravel-referral/issues",
+                "source": "https://github.com/questocat/laravel-referral/tree/master"
+            },
+            "time": "2020-05-07T12:20:09+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
