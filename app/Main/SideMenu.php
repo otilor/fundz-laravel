@@ -37,13 +37,13 @@ class SideMenu
                 ],
                 'title' => 'Withdraw'
             ],
-            'safelock' => [
-                'icon' => 'lock',
-                'route_name' => 'safelock.create',
+            'Referral' => [
+                'icon' => 'user-plus',
+                'route_name' => 'referral',
                 'params' => [
                     'layout' => 'side-menu'
                 ],
-                'title' => 'Safelock'
+                'title' => 'Referral'
             ],
         ];
     }

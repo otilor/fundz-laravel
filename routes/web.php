@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\DarkModeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReferralController;
 use App\Http\Controllers\TransferController;
 
 /*
@@ -67,6 +68,11 @@ Route::middleware('auth')->group(function () {
     Route::post('transfer',[TransferController::class, 'transfer'])->name('transfer');
 
     // Transfer Routes end
+
+    // Referral Routes Begin
+    Route::get('referral',[ReferralController::class,'index'])->name('referral');
+    // Route::get('/referral-link', 'HomeController@referral');
+    // Referral route end
     Route::get('wizard-layout-1-page', [PageController::class, 'wizardLayout1'])->name('wizard-layout-1');
     Route::get('wizard-layout-2-page', [PageController::class, 'wizardLayout2'])->name('wizard-layout-2');
     Route::get('wizard-layout-3-page', [PageController::class, 'wizardLayout3'])->name('wizard-layout-3');

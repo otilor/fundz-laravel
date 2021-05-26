@@ -6,6 +6,7 @@ use App\Http\Request\LoginRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -23,8 +24,11 @@ class AuthController extends Controller
         ]);
     }
 
-    public function RegisterView()
+    public function RegisterView(Request $request)
     {
+        if($request->ref){
+            session(['ref_by' => $request->ref]);
+        }
         return view('register/main', [
             'layout' => 'login',
         ]);
@@ -61,17 +65,20 @@ class AuthController extends Controller
 
     public function register(RegisterRequest $request)
     {
+        // return session('ref_by');
         $register = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone_number' => $request->phone_number,
             'password' => Hash::make($request->password),
             'gender' => $request->gender,
+            'referred_by' => session('ref_by'),
             'active' => 1,
         ]);
 
         if($register)
         {
+            session()->forget('ref_by');
             session()->flash('success', 'Registration successful, Now Login');
             return redirect('/login');
         }
