@@ -78,6 +78,7 @@ class AuthController extends Controller
 
         if($register)
         {
+            session()->forget('ref_by');
             session()->flash('success', 'Registration successful, Now Login');
             return redirect('/login');
         }
