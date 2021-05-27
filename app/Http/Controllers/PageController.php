@@ -10,6 +10,7 @@ class PageController extends Controller
 {
     public function __construct(public UserRepository $user)
     {
+        // $this->middleware(['auth','verified']);
     }
 
     /**
@@ -192,7 +193,7 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    
+
 
     /**
      * Show specified view.

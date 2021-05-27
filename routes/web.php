@@ -32,14 +32,15 @@ Route::middleware('loggedin')->group(function () {
     Route::post('login', [AuthController::class, 'login'])->name('login');
     Route::get('register', [AuthController::class, 'registerView'])->name('register-view');
     Route::post('register', [AuthController::class, 'register'])->name('register');
-});
 
- Route::middleware(['auth'])->group(function () {
     // Password Reset Routes...
     Route::get('password/reset', [ForgotPasswordController::class,'showLinkRequestForm'])->name('password.request');
     Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
     Route::get('password/reset/{token}', [ResetPasswordController::class,'showResetForm'])->name('password.reset');
     Route::post('password/reset', [ResetPasswordController::class,'reset'])->name('password.update');
+});
+
+ Route::middleware(['auth'])->group(function () {
 
     // Email Verification Routes...
     Route::get('email/verify', [VerificationController::class,'show'])->name('verification.notice');
@@ -51,11 +52,12 @@ Route::middleware('loggedin')->group(function () {
     Route::post('PersonalInfomation', [ProfileController::class, 'updatePersonalInformation'])->name('updatePersonalInformation');
     Route::post('changePassword', [ProfileController::class, 'changePassword'])->name('changePassword');
     // Profile routes ends
+    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
  });
 
 Route::middleware(['auth','verified'])->group(function () {
-    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
+
 
 
     // Safelock Route (Currently Disabled)
