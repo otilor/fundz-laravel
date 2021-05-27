@@ -36,13 +36,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="text-3xl font-bold leading-8 mt-6">₦{{ $balance }}</div>
+                                    <div class="text-3xl font-bold leading-8 mt-6">₦{{ number_format($balance,0,'.',',') }}</div>
                                     <div class="text-base text-gray-600 mt-1">Total Savings</div>
                                 </div>
                             </div>
                         </div>
 
-                        <a class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y" href="/safelock">
+                        <a class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y" href="/referral">
                             <div>
                                 <div class="report-box zoom-in">
                                     <div class="box p-5">
@@ -69,8 +69,8 @@
                                             </div>
                                         </div>
                                         <div class="text-3xl break-all font-bold leading-8 mt-6">
-                                            ₦{{ number_format($balance * 1000, 3, '.', ',')}}</div>
-                                        <div class="text-base text-gray-600 mt-1">Safelock</div>
+                                            ₦{{ number_format(auth()->user()->referral_earning, 0, '.', ',')}}</div>
+                                        <div class="text-base text-gray-600 mt-1">Referral Earnings</div>
                                     </div>
                                 </div>
                                 {{--                        </div><div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">--}}

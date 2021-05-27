@@ -12,6 +12,7 @@
     <h2 class="text-lg font-medium mr-auto">
         Referral
     </h2>
+    <p class="mb-4 text-bold text-blue-600 text-xl">Referral Earnings: ₦{{ auth()->user()->referral_earning }}</p>
 </div>
 <div class="grid grid-cols-12 gap-6 mt-5">
     <div class="intro-y col-span-12 lg:col-span-6">
