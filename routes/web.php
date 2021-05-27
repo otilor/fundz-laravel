@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\SafelockController;
 use App\Http\Controllers\SavingsController;
 use Illuminate\Support\Facades\Route;
@@ -9,6 +12,7 @@ use App\Http\Controllers\DarkModeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReferralController;
 use App\Http\Controllers\TransferController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,18 +34,56 @@ Route::middleware('loggedin')->group(function () {
     Route::post('register', [AuthController::class, 'register'])->name('register');
 });
 
-Route::middleware('auth')->group(function () {
+ Route::middleware(['auth'])->group(function () {
+    // Password Reset Routes...
+    Route::get('password/reset', [ForgotPasswordController::class,'showLinkRequestForm'])->name('password.request');
+    Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+    Route::get('password/reset/{token}', [ResetPasswordController::class,'showResetForm'])->name('password.reset');
+    Route::post('password/reset', [ResetPasswordController::class,'reset'])->name('password.update');
+
+    // Email Verification Routes...
+    Route::get('email/verify', [VerificationController::class,'show'])->name('verification.notice');
+    Route::get('email/verify/{id}/{hash}', [VerificationController::class,'verify'])->name('verification.verify');
+    Route::post('email/resend', [VerificationController::class,'resend'])->name('verification.resend');
+
+    // Profile Routes Begins
+    Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
+    Route::post('PersonalInfomation', [ProfileController::class, 'updatePersonalInformation'])->name('updatePersonalInformation');
+    Route::post('changePassword', [ProfileController::class, 'changePassword'])->name('changePassword');
+    // Profile routes ends
+ });
+
+Route::middleware(['auth','verified'])->group(function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
-    Route::group(['prefix' => 'safelock'], function () {
-        Route::get('/', [SafelockController::class, 'index'])->name('safelock.index');
-        Route::get('/create', [SafelockController::class, 'create'])->name('safelock.create');
-    });
+
+
+    // Safelock Route (Currently Disabled)
+
+    // Route::group(['prefix' => 'safelock'], function () {
+    //     Route::get('/', [SafelockController::class, 'index'])->name('safelock.index');
+    //     Route::get('/create', [SafelockController::class, 'create'])->name('safelock.create');
+    // });
+
+
+    // Saving and Withdraw routes
     Route::get('savings', [SavingsController::class, 'index'])->name('savings');
     Route::post('savings', [SavingsController::class, 'save'])->name('savings');
     Route::get('withdraw', [SavingsController::class, 'withdraw'])->name('withdraw');
     Route::post('withdraw', [SavingsController::class, 'withdrawFundz'])->name('withdraw');
     Route::get('/rave/callback', [SavingsController::class, 'callback'])->name('callback');
+
+
+
+     // Transfer Routes Begins
+     Route::get('transfer',[TransferController::class, 'index'])->name('transfer');
+
+     Route::post('transfer',[TransferController::class, 'transfer'])->name('transfer');
+
+     // Transfer Routes end
+
+     // Referral Routes Begin
+     Route::get('referral',[ReferralController::class,'index'])->name('referral');
 
     Route::get('dashboard-overview-2-page', [PageController::class, 'dashboardOverview2'])->name('dashboard-overview-2');
     Route::get('inbox-page', [PageController::class, 'inbox'])->name('inbox');
@@ -56,22 +98,6 @@ Route::middleware('auth')->group(function () {
     Route::get('users-layout-2-page', [PageController::class, 'usersLayout2'])->name('users-layout-2');
     Route::get('users-layout-3-page', [PageController::class, 'usersLayout3'])->name('users-layout-3');
 
-    // Profile Routes Begins
-    Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
-    Route::post('PersonalInfomation', [ProfileController::class, 'updatePersonalInformation'])->name('updatePersonalInformation');
-    Route::post('changePassword', [ProfileController::class, 'changePassword'])->name('changePassword');
-    // Profile routes ends
-
-    // Transfer Routes Begins
-    Route::get('transfer',[TransferController::class, 'index'])->name('transfer');
-
-    Route::post('transfer',[TransferController::class, 'transfer'])->name('transfer');
-
-    // Transfer Routes end
-
-    // Referral Routes Begin
-    Route::get('referral',[ReferralController::class,'index'])->name('referral');
-    // Route::get('/referral-link', 'HomeController@referral');
     // Referral route end
     Route::get('wizard-layout-1-page', [PageController::class, 'wizardLayout1'])->name('wizard-layout-1');
     Route::get('wizard-layout-2-page', [PageController::class, 'wizardLayout2'])->name('wizard-layout-2');
@@ -115,3 +141,4 @@ Route::middleware('auth')->group(function () {
     Route::get('slider-page', [PageController::class, 'slider'])->name('slider');
     Route::get('image-zoom-page', [PageController::class, 'imageZoom'])->name('image-zoom');
 });
+
