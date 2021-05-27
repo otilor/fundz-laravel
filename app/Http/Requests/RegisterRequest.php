@@ -26,7 +26,7 @@ class RegisterRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
-            'phone_number' => 'required',
+            'phone_number' => 'required|unique:users,phone_number',
             'gender' => 'required',
             'password' => 'required|same:confirm_password',
             'PrivacyPolicy' => 'required',
@@ -37,6 +37,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'email.unique' => 'Email is already being used.',
+            'phone_number.unique' => 'Phone number already in use',
         ];
     }
 }
