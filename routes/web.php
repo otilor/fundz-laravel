@@ -100,6 +100,22 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::get('users-layout-2-page', [PageController::class, 'usersLayout2'])->name('users-layout-2');
     Route::get('users-layout-3-page', [PageController::class, 'usersLayout3'])->name('users-layout-3');
 
+
+    // Profile Routes Begins
+    Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
+    Route::post('PersonalInfomation', [ProfileController::class, 'updatePersonalInformation'])->name('updatePersonalInformation');
+    Route::post('changePassword', [ProfileController::class, 'changePassword'])->name('changePassword');
+    // Profile routes ends
+
+    // Transfer Routes Begins
+    Route::get('transfer',[TransferController::class, 'index'])->name('transfer');
+
+    Route::post('transfer',[TransferController::class, 'transfer'])->name('transfer');
+
+    // Transfer Routes end
+
+    // Referral Routes Begin
+    Route::get('referral',[ReferralController::class,'index'])->name('referral');
     // Referral route end
     Route::get('wizard-layout-1-page', [PageController::class, 'wizardLayout1'])->name('wizard-layout-1');
     Route::get('wizard-layout-2-page', [PageController::class, 'wizardLayout2'])->name('wizard-layout-2');
