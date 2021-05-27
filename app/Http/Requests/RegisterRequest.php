@@ -25,11 +25,18 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'phone_number' => 'required',
             'gender' => 'required',
             'password' => 'required|same:confirm_password',
             'PrivacyPolicy' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'email.unique' => 'Email is already being used.',
         ];
     }
 }

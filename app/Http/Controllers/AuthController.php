@@ -78,6 +78,15 @@ class AuthController extends Controller
 
         if($register)
         {
+            if(session('ref_by'))
+            {
+                $referred_by = User::select('referral_earning')->where('affiliate_id',session('ref_by'))->first();
+                $referred_by = $referred_by->referral_earning + 1000;
+                $updateReferralEarnings = User::where('affiliate_id',session('ref_by'))->update([
+                    'referral_earning' => $referred_by,
+                ]);
+                session()->forget('ref_by');
+            }
             session()->forget('ref_by');
             session()->flash('success', 'Registration successful, Now Login');
             return redirect('/login');

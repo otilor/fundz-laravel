@@ -12,7 +12,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Questocat\Referral\Traits\UserReferral;
 
-class User extends Authenticatable implements Wallet
+class User extends Authenticatable implements Wallet, MustVerifyEmail
 {
     use HasFactory, Notifiable, SoftDeletes, HasWallet, HasWallets, UserReferral;
 
