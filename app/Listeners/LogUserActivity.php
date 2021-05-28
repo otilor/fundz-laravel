@@ -14,7 +14,7 @@ class LogUserActivity
     {
         activity()
             ->causedBy($this->user)
-            ->performedOn(User::class)
+            ->performedOn(new User())
             ->log('Registered user');
     }
 }
