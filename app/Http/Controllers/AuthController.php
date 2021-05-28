@@ -65,7 +65,6 @@ class AuthController extends Controller
 
     public function register(RegisterRequest $request)
     {
-        // return session('ref_by');
         $register = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -85,6 +84,7 @@ class AuthController extends Controller
                 $updateReferralEarnings = User::where('affiliate_id',session('ref_by'))->update([
                     'referral_earning' => $referred_by,
                 ]);
+
                 session()->forget('ref_by');
             }
             session()->flash('success', 'Registration successful, Now Login');
