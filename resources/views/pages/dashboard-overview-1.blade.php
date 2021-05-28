@@ -101,7 +101,7 @@
                             <div class="intro-y box">
                                 <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
                                     <h2 class="font-medium text-xl text-base mr-auto">
-                                        Activities
+                                        Activities 🗓
                                     </h2>
                                 </div>
 
