@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Models\User;
+use Spatie\Activitylog\Facades\CauserResolver;
 
 class LogUserActivity
 {
@@ -12,9 +13,7 @@ class LogUserActivity
 
     public function handle($event)
     {
-        activity()
-            ->causedBy($this->user)
-            ->performedOn(new User())
-            ->log('Registered user');
+        CauserResolver::setCauser(User::find($event->user->id));
+        activity()->log('Registered account');
     }
 }
