@@ -112,9 +112,9 @@
 {{--                                    </div>--}}
                                     <div class="ml-4 mr-auto">
                                         <div class="font-medium">{{ $activity->description }}</div>
-                                        <div class="text-gray-600 text-xs mt-0.5">{{ $activity->created_at }}</div>
+                                        <div class="text-gray-600 text-xs mt-0.5">{{ $activity->created_at->toDayDateTimeString() }}</div>
                                     </div>
-                                    <div class="text-info">{{ $activity->created_at }}</div>
+{{--                                    <div class="text-info">{{ $activity->created_at }}</div>--}}
                                 </div>
                                 @endforeach
                             </div>
