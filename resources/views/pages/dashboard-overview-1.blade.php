@@ -95,6 +95,31 @@
                 <!-- END: General Report -->
                 <!-- BEGIN: Sales Report -->
 
+                    <div class="grid grid-cols-12 gap-6 mt-5">
+                        <div class="intro-y col-span-12 lg:col-span-12">
+                            <!-- BEGIN: Input -->
+                            <div class="intro-y box">
+                                <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200 dark:border-dark-5">
+                                    <h2 class="font-medium text-xl text-base mr-auto">
+                                        Activities 🗓
+                                    </h2>
+                                </div>
+
+                                @foreach($activities as $activity)
+                                <div class="box px-5 py-3 mb-3 flex items-center">
+{{--                                    <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">--}}
+{{--                                        <img alt="Rubick Tailwind HTML Admin Template" src="http://fundz-laravel.test/dist/images/profile-7.jpg">--}}
+{{--                                    </div>--}}
+                                    <div class="ml-4 mr-auto">
+                                        <div class="font-medium">{{ $activity->description }}</div>
+                                        <div class="text-gray-600 text-xs mt-0.5">{{ $activity->created_at->toDayDateTimeString() }}</div>
+                                    </div>
+{{--                                    <div class="text-info">{{ $activity->created_at }}</div>--}}
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
                 <!-- END: Sales Report -->
                 <!-- BEGIN: Weekly Top Seller -->
                 <!-- END: Weekly Top Seller -->

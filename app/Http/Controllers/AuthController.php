@@ -6,6 +6,7 @@ use App\Http\Request\LoginRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -66,7 +67,7 @@ class AuthController extends Controller
     public function register(RegisterRequest $request)
     {
         // return session('ref_by');
-        $register = User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone_number' => $request->phone_number,
@@ -76,7 +77,10 @@ class AuthController extends Controller
             'active' => 1,
         ]);
 
-        if($register)
+
+        event(new Registered($user));
+
+        if($user)
         {
             if(session('ref_by'))
             {
