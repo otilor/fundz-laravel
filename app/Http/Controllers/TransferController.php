@@ -36,7 +36,7 @@ class TransferController extends Controller
             CauserResolver::setCauser(User::find(auth()->id()));
             activity()
                 ->withProperty('created_at', now())
-                ->log("Transfered {$request->amount} money to {$request->email}");
+                ->log("Transfered ₦{$request->amount} to {$request->email}");
 
             session()->flash('success','Transfer of '. $request->amount . ' 🤑 to ' . $request->email. ' was successful🙌🏻. ');
             return redirect('/');
