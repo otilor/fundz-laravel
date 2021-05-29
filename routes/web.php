@@ -11,6 +11,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\DarkModeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReferralController;
+use App\Http\Controllers\TargetController;
 use App\Http\Controllers\TransferController;
 use Illuminate\Support\Facades\Auth;
 
@@ -75,6 +76,8 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::post('withdraw', [SavingsController::class, 'withdrawFundz'])->name('withdraw');
     Route::get('/rave/callback', [SavingsController::class, 'callback'])->name('callback');
 
+    // Target Routes
+    Route::get('target', [TargetController::class, 'index'])->name('target');
 
 
      // Transfer Routes Begins

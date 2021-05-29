@@ -42,6 +42,7 @@
                             </div>
                         </div>
 
+
                         <a class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y" href="/referral">
                             <div>
                                 <div class="report-box zoom-in">
@@ -90,8 +91,26 @@
                                 {{--                            </div>--}}
                                 {{--                        </div>--}}
                             </div>
+
+
+                        </a>
+                        {{-- Target Fature --}}
+
+                        <a class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y" href="/target">
+                            <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                                <div class="report-box zoom-in">
+                                    <div class="box p-5">
+                                        <div class="flex">
+                                            <i data-feather="credit-card" class="report-box__icon text-theme-11"></i>
+                                        </div>
+                                        <div class="text-3xl font-bold leading-8 mt-6">₦{{ number_format($balance,0,'.',',') }}</div>
+                                        <div class="text-base text-gray-600 mt-1">Targets</div>
+                                    </div>
+                                </div>
+                            </div>
                         </a>
                 </div>
+
                 <!-- END: General Report -->
                 <!-- BEGIN: Sales Report -->
 
