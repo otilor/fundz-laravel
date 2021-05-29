@@ -6,6 +6,7 @@ use App\Http\Requests\TransferRequest;
 use App\Repositories\UserRepository;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Activitylog\Facades\CauserResolver;
 
 class TransferController extends Controller
 {
@@ -32,6 +33,11 @@ class TransferController extends Controller
 
         if($transferFundz){
             $deductFundz = User::find(auth()->id())->withdraw($request->amount);
+            CauserResolver::setCauser(User::find(auth()->id()));
+            activity()
+                ->withProperty('created_at', now())
+                ->log("Transfered ₦{$request->amount} to {$request->email}");
+
             session()->flash('success','Transfer of '. $request->amount . ' 🤑 to ' . $request->email. ' was successful🙌🏻. ');
             return redirect('/');
         }
