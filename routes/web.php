@@ -160,3 +160,6 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::get('image-zoom-page', [PageController::class, 'imageZoom'])->name('image-zoom');
 });
 
+Route::fallback(function () {
+    return 'Route not found!';
+});
