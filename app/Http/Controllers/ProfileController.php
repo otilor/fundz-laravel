@@ -26,7 +26,9 @@ class ProfileController extends Controller
             // Filename To store
             $fileNameToStore = time().'.'.$extension;
             // dd($fileNameToStore);
-            $path = $request->file('photo')->storeAs('public/image', $fileNameToStore);
+            $result = $request->file('photo')->storeOnCloudinary('profile_pics');
+
+
 
         }
         // Else add a dummy image
@@ -35,7 +37,7 @@ class ProfileController extends Controller
         }
         User::where('id',auth()->user()->id)->update([
             'phone_number' => $request->phone_number,
-            'photo' => $fileNameToStore ?? auth()->user()->photo,
+            'photo' => $result->getPath(),
         ]);
 
         session()->flash('sussess','Profile Updated Successfully!!!');

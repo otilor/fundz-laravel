@@ -5,6 +5,7 @@ namespace App\Models;
 use Bavix\Wallet\Interfaces\Wallet;
 use Bavix\Wallet\Traits\HasWallet;
 use Bavix\Wallet\Traits\HasWallets;
+use CloudinaryLabs\CloudinaryLaravel\MediaAlly;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,7 +15,7 @@ use App\Traits\UserReferral;
 
 class User extends Authenticatable implements Wallet, MustVerifyEmail
 {
-    use HasFactory, Notifiable, SoftDeletes, HasWallet, HasWallets, UserReferral;
+    use HasFactory, Notifiable, SoftDeletes, HasWallet, HasWallets, UserReferral, MediaAlly;
 
     /**
      * The attributes that are mass assignable.

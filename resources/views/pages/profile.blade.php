@@ -81,7 +81,7 @@
                             <div class="col-span-12 xl:col-span-6">
                                 <div class="h-40 relative image-fit cursor-pointer zoom-in mx-auto">
                                     @if (auth()->user()->photo !== null)
-                                        <img alt="{{auth()->user()->name. ' picture'}}" class="rounded-full" src="{{asset('storage/image/'.auth()->user()->photo)}} ">
+                                        <img alt="{{auth()->user()->name. ' picture'}}" class="rounded-full" src="{{auth()->user()->photo}} ">
                                     @else
                                         <img alt="Picture" class="rounded-full" src="{{asset('storage/image/default.jpeg')}} ">
                                     @endif
