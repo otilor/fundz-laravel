@@ -15,7 +15,7 @@
                 <div class="relative flex items-center p-5">
                     <div class="w-12 h-12 image-fit">
                         @if (auth()->user()->photo !== null)
-                            <img alt="Picture" class="rounded-full" src="{{asset('storage/image/'.auth()->user()->photo)}} ">
+                            <img alt="Picture" class="rounded-full" src="{{auth()->user()->photo}} ">
                         @else
                             <img alt="Picture" class="rounded-full" src="{{asset('storage/image/default.jpeg')}} ">
                         @endif
