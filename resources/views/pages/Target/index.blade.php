@@ -6,5 +6,5 @@
 
 @section('subcontent')
     <!-- BEGIN: Target Content -->
-    Target
+    Target Feature coming soon
 @endsection

@@ -125,6 +125,7 @@
                                         <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Name</th>
                                         <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Email Address</th>
                                         <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Date Joined</th>
+                                        <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Pay out</th>
                                         <?php
                                             $SerialNumberCounter = 0;
                                         ?>
@@ -132,11 +133,26 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($referrals as $referral)
+                                    <form action="{{route('request.pay')}}" method="Post" id="RequestPayform">
+                                        @csrf
+                                        <div hidden>
+                                            <input type="text" value="{{$referral->affiliate_id}}" name="affiliate_id">
+                                        </div>
+                                    </form>
                                         <tr>
                                             <td class="border-b dark:border-dark-5">{{$SerialNumberCounter += 1}}</td>
                                             <td class="border-b dark:border-dark-5">{{$referral->name}}</td>
                                             <td class="border-b dark:border-dark-5">{{$referral->email}}</td>
                                             <td class="border-b dark:border-dark-5">{{$referral->created_at}}</td>
+                                            @if ($referral->paid)
+                                            <td class="border-b dark:border-dark-5">
+                                                <button class="btn btn-success w-24">Paid</button>
+                                            </td>
+                                            @else
+                                            <td class="border-b dark:border-dark-5">
+                                                <button class="btn btn-secondary w-24" onclick="SubmitRequestPaymentForm()">Request Payment</button>
+                                            </td>
+                                            @endif
                                         </tr>
                                     @endforeach
                                 @endif
@@ -161,6 +177,11 @@
         document.execCommand("copy");
         // alert("Referral code copied!!");
         document.getElementById('linkCopySuccessMessage').innerText = "Referral Link Copied!!";
+    }
+
+    function SubmitRequestPaymentForm()
+    {
+        document.getElementById('RequestPayform').submit();
     }
     </script>
 
