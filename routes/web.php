@@ -75,11 +75,7 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::get('withdraw', [SavingsController::class, 'withdraw'])->name('withdraw');
     Route::post('withdraw', [SavingsController::class, 'withdrawFundz'])->name('withdraw');
     Route::get('/rave/callback', [SavingsController::class, 'callback'])->name('callback');
-
-    // Target Routes
-    Route::get('target', [TargetController::class, 'index'])->name('target');
-
-
+    
      // Transfer Routes Begins
     Route::get('transfer',[TransferController::class, 'index'])->name('transfer');
 
