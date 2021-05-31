@@ -11,6 +11,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\DarkModeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReferralController;
+use App\Http\Controllers\TargetController;
 use App\Http\Controllers\TransferController;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,7 +41,7 @@ Route::middleware('loggedin')->group(function () {
     Route::post('password/reset', [ResetPasswordController::class,'reset'])->name('password.update');
 });
 
- Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
 
     // Email Verification Routes...
     Route::get('email/verify', [VerificationController::class,'show'])->name('verification.notice');
@@ -74,19 +75,17 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::get('withdraw', [SavingsController::class, 'withdraw'])->name('withdraw');
     Route::post('withdraw', [SavingsController::class, 'withdrawFundz'])->name('withdraw');
     Route::get('/rave/callback', [SavingsController::class, 'callback'])->name('callback');
-
-
-
+    
      // Transfer Routes Begins
-     Route::get('transfer',[TransferController::class, 'index'])->name('transfer');
+    Route::get('transfer',[TransferController::class, 'index'])->name('transfer');
 
-     Route::post('transfer',[TransferController::class, 'transfer'])->name('transfer');
+    Route::post('transfer',[TransferController::class, 'transfer'])->name('transfer');
 
      // Transfer Routes end
 
      // Referral Routes Begin
-     Route::get('referral',[ReferralController::class,'index'])->name('referral');
-
+    Route::get('referral',[ReferralController::class,'index'])->name('referral');
+    Route::post('request-payment',[ReferralController::class, 'RequestPayment'])->name('request.pay');
     Route::get('dashboard-overview-2-page', [PageController::class, 'dashboardOverview2'])->name('dashboard-overview-2');
     Route::get('inbox-page', [PageController::class, 'inbox'])->name('inbox');
     Route::get('file-manager-page', [PageController::class, 'fileManager'])->name('file-manager');
@@ -99,24 +98,6 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::get('users-layout-1-page', [PageController::class, 'usersLayout1'])->name('users-layout-1');
     Route::get('users-layout-2-page', [PageController::class, 'usersLayout2'])->name('users-layout-2');
     Route::get('users-layout-3-page', [PageController::class, 'usersLayout3'])->name('users-layout-3');
-
-
-    // Profile Routes Begins
-    Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
-    Route::post('PersonalInfomation', [ProfileController::class, 'updatePersonalInformation'])->name('updatePersonalInformation');
-    Route::post('changePassword', [ProfileController::class, 'changePassword'])->name('changePassword');
-    // Profile routes ends
-
-    // Transfer Routes Begins
-    Route::get('transfer',[TransferController::class, 'index'])->name('transfer');
-
-    Route::post('transfer',[TransferController::class, 'transfer'])->name('transfer');
-
-    // Transfer Routes end
-
-    // Referral Routes Begin
-    Route::get('referral',[ReferralController::class,'index'])->name('referral');
-    // Referral route end
     Route::get('wizard-layout-1-page', [PageController::class, 'wizardLayout1'])->name('wizard-layout-1');
     Route::get('wizard-layout-2-page', [PageController::class, 'wizardLayout2'])->name('wizard-layout-2');
     Route::get('wizard-layout-3-page', [PageController::class, 'wizardLayout3'])->name('wizard-layout-3');

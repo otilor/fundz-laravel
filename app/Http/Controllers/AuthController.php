@@ -8,6 +8,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -82,18 +83,8 @@ class AuthController extends Controller
 
         if($user)
         {
-            if(session('ref_by'))
-            {
-                $referred_by = User::select('referral_earning')->where('affiliate_id',session('ref_by'))->first();
-                $referred_by = $referred_by->referral_earning + 1000;
-                $updateReferralEarnings = User::where('affiliate_id',session('ref_by'))->update([
-                    'referral_earning' => $referred_by,
-                ]);
-                session()->forget('ref_by');
-            }
-            session()->forget('ref_by');
-            session()->flash('success', 'Registration successful, Now Login');
-            return redirect('/login');
+            Auth::login($user);
+            return redirect('/');
         }
         else{
             session()->flash('error','Registration Failed');
