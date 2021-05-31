@@ -96,7 +96,7 @@
     <div class="intro-x dropdown w-8 h-8">
         <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in" role="button" aria-expanded="false">
             @if (auth()->user()->photo !== null)
-                <img alt="{{auth()->user()->name. ' picture'}}" class="rounded-full" src="{{asset('storage/image/'.auth()->user()->photo)}} ">
+                <img alt="{{auth()->user()->name. ' picture'}}" class="rounded-full" src="{{auth()->user()->photo}} ">
             @else
                 <img alt="Picture" class="rounded-full" src="{{asset('storage/image/default.jpeg')}} ">
             @endif
