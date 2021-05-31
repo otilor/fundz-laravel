@@ -15,10 +15,10 @@ class EnsureEmailIsVerified extends \Illuminate\Auth\Middleware\EnsureEmailIsVer
      */
     public function handle($request, Closure $next, $redirectTo = null): mixed
     {
-        if (in_array(env('APP_ENV'), ['local', 'dev'])) {
-            return $next($request);
+        if(auth()->user()->email_verified_at == null)
+        {
+            return redirect('/email/verify');
         }
-
         return parent::handle($request, $next);
     }
 }
