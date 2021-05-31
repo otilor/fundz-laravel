@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ChangePasswordRequest;
+use App\Jobs\ProcessProfilePictureUploadJob;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,16 +27,15 @@ class ProfileController extends Controller
             // Filename To store
             $fileNameToStore = time().'.'.$extension;
             // dd($fileNameToStore);
-            $filePath = cloudinary()->upload(
-                $request->file('photo')->getRealPath(), [
-                'transformation' => [
-                    'width' => 300,
-                ]
-            ])->getSecurePath();
 
+//            dd($request->file('photo'));
 
-
-
+            $image = [];
+            $image = [
+                'path' => $request->file('photo')->getRealPath(),
+                'name' => $request->file('photo')->getClientOriginalName()
+            ];
+            dispatch(new ProcessProfilePictureUploadJob($image));
         }
         // Else add a dummy image
         else {
@@ -43,7 +43,7 @@ class ProfileController extends Controller
         }
         User::where('id',auth()->user()->id)->update([
             'phone_number' => $request->phone_number,
-            'photo' => $filePath,
+            'photo' => asset('dist/images/profile-1.jpg'),
         ]);
 
         session()->flash('sussess','Profile Updated Successfully!!!');
