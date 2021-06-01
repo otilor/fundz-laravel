@@ -12,6 +12,7 @@ use App\Facades\UpdatedRave as Flutterwave;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
+use Spatie\Activitylog\Facades\CauserResolver;
 
 class SavingsController extends Controller
 {
@@ -112,6 +113,11 @@ class SavingsController extends Controller
         }
         $transactionDetails = Flutterwave::verifyTransaction($transactionID);
         $this->user->topupWallet(amount: $transactionDetails['data']['amount'], userId: auth()->id());
+        CauserResolver::setCauser(User::find(auth()->id()));
+        activity()
+            ->withProperty('created_at', now())
+            ->log("Deposited ₦{$transactionDetails['data']['amount']} to wallet");
+
         \session()->flash('success', 'Payment compeleted successfully!');
         return redirect('/');
 //        dd($transactionDetails);
