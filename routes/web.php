@@ -58,7 +58,7 @@ Route::middleware('auth')->group(function () {
 
     // Referral Routes Begin
     Route::get('referral',[ReferralController::class,'index'])->name('referral');
-    Route::post('request-payment',[ReferralController::class, 'RequestPayment'])->name('request.pay');
+    Route::get('request-payment/{affiliate_id}',[ReferralController::class, 'RequestPayment'])->name('request.pay');
     Route::middleware('verified')->group(function () {
 
         // Route::group(['middleware' => ['auth','verified']], function (){
