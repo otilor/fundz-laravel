@@ -11,9 +11,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\DarkModeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReferralController;
-use App\Http\Controllers\TargetController;
 use App\Http\Controllers\TransferController;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------

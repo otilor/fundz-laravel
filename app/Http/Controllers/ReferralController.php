@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Referral;
 use App\Models\User;
 use App\Repositories\UserRepository;
-use Illuminate\Http\Request;
-use Vinkla\Hashids\Facades\Hashids;
 
 class ReferralController extends Controller
 {
@@ -19,9 +17,9 @@ class ReferralController extends Controller
         return view('pages.Referral.index', compact('referrals'));
     }
 
-    public function RequestPayment($affiliate_id)
+    public function RequestPayment($affiliateId)
     {
-        $ReferredUserDetails = User::whereAffiliate_id($affiliate_id)->first();
+        $ReferredUserDetails = User::whereAffiliate_id($affiliateId)->first();
         if($ReferredUserDetails->email_verified_at == null)
         {
             return redirect()->back()->with('error', 'The User you referred has not been verified.');
@@ -33,7 +31,7 @@ class ReferralController extends Controller
                 'referral_earning' => auth()->user()->referral_earning + 1000,
             ]);
             if($payReferrar){
-                User::where('affiliate_id',$affiliate_id)->update([
+                User::where('affiliate_id',$affiliateId)->update([
                     'paid' => true,
                 ]);
                 return redirect()->back()->with('success','You have be credited 1000 🤩 🥳 🥳');
