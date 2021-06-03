@@ -95,10 +95,12 @@ class SavingsController extends Controller
         {
             User::find(auth()->id())->withdraw($request->amount);
             session()->flash('success', 'Withdrawal successful🙌🏻');
+
             CauserResolver::setCauser($this->user->getUserDetails(auth()->id()));
             activity()
                 ->withProperty('created_at', now())
                 ->log("Deposited ₦{$request->amount}");
+
             return redirect(route('dashboard-overview-1'));
         }
         else
