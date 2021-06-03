@@ -12,6 +12,7 @@ use App\Facades\UpdatedRave as Flutterwave;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
+use Spatie\Activitylog\Facades\CauserResolver;
 
 class SavingsController extends Controller
 {
@@ -94,6 +95,10 @@ class SavingsController extends Controller
         {
             User::find(auth()->id())->withdraw($request->amount);
             session()->flash('success', 'Withdrawal successful🙌🏻');
+            CauserResolver::setCauser($this->user->getUserDetails(auth()->id()));
+            activity()
+                ->withProperty('created_at', now())
+                ->log("Deposited ₦{$request->amount}");
             return redirect(route('dashboard-overview-1'));
         }
         else

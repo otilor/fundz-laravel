@@ -11,6 +11,10 @@ use Bavix\Wallet\Models\Wallet;
 
 class UserService implements UserRepository
 {
+    public function getUser($id)
+    {
+        return User::find($id);
+    }
     public function getWalletBalance($userId)
     {
         $user = User::find($userId);

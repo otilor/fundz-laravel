@@ -5,6 +5,7 @@ namespace App\Models;
 use Bavix\Wallet\Interfaces\Wallet;
 use Bavix\Wallet\Traits\HasWallet;
 use Bavix\Wallet\Traits\HasWallets;
+use Faker\Provider\Payment;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -49,4 +50,9 @@ class User extends Authenticatable implements Wallet,MustVerifyEmail
      *
      * @var array
      */
+
+    public function paymentLink(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->morphOne(PaymentLink::class, 'imageable');
+    }
 }
