@@ -11,9 +11,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\DarkModeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReferralController;
-use App\Http\Controllers\TargetController;
 use App\Http\Controllers\TransferController;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,7 +56,7 @@ Route::middleware('auth')->group(function () {
 
     // Referral Routes Begin
     Route::get('referral',[ReferralController::class,'index'])->name('referral');
-    Route::post('request-payment',[ReferralController::class, 'RequestPayment'])->name('request.pay');
+    Route::get('request-payment/{affiliate_id}',[ReferralController::class, 'RequestPayment'])->name('request.pay');
     Route::middleware('verified')->group(function () {
 
         // Route::group(['middleware' => ['auth','verified']], function (){

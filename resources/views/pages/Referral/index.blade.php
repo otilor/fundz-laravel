@@ -120,25 +120,19 @@
                                         </h2>
                                     </div>
                                 @else
-                                    <tr>
-                                        <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">#</th>
-                                        <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Name</th>
-                                        <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Email Address</th>
-                                        <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Date Joined</th>
-                                        <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Pay out</th>
-                                        <?php
-                                            $SerialNumberCounter = 0;
-                                        ?>
-                                    </tr>
+                                <tr>
+                                    <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">#</th>
+                                    <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Name</th>
+                                    <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Email Address</th>
+                                    <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Date Joined</th>
+                                    <th class="border-b-2 dark:border-dark-5 whitespace-nowrap">Pay out</th>
+                                    <?php
+                                        $SerialNumberCounter = 0;
+                                    ?>
+                                </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($referrals as $referral)
-                                    <form action="{{route('request.pay')}}" method="Post" id="RequestPayform">
-                                        @csrf
-                                        <div hidden>
-                                            <input type="text" value="{{$referral->affiliate_id}}" name="affiliate_id">
-                                        </div>
-                                    </form>
                                         <tr>
                                             <td class="border-b dark:border-dark-5">{{$SerialNumberCounter += 1}}</td>
                                             <td class="border-b dark:border-dark-5">{{$referral->name}}</td>
@@ -150,7 +144,7 @@
                                             </td>
                                             @else
                                             <td class="border-b dark:border-dark-5">
-                                                <button class="btn btn-secondary w-24" onclick="SubmitRequestPaymentForm()">Request Payment</button>
+                                                <a href="/request-payment/{{$referral->affiliate_id}}" class="btn btn-secondary w-24">Request Payment</a>
                                             </td>
                                             @endif
                                         </tr>
@@ -179,9 +173,9 @@
         document.getElementById('linkCopySuccessMessage').innerText = "Referral Link Copied!!";
     }
 
-    function SubmitRequestPaymentForm()
+    function SubmitRequestPaymentForm(e)
     {
-        document.getElementById('RequestPayform').submit();
+
     }
     </script>
 
