@@ -43,12 +43,6 @@ class User extends Authenticatable implements Wallet,MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    /**
-     * The attributes that appends to returned entities.
-     *
-     * @var array
-     */
-    protected $appends = ['photo'];
 
     /**
      * The getter that return accessible URL for user photo.
