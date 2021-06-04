@@ -81,15 +81,7 @@ class SavingsController extends Controller
 
         $reference = Flutterwave::generateReference();
 
-        $data = [
-            "account_bank"=>$request->bank_code,
-            "account_number"=>$request->account_number,
-            "amount"=>$request->amount,
-            "narration"=>"Transfer from Fundz",
-            "currency"=>"NGN",
-            "debit_currency"=>"NGN",
-            'reference' => $reference
-        ];
+        $data = $this->getWithdrawalPayload($request, $reference);
 
         $transfer = Flutterwave::transfers()->initiate($data);
 
@@ -144,5 +136,24 @@ class SavingsController extends Controller
     public function fundzDey(WithdrawRequest $request, $balance): bool
     {
         return (int)$request->amount > (int)$balance;
+    }
+
+    /**
+     * @param WithdrawRequest $request
+     * @param $reference
+     * @return array
+     */
+    public function getWithdrawalPayload(WithdrawRequest $request, $reference): array
+    {
+        $data = [
+            "account_bank" => $request->bank_code,
+            "account_number" => $request->account_number,
+            "amount" => $request->amount,
+            "narration" => "Transfer from Fundz",
+            "currency" => "NGN",
+            "debit_currency" => "NGN",
+            'reference' => $reference
+        ];
+        return $data;
     }
 }
