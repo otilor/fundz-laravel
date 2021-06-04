@@ -87,7 +87,8 @@ class SavingsController extends Controller
 
         if($transfer['status'] == 'success')
         {
-            User::find(auth()->id())->withdraw($request->amount);
+            $this->user->withdraw(amount: $request->amount, userId: auth()->id());
+
             session()->flash('success', 'Withdrawal successful🙌🏻');
 
             CauserResolver::setCauser($this->user->getUserDetails(auth()->id()));
