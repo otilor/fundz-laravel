@@ -74,7 +74,7 @@ class SavingsController extends Controller
         $balance = $this->user->getWalletBalance(auth()->id());
 
 
-        if ((int)$request->amount > (int)$balance) {
+        if ($this->fundzDey($request, $balance)) {
             session()->flash('error', 'Fundz you no get! 😕');
             return redirect()->back();
         }
@@ -134,5 +134,15 @@ class SavingsController extends Controller
         // Update the transaction to note that you have given value for the transaction
         // You can also redirect to your success page from here
 
+    }
+
+    /**
+     * @param WithdrawRequest $request
+     * @param $balance
+     * @return bool
+     */
+    public function fundzDey(WithdrawRequest $request, $balance): bool
+    {
+        return (int)$request->amount > (int)$balance;
     }
 }
