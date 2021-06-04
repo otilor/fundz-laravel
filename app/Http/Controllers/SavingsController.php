@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Spatie\Activitylog\Facades\CauserResolver;
+use function Symfony\Component\String\b;
 
 class SavingsController extends Controller
 {
@@ -71,10 +72,10 @@ class SavingsController extends Controller
 
     public function withdrawFundz(WithdrawRequest $request)
     {
-        $balance = $this->user->getWalletBalance(auth()->id());
+        $balance = $this->user->getWalletBalance(auth()->id())['balance'];
 
 
-        if ($this->fundzNoDey($request, $balance)) {
+        if ($this->fundzNoDey(amount: $request->amount, balance: $balance)) {
             session()->flash('error', 'Fundz you no get! 😕');
             return redirect()->back();
         }
@@ -91,10 +92,10 @@ class SavingsController extends Controller
 
             session()->flash('success', 'Withdrawal successful🙌🏻');
 
-            CauserResolver::setCauser($this->user->getUserDetails(auth()->id()));
+            CauserResolver::setCauser($this->user->getUser(auth()->id()));
             activity()
                 ->withProperty('created_at', now())
-                ->log("Deposited ₦{$request->amount}");
+                ->log("Withdrew ₦{$request->amount} from wallet");
 
             return redirect(route('dashboard-overview-1'));
         }
@@ -134,9 +135,9 @@ class SavingsController extends Controller
      * @param $balance
      * @return bool
      */
-    public function fundzNoDey(WithdrawRequest $request, $balance): bool
+    public function fundzNoDey($amount, $balance): bool
     {
-        return (int)$request->amount > (int)$balance;
+        return $amount > (int)$balance;
     }
 
     /**
