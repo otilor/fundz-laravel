@@ -74,7 +74,7 @@ class SavingsController extends Controller
         $balance = $this->user->getWalletBalance(auth()->id());
 
 
-        if ($this->fundzDey($request, $balance)) {
+        if ($this->fundzNoDey($request, $balance)) {
             session()->flash('error', 'Fundz you no get! 😕');
             return redirect()->back();
         }
@@ -134,7 +134,7 @@ class SavingsController extends Controller
      * @param $balance
      * @return bool
      */
-    public function fundzDey(WithdrawRequest $request, $balance): bool
+    public function fundzNoDey(WithdrawRequest $request, $balance): bool
     {
         return (int)$request->amount > (int)$balance;
     }
@@ -146,7 +146,7 @@ class SavingsController extends Controller
      */
     public function getWithdrawalPayload(WithdrawRequest $request, $reference): array
     {
-        $data = [
+        return [
             "account_bank" => $request->bank_code,
             "account_number" => $request->account_number,
             "amount" => $request->amount,
@@ -155,6 +155,5 @@ class SavingsController extends Controller
             "debit_currency" => "NGN",
             'reference' => $reference
         ];
-        return $data;
     }
 }
