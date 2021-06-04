@@ -72,6 +72,8 @@ class SavingsController extends Controller
     public function withdrawFundz(WithdrawRequest $request)
     {
         $balance = $this->user->getWalletBalance(auth()->id());
+
+
         if ((int)$request->amount > (int)$balance) {
             session()->flash('error', 'Fundz you no get! 😕');
             return redirect()->back();
