@@ -19,4 +19,6 @@ interface UserRepository
     public function getReferredUserDetails($affiliateId);
 
     public function getUserReferrals($affiliateId);
+
+    public function getUserWithPaymentHash($paymentHash);
 }
