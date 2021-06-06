@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Faker;
 use App\Http\Request\LoginRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
@@ -10,6 +11,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -73,6 +75,7 @@ class AuthController extends Controller
             'email' => $request->email,
             'phone_number' => $request->phone_number,
             'password' => Hash::make($request->password),
+            'payment_hash'=> Str::slug(Str::words(2)),
             'gender' => $request->gender,
             'referred_by' => session('ref_by'),
             'active' => 1,
