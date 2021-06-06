@@ -75,7 +75,7 @@ class AuthController extends Controller
             'email' => $request->email,
             'phone_number' => $request->phone_number,
             'password' => Hash::make($request->password),
-            'payment_hash'=> Str::slug(Str::words(2)),
+            'payment_hash'=> Str::slug(Str::random(8)),
             'gender' => $request->gender,
             'referred_by' => session('ref_by'),
             'active' => 1,
@@ -87,7 +87,7 @@ class AuthController extends Controller
         if($user)
         {
             Auth::login($user);
-            return redirect('/');
+            return redirect(route('dashboard-overview-1'));
         }
         else{
             session()->flash('error','Registration Failed');
