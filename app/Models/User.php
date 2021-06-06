@@ -23,7 +23,7 @@ class User extends Authenticatable implements Wallet,MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'gender', 'active', 'phone_number','referred_by'
+        'name', 'email', 'password', 'gender', 'active', 'phone_number','referred_by', 'payment_hash'
     ];
 
     /**
