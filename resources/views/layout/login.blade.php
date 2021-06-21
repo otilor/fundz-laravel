@@ -1,7 +1,7 @@
 @extends('../layout/base')
 
 @section('body')
-    <body class="login">
+    <body class="login font-karla">
         @yield('content')
         @include('../layout/components/dark-mode-switcher')
 
