@@ -12,6 +12,8 @@ use App\Facades\UpdatedRave as Flutterwave;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
+use Spatie\Activitylog\Facades\CauserResolver;
+use function Symfony\Component\String\b;
 
 class SavingsController extends Controller
 {
@@ -70,30 +72,31 @@ class SavingsController extends Controller
 
     public function withdrawFundz(WithdrawRequest $request)
     {
-        $balance = User::find(auth()->id())->balance;
-        if ((int)$request->amount > (int)$balance) {
+        $balance = $this->user->getWalletBalance(auth()->id())['balance'];
+
+
+        if ($this->fundzNoDey(amount: $request->amount, balance: $balance)) {
             session()->flash('error', 'Fundz you no get! 😕');
             return redirect()->back();
         }
 
         $reference = Flutterwave::generateReference();
 
-        $data = [
-            "account_bank"=>$request->bank_code,
-            "account_number"=>$request->account_number,
-            "amount"=>$request->amount,
-            "narration"=>"Transfer from Fundz",
-            "currency"=>"NGN",
-            "debit_currency"=>"NGN",
-            'reference' => $reference
-        ];
+        $data = $this->getWithdrawalPayload($request, $reference);
 
         $transfer = Flutterwave::transfers()->initiate($data);
 
         if($transfer['status'] == 'success')
         {
-            User::find(auth()->id())->withdraw($request->amount);
+            $this->user->withdraw(amount: $request->amount, userId: auth()->id());
+
             session()->flash('success', 'Withdrawal successful🙌🏻');
+
+            CauserResolver::setCauser($this->user->getUser(auth()->id()));
+            activity()
+                ->withProperty('created_at', now())
+                ->log("Withdrew ₦{$request->amount} from wallet");
+
             return redirect(route('dashboard-overview-1'));
         }
         else
@@ -125,5 +128,33 @@ class SavingsController extends Controller
         // Update the transaction to note that you have given value for the transaction
         // You can also redirect to your success page from here
 
+    }
+
+    /**
+     * @param WithdrawRequest $request
+     * @param $balance
+     * @return bool
+     */
+    public function fundzNoDey($amount, $balance): bool
+    {
+        return $amount > (int)$balance;
+    }
+
+    /**
+     * @param WithdrawRequest $request
+     * @param $reference
+     * @return array
+     */
+    public function getWithdrawalPayload(WithdrawRequest $request, $reference): array
+    {
+        return [
+            "account_bank" => $request->bank_code,
+            "account_number" => $request->account_number,
+            "amount" => $request->amount,
+            "narration" => "Transfer from Fundz",
+            "currency" => "NGN",
+            "debit_currency" => "NGN",
+            'reference' => $reference
+        ];
     }
 }

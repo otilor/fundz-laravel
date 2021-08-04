@@ -23,7 +23,7 @@ class PageController extends Controller
     public function dashboardOverview1()
     {
 
-        $activities = Activity::query()
+        $activities = Activity::query()->latest()
             ->whereCauserId(auth()->id())->get();
 
 

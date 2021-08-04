@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\PaymentLinkController;
 use App\Http\Controllers\SafelockController;
 use App\Http\Controllers\SavingsController;
 use Illuminate\Support\Facades\Route;
@@ -56,6 +57,10 @@ Route::middleware('auth')->group(function () {
 
     // Referral Routes Begin
     Route::get('referral',[ReferralController::class,'index'])->name('referral');
+
+    Route::get('/pay/{paymentHash}', [PaymentLinkController::class, 'resolve']);
+
+
     Route::get('request-payment/{affiliate_id}',[ReferralController::class, 'RequestPayment'])->name('request.pay');
     Route::middleware('verified')->group(function () {
 

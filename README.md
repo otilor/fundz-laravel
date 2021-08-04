@@ -1,3 +1,3 @@
 
 # fundz-laravel
-Laravel application for Fundz.
+A Savings platform just like PiggyVest

@@ -11,6 +11,12 @@ use Bavix\Wallet\Models\Wallet;
 
 class UserService implements UserRepository
 {
+    public function __construct(public User $user) {}
+
+    public function getUser($id)
+    {
+        return User::find($id);
+    }
     public function getWalletBalance($userId)
     {
         $user = User::find($userId);
@@ -76,5 +82,12 @@ class UserService implements UserRepository
     {
         $ReferredUserDetails = User::whereAffiliate_id($affiliateId)->first();
         return ['details' => $ReferredUserDetails];
+    }
+
+    public function getUserWithPaymentHash($paymentHash): \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Builder|User|null
+    {
+        return $this->user
+            ->newModelQuery()
+            ->firstWhere('payment_hash', '<>',$paymentHash);
     }
 }

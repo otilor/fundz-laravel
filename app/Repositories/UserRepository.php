@@ -6,6 +6,8 @@ namespace App\Repositories;
 
 interface UserRepository
 {
+    public function getUser($id);
+
     public function getWalletBalance($userId);
 
     public function topupWallet($amount, $userId);
@@ -17,4 +19,6 @@ interface UserRepository
     public function getReferredUserDetails($affiliateId);
 
     public function getUserReferrals($affiliateId);
+
+    public function getUserWithPaymentHash($paymentHash);
 }

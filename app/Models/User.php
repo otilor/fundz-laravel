@@ -5,6 +5,7 @@ namespace App\Models;
 use Bavix\Wallet\Interfaces\Wallet;
 use Bavix\Wallet\Traits\HasWallet;
 use Bavix\Wallet\Traits\HasWallets;
+use Faker\Provider\Payment;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -22,7 +23,7 @@ class User extends Authenticatable implements Wallet,MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'gender', 'active', 'phone_number','referred_by'
+        'name', 'email', 'password', 'gender', 'active', 'phone_number','referred_by', 'payment_hash'
     ];
 
     /**
@@ -43,16 +44,15 @@ class User extends Authenticatable implements Wallet,MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    /**
-     * The attributes that appends to returned entities.
-     *
-     * @var array
-     */
-    protected $appends = ['photo'];
 
     /**
      * The getter that return accessible URL for user photo.
      *
      * @var array
      */
+
+    public function paymentLink(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->morphOne(PaymentLink::class, 'imageable');
+    }
 }
