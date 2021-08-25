@@ -21,4 +21,10 @@ interface UserRepository
     public function getUserReferrals($affiliateId);
 
     public function getUserWithPaymentHash($paymentHash);
+
+    public function createSafelock($data);
+
+    public function getUserSafelocks($userId);
+
+    public function getUserSafelockbalance($userId);
 }

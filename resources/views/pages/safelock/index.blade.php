@@ -18,7 +18,57 @@
                             <i data-feather="refresh-ccw" class="w-4 h-4 mr-3"></i> Reload Data
                         </a>
                     </div>
+                    <div>
                         <a href="{{ route('safelock.create') }}" type="submit" class="btn btn-primary w-27 text-xl">Create a safelock</a>
+                    </div>
+                    <br>
+                    <div class="alert alert-dismissible show box bg-theme-3 text-white flex items-center mb-6" role="alert">
+                        <span>👇👇👇👇👇 </span> All available safe locks 👇👇👇👇👇👇</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x w-4 h-4"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        </button>
+                    </div>
+                        <br>
+                        <!-- Create table with 6 rows  -->
+                        <table class="table">
+         <thead>
+             <tr>
+                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">#</th>
+                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Safelock ID</th>
+                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Safelock Name</th>
+                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Total Amount</th>
+                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Intrest Amount</th>
+                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Return Date</th>
+                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Action</th>
+             </tr>
+         </thead>
+         <tbody>
+             <?php
+                $counter = 0;
+             ?>
+             @foreach($safelocks as $safelock)
+             <tr class="hover:bg-gray-200">
+                 <td class="border">{{$counter += 1}}</td>
+                 <td class="border">{{substr($safelock->safelock_id, 0,10)}}...</td>
+                 <td class="border">{{$safelock->name}}</td>
+                 <td class="border">{{$safelock->amount}}</td>
+                 <td class="border">{{$safelock->interest_amount}}</td>
+                 <td class="border">{{$safelock->return_date}}</td>
+                 <td class="border">
+                     <!-- link to view details -->
+                     <form action="/safelock/find" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value={{$safelock->id}}>
+                         <button type="submit" class="btn btn-primary">View</button>
+                     </form>
+
+                 </td>
+             </tr>
+             @endforeach
+         </tbody>
+     </table>
+ </div>
+                </div>
 
                     <!-- END: General Report -->
                     <!-- BEGIN: Sales Report -->

@@ -7,6 +7,7 @@ namespace App\Services;
 use App\Models\User;
 use App\Repositories\UserRepository;
 use App\Facades\UpdatedRave as Flutterwave;
+use App\Models\Safelock;
 use Bavix\Wallet\Models\Wallet;
 
 class UserService implements UserRepository
@@ -89,5 +90,39 @@ class UserService implements UserRepository
         return $this->user
             ->newModelQuery()
             ->firstWhere('payment_hash', '<>',$paymentHash);
+    }
+
+    public function createSafelock($data)
+    {
+        $safelock_id = md5(microtime());
+        $safelock = new Safelock();
+        $safelock->user_id = auth()->user()->id;
+        $safelock->safelock_id = $safelock_id;
+        $safelock->name = $data['name'];
+        $safelock->interest_amount = (1/100)*$data['amount'];
+        $safelock->amount = $data['amount'];
+        $safelock->return_date = $data['return_date'];
+        $safelock->description = $data['description'];
+        $safelock->save();
+
+        if($safelock->save()){
+            return ['message' => '🥳🥳🥳🥳 You have Successfully created a new safelock 🥳🥳🥳🥳', 'status' => true];
+        }
+        else{
+            return ['message' => 'There was an issue while creating safelock. Try again in 5 minutes', 'status' => false];
+        }
+    }
+
+    // Get auth user safelock method
+    public function getUserSafelocks($id)
+    {
+        $safelock = Safelock::where('user_id', '=', auth()->user()->id)->get();
+        return ['safelock' => $safelock];
+    }
+
+    public function getUserSafelockbalance($Userid)
+    {
+        $Safelockbalance = Safelock::where('user_id', '=',auth()->user()->id)->sum('amount');
+        return ['Safelockbalance' => $Safelockbalance];
     }
 }

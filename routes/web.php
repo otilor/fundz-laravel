@@ -69,10 +69,12 @@ Route::middleware('auth')->group(function () {
 
         // Safelock Route (Currently Disabled)
 
-        // Route::group(['prefix' => 'safelock'], function () {
-        //     Route::get('/', [SafelockController::class, 'index'])->name('safelock.index');
-        //     Route::get('/create', [SafelockController::class, 'create'])->name('safelock.create');
-        // });
+        Route::group(['prefix' => 'safelock'], function () {
+            Route::get('/', [SafelockController::class, 'index'])->name('safelock.index');
+            Route::get('/create', [SafelockController::class, 'create'])->name('safelock.create');
+            Route::post('/lock', [SafelockController::class, 'lock'])->name('safelock.lock');
+            Route::post('/find', [SafelockController::class, 'find']);
+        });
 
 
         // Saving and Withdraw routes
