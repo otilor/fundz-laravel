@@ -15,7 +15,6 @@ class CreateSafelocksTable extends Migration
     {
         Schema::create('safelocks', function (Blueprint $table) {
             $table->id();
-            // create column for referencing users table
             $table->integer('user_id')->unsigned()
             ->reference('id')->on('users')->onDelete('cascade');
             $table->string('name');

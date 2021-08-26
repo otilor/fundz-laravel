@@ -1,15 +1,15 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Dashboard | Fundz</title>
+    <title>Safelock | Fundz</title>
 @endsection
 
 @section('subcontent')
-    <!-- BEGIN: Notification Content -->
+    <!-- BEGIN: Header -->
     <div class="grid grid-cols-12 gap-6">
         <div class="col-span-12 xxl:col-span-9">
             <div class="grid grid-cols-12 gap-6">
-                <!-- BEGIN: General Report -->
+                <!-- BEGIN: Intro -->
                 <div class="col-span-12 mt-8">
                     <h1 class="text-3xl font-bold truncate mr-6">Safelock</h1>
                     <div class="intro-y flex items-center h-10">
@@ -28,67 +28,63 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x w-4 h-4"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                         </button>
                     </div>
-                        <br>
-                        <!-- Create table with 6 rows  -->
-                        <table class="table">
-         <thead>
-             <tr>
-                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">#</th>
-                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Safelock ID</th>
-                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Safelock Name</th>
-                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Total Amount</th>
-                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Intrest Amount</th>
-                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Return Date</th>
-                 <th class="border border-b-2 dark:border-dark-5 whitespace-nowrap">Action</th>
-             </tr>
-         </thead>
-         <tbody>
-             <?php
-                $counter = 0;
-             ?>
-             @foreach($safelocks as $safelock)
-             <tr class="hover:bg-gray-200">
-                 <td class="border">{{$counter += 1}}</td>
-                 <td class="border">{{substr($safelock->safelock_id, 0,10)}}...</td>
-                 <td class="border">{{$safelock->name}}</td>
-                 <td class="border">{{$safelock->amount}}</td>
-                 <td class="border">{{$safelock->interest_amount}}</td>
-                 <td class="border">{{$safelock->return_date}}</td>
-                 <td class="border">
-                     <!-- link to view details -->
-                     <form action="/safelock/find" method="post">
-                        @csrf
-                        <input type="hidden" name="id" value={{$safelock->id}}>
-                         <button type="submit" class="btn btn-primary">View</button>
-                     </form>
-
-                 </td>
-             </tr>
-             @endforeach
-         </tbody>
-     </table>
- </div>
                 </div>
+                <!-- END: Intro -->
+            </div>
+        </div>
+    </div>
+    <!-- END: Header-->
 
-                    <!-- END: General Report -->
-                    <!-- BEGIN: Sales Report -->
-
-                    <!-- END: Sales Report -->
-                    <!-- BEGIN: Weekly Top Seller -->
-                    <!-- END: Weekly Top Seller -->
-                    <!-- BEGIN: Sales Report -->
-                    <!-- END: Sales Report -->
-                    <!-- BEGIN: Official Store -->
-                    <!-- END: Official Store -->
-                    <!-- BEGIN: Weekly Best Sellers -->
-                    <!-- END: Weekly Best Sellers -->
-                    <!-- BEGIN: General Report -->
-                    <!-- END: General Report -->
-                    <!-- BEGIN: Weekly Top Products -->
-
-                    <!-- END: Weekly Top Products -->
+    <!-- Begin Card to display safelocks -->
+    <div class="intro-y grid grid-cols-12 gap-6 mt-5">
+        <!-- BEGIN: Blog Layout -->
+        @if($safelocks->isEmpty())
+            <div class="col-span-12">
+                <div class="alert alert-warning">
+                    <span>No safelocks available!</span>
                 </div>
             </div>
+        @else
+        @foreach ($safelocks as $safelock)
+            <div class="intro-y col-span-12 md:col-span-6 xl:col-span-4 box">
+            <div class="flex items-center border-b border-gray-200 dark:border-dark-5 px-5 py-4">
+                <div class="ml-3 mr-auto">
+                    <a class="font-medium">{{$safelock->name}}</a> 
+                    <div class="flex text-gray-600 truncate text-xs mt-0.5"> {{($safelock->created_at->diffForHumans())}}</div>
+                </div>
+            </div>
+            <div class="p-5">
+                <a href="" class="block font-bold text-base mt-5">Amount : ₦{{ number_format($safelock->amount,0,'.',',') }}</a> 
+                <a href="" class="block font-bold text-base mt-5">Interest Amount : ₦ {{number_format($safelock->interest_amount,0,'.',',') }}</a>
+                <a href="" class="block font-bold text-base mt-5">Total Amount : ₦ {{number_format(($safelock->interest_amount + $safelock->amount),0,'.',',') }}</a>
+                <Br>
+                <h4 class="block font-bold truncate mr-6">Description:</h4>
+                <div class="block text-gray-700 dark:text-gray-600 mt-2">{{$safelock->description}}</div>
+            </div>
+            <div class="flex justify-around">
+                <div class="">
+                    <a href="" class="btn btn-primary"> Top Up</a>
+                </div>
+                <div>
+                    @if (($safelock->return_date) <= date('Y-m-d'))
+                        <a href="" class="btn btn-primary"> Cash Out</a>
+                    @else
+                        <a  class="btn btn-primary">
+                            Return Date is {{$safelock->return_date}}
+                        </a>
+                    @endif
+                   
+                </div>
+            </div>
+            <div>
 
+            </div>
         </div>
+        @endforeach
+        @endif
+    </div>
+</div>
+    </div>
+    
+               
 @endsection

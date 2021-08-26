@@ -116,7 +116,7 @@ class UserService implements UserRepository
     // Get auth user safelock method
     public function getUserSafelocks($id)
     {
-        $safelock = Safelock::where('user_id', '=', auth()->user()->id)->get();
+        $safelock = Safelock::where('user_id', '=', auth()->user()->id)->latest()->get();
         return ['safelock' => $safelock];
     }
 

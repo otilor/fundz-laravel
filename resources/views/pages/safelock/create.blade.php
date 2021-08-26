@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Withdraw - Fundz</title>
+    <title>Safelock - Fundz</title>
 @endsection
 
 @section('subcontent')
@@ -37,7 +37,7 @@
                             <label for="fundz_source"></label>
                             <select id="fundz_source" name="source" class="form-control w-full">
                                 <option value="" active><--- Where you keep 'em Fundz?----></option>
-                                <option value="main_wallet">Your main wallet balance {{ auth()->user()->balance }}</option>
+                                <option value="main_wallet">Your main wallet balance ₦{{ number_format(auth()->user()->balance,0,'.',',') }}</option>
                             </select>
                         </div>
 

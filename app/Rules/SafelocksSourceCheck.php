@@ -39,6 +39,6 @@ class SafelocksSourceCheck implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'You don\'t have enough Fundz in the selected source.';
     }
 }
