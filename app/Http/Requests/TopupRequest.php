@@ -2,11 +2,10 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\ValidatePassword;
+use App\Rules\SafelocksSourceCheck;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Password;
 
-class WithdrawRequest extends FormRequest
+class TopupRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,11 +25,8 @@ class WithdrawRequest extends FormRequest
     public function rules()
     {
         return [
-            'amount' => 'required|numeric|min:2000',
-            'bank_code' => 'required',
-            'account_number' => 'required|numeric',
-            'comment' => 'nullable',
-            'password' => ['required', new ValidatePassword],
+            'amount' => ['required' , new SafelocksSourceCheck()],
+            'source' => 'required',
         ];
     }
 }

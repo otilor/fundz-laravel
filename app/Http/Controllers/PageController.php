@@ -28,8 +28,10 @@ class PageController extends Controller
 
 
         $balance = $this->user->getWalletBalance(userId: auth()->id())['balance'];
+        $Safelockbalance = $this->user->getUserSafelockbalance(auth()->id())['Safelockbalance'];
         return view('pages/dashboard-overview-1', [
             'balance' => $balance,
+            'Safelockbalance' => $Safelockbalance,
             'activities' => $activities,
         ]);
     }
