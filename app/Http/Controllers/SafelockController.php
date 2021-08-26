@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\CreateSafelockRequest;
+use App\Http\Requests\TopupRequest;
 use App\Repositories\UserRepository;
 
 class SafelockController
@@ -39,4 +40,19 @@ class SafelockController
         }
         
     }
+
+    public function topup(TopupRequest $request)
+    {
+        $topup = $this->user->topupSafelock($request->safelock_id, $request->amount);
+        if($topup['status'] == true) {
+            $this->user->withdraw($request->input('amount'), auth()->user()->id);
+            session()->flash('success', $topup['message']);
+            return redirect('safelock');
+        }
+        else{
+            session()->flash('error', $topup['message']);
+            return back();
+        }
+    }
+    
 }

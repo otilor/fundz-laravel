@@ -27,4 +27,6 @@ interface UserRepository
     public function getUserSafelocks($userId);
 
     public function getUserSafelockbalance($userId);
+
+    public function topupSafelock($safelockId,$amount);
 }

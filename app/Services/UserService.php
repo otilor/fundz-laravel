@@ -125,4 +125,17 @@ class UserService implements UserRepository
         $Safelockbalance = Safelock::where('user_id', '=',auth()->user()->id)->sum('amount');
         return ['Safelockbalance' => $Safelockbalance];
     }
+
+    public function topupSafelock($safelockId, $amount)
+    {
+        $getSafelockAmount = Safelock::whereId($safelockId)->pluck('amount')->toArray();
+        $newAmount = $getSafelockAmount[0] + $amount;
+        $topup = Safelock::whereId($safelockId)
+        ->update(['amount' => $newAmount]);
+        if($topup)
+        {
+            return ['status' => true, 'message' => '🎉🥳🎉🥳Safe lock successfully Updated!!!🎉🥳🎉🥳'];
+        }
+        return ['status' => false, 'message' => '😥😥😥Safe lock Failed to update😥😥😥. Try again in 5 minutes'];
+    }
 }

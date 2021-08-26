@@ -63,14 +63,14 @@
             </div>
             <div class="flex justify-around">
                 <div class="">
-                    <a href="" class="btn btn-primary"> Top Up</a>
+                    <a data-toggle="modal" data-target="#topup-slide-over-{{$safelock->id}}" class="btn btn-primary"> Top Up</a>
                 </div>
                 <div>
                     @if (($safelock->return_date) <= date('Y-m-d'))
-                        <a href="" class="btn btn-primary"> Cash Out</a>
+                        <a href="" class="btn btn-success"> Cash Out</a>
                     @else
                         <a  class="btn btn-primary">
-                            Return Date is {{$safelock->return_date}}
+                            Due Date is {{$safelock->return_date}}
                         </a>
                     @endif
                    
@@ -80,11 +80,42 @@
 
             </div>
         </div>
+                    <!-- BEGIN: Medium Slide Over Content -->
+            <div id="topup-slide-over-{{$safelock->id}}" class="modal modal-slide-over" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header p-5">
+                            <h2 class="font-medium text-base mr-auto">Top-Up Safelock ({{$safelock->name}})</h2>
+                        </div>
+                        <form action="/safelock/topup" method="post">
+                            @csrf
+                            <div class="mt-3"> 
+                                <input type="hidden" name="safelock_id" value="{{$safelock->id}}">
+                                <label for="regular-form-2" class="form-label">Amount:</label> 
+                                <input id="regular-form" type="number" name="amount" class="form-control form-control" placeholder="E.g 15,000">
+                            </div>
+                                <div class="mt-3"> <label for="regular-form-3" class="form-label">Source: </label> 
+                                    <div class="input-group">
+                                        <label for="fundz_source"></label>
+                                        <select id="fundz_source" name="source" class="form-control w-full" required>
+                                            <option value="" active><--- Where you keep 'em Fundz?----></option>
+                                            <option value="main_wallet">Your main wallet balance ₦{{ number_format(auth()->user()->balance,0,'.',',') }}</option>
+                                        </select>
+                                    </div>
+                                <br>
+                                <div class="flex justify-center">
+                                    <button type="submit" class="btn btn-primary">Top Up now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         @endforeach
         @endif
     </div>
 </div>
     </div>
-    
+
                
 @endsection
