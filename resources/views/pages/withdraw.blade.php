@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Withdraw - Fundz by Gabriel</title>
+    <title>Withdraw - Fundz</title>
 @endsection
 
 @section('subcontent')
@@ -15,7 +15,7 @@
                 <!-- BEGIN: Form Layout -->
                 <div class="intro-y box p-5">
                     <div>
-                        <p class="mb-4 text-bold text-blue-600 text-xl">Wallet balance: ₦{{ $balance }}</p>
+                        <p class="mb-4 text-bold text-blue-600 text-xl">Wallet balance: ₦{{ number_format($balance,0,'.',',') }}</p>
                         <label for="crud-form-1" class="form-label">Amount(minimum of ₦2000)</label>
                         @error('amount')
                             <span style="color: red">Enter a valid amount</span>
@@ -63,7 +63,7 @@
                         <br>
                         <label for="crud-form-1" class="form-label">Comment (Optional)</label>
                         <div class="input-group">
-                            <textarea name="comment" id="crud-form-1" type="text" class="form-control w-full" placeholder="Thank you for helping my save.....">{{old('comment')}}</textarea>
+                            <textarea name="comment" id="crud-form-1" type="text" class="form-control w-full" placeholder="Thank you for helping me save.....">{{old('comment')}}</textarea>
                         </div>
                         <br>
                         @error('password')
