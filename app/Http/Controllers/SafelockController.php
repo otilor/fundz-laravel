@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateSafelockRequest;
 use App\Http\Requests\TopupRequest;
 use App\Repositories\UserRepository;
+use Illuminate\Http\Request;
 
 class SafelockController
 {
@@ -52,6 +53,20 @@ class SafelockController
         else{
             session()->flash('error', $topup['message']);
             return back();
+        }
+    }
+
+    public function cashout(Request $request)
+    {
+        $this->user->topupWallet($request->amount, auth()->user()->id); 
+        $deletesafelock = $this->user->deletesafelock($request->safelock_id);
+        if($deletesafelock['status'])
+        {
+            return redirect()->back()->with('success', $deletesafelock['message']);
+        }
+        else
+        {
+            return redirect()->back()->with('error', $deletesafelock['message']);
         }
     }
     

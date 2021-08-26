@@ -138,4 +138,22 @@ class UserService implements UserRepository
         }
         return ['status' => false, 'message' => '😥😥😥Safe lock Failed to update😥😥😥. Try again in 5 minutes'];
     }
+
+    public function deletesafelock($safelockId)
+    {
+        $safelock = Safelock::whereId($safelockId)->first();
+        if($safelock != null) {
+            $deletesafelock = $safelock->delete();
+        }
+
+        if($deletesafelock)
+        {
+            $succssmsg = '😎😎😎You have successfully Cashed out your fundz from Safelock, Hope it helped. Note: Since no more fundz, Safelock has been deleted';
+            return ['message' => $succssmsg ,'status' =>true,];
+        }
+        else 
+        {
+            return ['message' => '😞😞😞CashOut failed!!!😞😞😞', 'status' =>false];
+        }
+    }
 }

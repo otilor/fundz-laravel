@@ -67,7 +67,12 @@
                 </div>
                 <div>
                     @if (($safelock->return_date) <= date('Y-m-d'))
-                        <a href="" class="btn btn-success"> Cash Out</a>
+                    <form method="post" action="/safelock/cashout">
+                    @csrf
+                        <input type="hidden" name="amount" value="{{$safelock->interest_amount + $safelock->amount}}">
+                        <input type="hidden" name="safelock_id" value="{{$safelock->id}}">
+                        <button type="submit" class="btn btn-success">Cash Out</button>  
+                    </form>
                     @else
                         <a  class="btn btn-primary">
                             Due Date is {{$safelock->return_date}}
