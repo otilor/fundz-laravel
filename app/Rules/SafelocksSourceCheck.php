@@ -26,7 +26,7 @@ class SafelocksSourceCheck implements Rule
     public function passes($attribute, $value)
     {
         // check if value is less than auth user balance
-        if ($value <= auth()->user()->balance) {
+        if ($value <= auth()->user()->balance && $value >= 1) {
             return true;
         }
         return false;
@@ -39,6 +39,6 @@ class SafelocksSourceCheck implements Rule
      */
     public function message()
     {
-        return 'You don\'t have enough Fundz in the selected source.';
+        return 'Enter a valid amount.';
     }
 }
