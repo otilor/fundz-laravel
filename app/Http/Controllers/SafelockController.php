@@ -8,6 +8,7 @@ use App\Http\Requests\CreateSafelockRequest;
 use App\Http\Requests\TopupRequest;
 use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
+use Spatie\Activitylog\Facades\CauserResolver;
 
 class SafelockController
 {
@@ -32,6 +33,12 @@ class SafelockController
         $createsafelock = $this->user->createSafelock($request);
         if($createsafelock['status'] == true) {
             $this->user->withdraw($request->input('amount'), auth()->user()->id);
+            // Log the activity
+            CauserResolver::setCauser($this->user->getUser(auth()->id()));
+            activity()
+                ->withProperty('created_at', now())
+                ->log("Create Safelock '{$request->name}' with initial deposit of ₦{$request->amount}");
+
             session()->flash('success', $createsafelock['message']);
             return redirect('safelock');
         }
