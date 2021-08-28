@@ -33,53 +33,6 @@
                 <a class="notification notification--light sm:hidden" href="">
                     <i data-feather="search" class="notification__icon dark:text-gray-300"></i>
                 </a>
-                <!-- <div class="search-result">
-                    <div class="search-result__content">
-                        <div class="search-result__content__title">Pages</div>
-                        <div class="mb-5">
-                            <a href="" class="flex items-center">
-                                <div class="w-8 h-8 bg-theme-18 text-theme-9 flex items-center justify-center rounded-full">
-                                    <i class="w-4 h-4" data-feather="inbox"></i>
-                                </div>
-                                <div class="ml-3">Mail Settings</div>
-                            </a>
-                            <a href="" class="flex items-center mt-2">
-                                <div class="w-8 h-8 bg-theme-17 text-theme-11 flex items-center justify-center rounded-full">
-                                    <i class="w-4 h-4" data-feather="users"></i>
-                                </div>
-                                <div class="ml-3">Users & Permissions</div>
-                            </a>
-                            <a href="" class="flex items-center mt-2">
-                                <div class="w-8 h-8 bg-theme-14 text-theme-10 flex items-center justify-center rounded-full">
-                                    <i class="w-4 h-4" data-feather="credit-card"></i>
-                                </div>
-                                <div class="ml-3">Transactions Report</div>
-                            </a>
-                        </div>
-                        <div class="search-result__content__title">Users</div>
-                        <div class="mb-5">
-                            @foreach (array_slice($fakers, 0, 4) as $faker)
-                                <a href="" class="flex items-center mt-2">
-                                    <div class="w-8 h-8 image-fit">
-                                        <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="{{ asset('dist/images/' . $faker['photos'][0]) }}">
-                                    </div>
-                                    <div class="ml-3">{{ $faker['users'][0]['name'] }}</div>
-                                    <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">{{ $faker['users'][0]['email'] }}</div>
-                                </a>
-                            @endforeach
-                        </div>
-                        <div class="search-result__content__title">Products</div>
-                        @foreach (array_slice($fakers, 0, 4) as $faker)
-                            <a href="" class="flex items-center mt-2">
-                                <div class="w-8 h-8 image-fit">
-                                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="{{ asset('dist/images/' . $faker['images'][0]) }}">
-                                </div>
-                                <div class="ml-3">{{ $faker['products'][0]['name'] }}</div>
-                                <div class="ml-auto w-48 truncate text-gray-600 text-xs text-right">{{ $faker['products'][0]['category'] }}</div>
-                            </a>
-                        @endforeach
-                    </div>
-                </div> -->
             </div>
             <!-- END: Search -->
             <!-- BEGIN: Notifications -->
@@ -93,7 +46,7 @@
                         @foreach ($activities as $activity)
                             <div class="cursor-pointer relative flex items-center {{ $key ? 'mt-5' : '' }}">
                                 <div class="w-12 h-12 flex-none image-fit mr-1">
-                                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="{{ asset('dist/images/' . $faker['photos'][0]) }}">
+                                    <img alt="Fundz" class="rounded-full" src="{{ asset('dist/images/' . $faker['photos'][0]) }}">
                                     <div class="w-3 h-3 bg-theme-9 absolute right-0 bottom-0 rounded-full border-2 border-white"></div>
                                 </div>
                                 <div class="ml-2 overflow-hidden">
@@ -112,7 +65,7 @@
             <!-- BEGIN: Account Menu -->
             <div class="intro-x dropdown w-8 h-8">
                 <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in scale-110" role="button" aria-expanded="false">
-                    <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[9]['photos'][0]) }}">
+                    <img alt="Fundz" src="{{ asset('dist/images/' . $fakers[9]['photos'][0]) }}">
                 </div>
                 <div class="dropdown-menu w-56">
                     <div class="dropdown-menu__content box bg-theme-26 dark:bg-dark-6 text-white">
