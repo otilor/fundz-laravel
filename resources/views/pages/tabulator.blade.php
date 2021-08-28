@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Tabulator - Rubick - Tailwind HTML Admin Template</title>
+    <title>Tabulator - Fundz</title>
 @endsection
 
 @section('subcontent')

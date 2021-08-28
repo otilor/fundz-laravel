@@ -75,7 +75,7 @@
                                 </div>
                                 <div class="mt-3 xl:mt-0">
                                     <label for="update-profile-form-10" class="form-label">Phone Number</label>
-                                    <input id="update-profile-form-10" name="phone_number" type="number" class="form-control" placeholder="Phone Number" value="{{auth()->user()->phone_number ?? ''}}" disabled>
+                                    <input id="update-profile-form-10" name="phone_number" type="number" class="form-control" placeholder="Phone Number" value="{{auth()->user()->phone_number ?? ''}}">
                                 </div>
                             </div>
                             <div class="col-span-12 xl:col-span-6">

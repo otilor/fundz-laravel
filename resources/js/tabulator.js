@@ -61,17 +61,17 @@ import Tabulator from "tabulator-tables";
                     formatter(cell, formatterParams) {
                         return `<div class="flex lg:justify-center">
                             <div class="intro-x w-10 h-10 image-fit">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/${
+                                <img alt="Fundz" class="rounded-full" src="/dist/images/${
                                     cell.getData().images[0]
                                 }">
                             </div>
                             <div class="intro-x w-10 h-10 image-fit -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/${
+                                <img alt="Fundz" class="rounded-full" src="/dist/images/${
                                     cell.getData().images[1]
                                 }">
                             </div>
                             <div class="intro-x w-10 h-10 image-fit -ml-5">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/${
+                                <img alt="Fundz" class="rounded-full" src="/dist/images/${
                                     cell.getData().images[2]
                                 }">
                             </div>

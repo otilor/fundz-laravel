@@ -132,7 +132,7 @@
                                 @foreach($activities as $activity)
                                 <div class="box px-5 py-3 mb-3 flex items-center">
 {{--                                    <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">--}}
-{{--                                        <img alt="Rubick Tailwind HTML Admin Template" src="http://fundz-laravel.test/dist/images/profile-7.jpg">--}}
+{{--                                        <img alt="Fundz" src="http://fundz-laravel.test/dist/images/profile-7.jpg">--}}
 {{--                                    </div>--}}
                                     <div class="ml-4 mr-auto">
                                         <div class="font-medium">{{ $activity->description }}</div>

@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Add New Post - Rubick - Tailwind HTML Admin Template</title>
+    <title>Add New Post - Fundz</title>
 @endsection
 
 @section('subcontent')
@@ -94,7 +94,7 @@
                                         <div class="flex flex-wrap px-4">
                                             @foreach (array_slice($fakers, 0, 4) as $faker)
                                                 <div class="w-24 h-24 relative image-fit mb-5 mr-5 cursor-pointer zoom-in">
-                                                    <img class="rounded-md" alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $faker['images'][0]) }}">
+                                                    <img class="rounded-md" alt="Fundz" src="{{ asset('dist/images/' . $faker['images'][0]) }}">
                                                     <div title="Remove this image?" class="tooltip w-5 h-5 flex items-center justify-center absolute rounded-full text-white bg-theme-6 right-0 top-0 -mr-2 -mt-2">
                                                         <i data-feather="x" class="w-4 h-4"></i>
                                                     </div>
@@ -122,7 +122,7 @@
                     <div class="dropdown">
                         <div class="dropdown-toggle btn w-full btn-outline-secondary dark:bg-dark-2 dark:border-dark-2 flex items-center justify-start" role="button" aria-expanded="false">
                             <div class="w-6 h-6 image-fit mr-3">
-                                <img class="rounded" alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[0]['photos'][0]) }}">
+                                <img class="rounded" alt="Fundz" src="{{ asset('dist/images/' . $fakers[0]['photos'][0]) }}">
                             </div>
                             <div class="truncate">{{ $fakers[0]['users'][0]['name'] }}</div>
                             <i class="w-4 h-4 ml-auto" data-feather="chevron-down"></i>
@@ -132,7 +132,7 @@
                                 @foreach (array_slice($fakers, 0, 5) as $faker)
                                     <a href="javascript:;" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
                                         <div class="w-6 h-6 absolute image-fit mr-3">
-                                            <img class="rounded" alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $faker['photos'][0]) }}">
+                                            <img class="rounded" alt="Fundz" src="{{ asset('dist/images/' . $faker['photos'][0]) }}">
                                         </div>
                                         <div class="ml-8 pl-1">{{ $faker['users'][0]['name'] }}</div>
                                     </a>
