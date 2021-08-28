@@ -1,16 +1,16 @@
 
-# fundz
+# Fundz
 Fundz is a very secure online savings platform that makes saving possible by combining discipline and flexibility to make you build your fundz.
 
 # Motto
 Manage all your fundz with fundz 😇😇😇
 # Current available features
 
-. Saving 
-. Withdrawal
-. Transfer of Fundz
-. Referral
-. Safelock
+. Saving <br>
+. Withdrawal<br>
+. Transfer of Fundz<br>
+. Referral<br>
+. Safelock<br>
 
 # Meet the team
 
@@ -19,4 +19,4 @@ Manage all your fundz with fundz 😇😇😇
 
 # links
 
-<a href="https://fundz.live" target="_blank">Fundz.live</a>)
+<a href="https://fundz.live" target="_blank">Fundz.live</a>
