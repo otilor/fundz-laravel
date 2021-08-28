@@ -10,10 +10,10 @@
     <div class="border-b border-theme-29 -mt-10 md:-mt-5 -mx-3 sm:-mx-8 px-3 sm:px-8 pt-3 md:pt-0 mb-10">
         <div class="top-bar-boxed flex items-center">
             <!-- BEGIN: Logo -->
-            <a href="" class="-intro-x hidden md:flex">
-                <img alt="Rubick Tailwind HTML Admin Template" class="w-6" src="{{ asset('dist/images/logo.svg') }}">
+            <a href="/dashboard/" class="-intro-x hidden md:flex">
+                <img alt="Fundz logo" class="w-6" src="{{ asset('dist/images/logo.svg') }}">
                 <span class="text-white text-lg ml-3">
-                    Ru<span class="font-medium">bick</span>
+                    Fu<span class="font-medium">ndz</span>
                 </span>
             </a>
             <!-- END: Logo -->
@@ -21,7 +21,7 @@
             <div class="-intro-x breadcrumb breadcrumb--light mr-auto">
                 <a href="">Application</a>
                 <i data-feather="chevron-right" class="breadcrumb__icon"></i>
-                <a href="" class="breadcrumb--active">Dashboard</a>
+                <a href="" class="breadcrumb--active">Dasdhboard</a>
             </div>
             <!-- END: Breadcrumb -->
             <!-- BEGIN: Search -->
@@ -33,7 +33,7 @@
                 <a class="notification notification--light sm:hidden" href="">
                     <i data-feather="search" class="notification__icon dark:text-gray-300"></i>
                 </a>
-                <div class="search-result">
+                <!-- <div class="search-result">
                     <div class="search-result__content">
                         <div class="search-result__content__title">Pages</div>
                         <div class="mb-5">
@@ -79,7 +79,7 @@
                             </a>
                         @endforeach
                     </div>
-                </div>
+                </div> -->
             </div>
             <!-- END: Search -->
             <!-- BEGIN: Notifications -->
@@ -90,7 +90,7 @@
                 <div class="notification-content pt-2 dropdown-menu">
                     <div class="notification-content__box dropdown-menu__content box dark:bg-dark-6">
                         <div class="notification-content__title">Notifications</div>
-                        @foreach (array_slice($fakers, 0, 5) as $key => $faker)
+                        @foreach ($activities as $activity)
                             <div class="cursor-pointer relative flex items-center {{ $key ? 'mt-5' : '' }}">
                                 <div class="w-12 h-12 flex-none image-fit mr-1">
                                     <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="{{ asset('dist/images/' . $faker['photos'][0]) }}">
@@ -98,7 +98,7 @@
                                 </div>
                                 <div class="ml-2 overflow-hidden">
                                     <div class="flex items-center">
-                                        <a href="javascript:;" class="font-medium truncate mr-5">{{ $faker['users'][0]['name'] }}</a>
+                                        <a href="javascript:;" class="font-medium truncate mr-5">{{ $activity->description }}</a>
                                         <div class="text-xs text-gray-500 ml-auto whitespace-nowrap">{{ $faker['times'][0] }}</div>
                                     </div>
                                     <div class="w-full truncate text-gray-600 mt-0.5">{{ $faker['news'][0]['short_content'] }}</div>
