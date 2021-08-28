@@ -8,6 +8,7 @@ use App\Http\Requests\CreateSafelockRequest;
 use App\Http\Requests\TopupRequest;
 use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
+use Spatie\Activitylog\Facades\CauserResolver;
 
 class SafelockController
 {
@@ -32,6 +33,12 @@ class SafelockController
         $createsafelock = $this->user->createSafelock($request);
         if($createsafelock['status'] == true) {
             $this->user->withdraw($request->input('amount'), auth()->user()->id);
+            // Log the activity
+            CauserResolver::setCauser($this->user->getUser(auth()->id()));
+            activity()
+                ->withProperty('created_at', now())
+                ->log("Create Safelock '{$request->name}' with initial deposit of ₦{$request->amount}");
+
             session()->flash('success', $createsafelock['message']);
             return redirect('safelock');
         }
@@ -47,6 +54,11 @@ class SafelockController
         $topup = $this->user->topupSafelock($request->safelock_id, $request->amount);
         if($topup['status'] == true) {
             $this->user->withdraw($request->input('amount'), auth()->user()->id);
+            CauserResolver::setCauser($this->user->getUser(auth()->id()));
+            activity()
+                ->withProperty('created_at', now())
+                ->log("Topped up '{$request->name}' Safelock  with deposit of ₦{$request->amount}");
+
             session()->flash('success', $topup['message']);
             return redirect('safelock');
         }
@@ -62,6 +74,10 @@ class SafelockController
         $deletesafelock = $this->user->deletesafelock($request->safelock_id);
         if($deletesafelock['status'])
         {
+            CauserResolver::setCauser($this->user->getUser(auth()->id()));
+            activity()
+                ->withProperty('created_at', now())
+                ->log("Cashed out ₦{$request->amount} from '{$request->name}'");
             return redirect()->back()->with('success', $deletesafelock['message']);
         }
         else

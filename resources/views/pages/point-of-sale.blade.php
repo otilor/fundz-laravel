@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Point of Sale - Rubick - Tailwind HTML Admin Template</title>
+    <title>Point of Sale - Fundz</title>
 @endsection
 
 @section('subcontent')
@@ -86,7 +86,7 @@
                         <div class="box rounded-md p-3 relative zoom-in">
                             <div class="flex-none pos-image relative block">
                                 <div class="pos-image__preview image-fit">
-                                    <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $faker['foods'][0]['image']) }}">
+                                    <img alt="Fundz" src="{{ asset('dist/images/' . $faker['foods'][0]['image']) }}">
                                 </div>
                             </div>
                             <div class="block font-medium text-center truncate mt-3">{{ $faker['foods'][0]['name'] }}</div>

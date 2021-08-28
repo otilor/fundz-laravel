@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Blog - Rubick - Tailwind HTML Admin Template</title>
+    <title>Blog - Fundz</title>
 @endsection
 
 @section('subcontent')
@@ -13,7 +13,7 @@
         </div>
         <div class="intro-y mt-6">
             <div class="news__preview image-fit">
-                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-md" src="{{ asset('dist/images/' . $fakers[0]['images'][0]) }}">
+                <img alt="Fundz" class="rounded-md" src="{{ asset('dist/images/' . $fakers[0]['images'][0]) }}">
             </div>
         </div>
         <div class="intro-y flex relative pt-16 sm:pt-6 items-center pb-6">
@@ -22,13 +22,13 @@
             </a>
             <div class="intro-x flex mr-3">
                 <div class="intro-x w-8 h-8 sm:w-10 sm:h-10 image-fit">
-                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="{{ asset('dist/images/' . $fakers[0]['photos'][0]) }}" title="{{ $fakers[0]['users'][0]['name'] }}">
+                    <img alt="Fundz" class="rounded-full border border-white zoom-in tooltip" src="{{ asset('dist/images/' . $fakers[0]['photos'][0]) }}" title="{{ $fakers[0]['users'][0]['name'] }}">
                 </div>
                 <div class="intro-x w-8 h-8 sm:w-10 sm:h-10 image-fit -ml-4">
-                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="{{ asset('dist/images/' . $fakers[0]['photos'][1]) }}" title="{{ $fakers[0]['users'][1]['name'] }}">
+                    <img alt="Fundz" class="rounded-full border border-white zoom-in tooltip" src="{{ asset('dist/images/' . $fakers[0]['photos'][1]) }}" title="{{ $fakers[0]['users'][1]['name'] }}">
                 </div>
                 <div class="intro-x w-8 h-8 sm:w-10 sm:h-10 image-fit -ml-4">
-                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="{{ asset('dist/images/' . $fakers[0]['photos'][2]) }}" title="{{ $fakers[0]['users'][2]['name'] }}">
+                    <img alt="Fundz" class="rounded-full border border-white zoom-in tooltip" src="{{ asset('dist/images/' . $fakers[0]['photos'][2]) }}" title="{{ $fakers[0]['users'][2]['name'] }}">
                 </div>
             </div>
             <div class="absolute sm:relative -mt-12 sm:mt-0 w-full flex text-gray-700 dark:text-gray-600 text-xs sm:text-sm">
@@ -57,7 +57,7 @@
         <div class="intro-y flex text-xs sm:text-sm flex-col sm:flex-row items-center mt-5 pt-5 border-t border-gray-200 dark:border-dark-5">
             <div class="flex items-center">
                 <div class="w-12 h-12 flex-none image-fit">
-                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="{{ asset('dist/images/' . $fakers[0]['photos'][0]) }}">
+                    <img alt="Fundz" class="rounded-full" src="{{ asset('dist/images/' . $fakers[0]['photos'][0]) }}">
                 </div>
                 <div class="ml-3 mr-auto">
                     <a href="" class="font-medium">{{ $fakers[0]['users'][0]['name'] }}</a>, Author
@@ -90,7 +90,7 @@
             <div class="pt-5">
                 <div class="flex">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 flex-none image-fit">
-                        <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="{{ asset('dist/images/' . $fakers[0]['photos'][0]) }}">
+                        <img alt="Fundz" class="rounded-full" src="{{ asset('dist/images/' . $fakers[0]['photos'][0]) }}">
                     </div>
                     <div class="ml-3 flex-1">
                         <div class="flex items-center">
@@ -105,7 +105,7 @@
             <div class="mt-5 pt-5 border-t border-gray-200 dark:border-dark-5">
                 <div class="flex">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 flex-none image-fit">
-                        <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="{{ asset('dist/images/' . $fakers[0]['photos'][1]) }}">
+                        <img alt="Fundz" class="rounded-full" src="{{ asset('dist/images/' . $fakers[0]['photos'][1]) }}">
                     </div>
                     <div class="ml-3 flex-1">
                         <div class="flex items-center">

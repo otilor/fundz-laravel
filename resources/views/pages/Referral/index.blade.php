@@ -3,7 +3,6 @@
 @section('subhead')
     <title>Referral | Fundz</title>
 @endsection
-
 @section('subcontent')
     <!-- BEGIN: Referral Content -->
 

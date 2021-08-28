@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Image Zoom - Rubick - Tailwind HTML Admin Template</title>
+    <title>Image Zoom - Fundz</title>
 @endsection
 
 @section('subcontent')
@@ -50,7 +50,7 @@
                                 readymade authentic plaid pickled hashtag biodiesel.
                             </p>
                             <div class="w-full h-64 my-5 image-fit">
-                                <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[0]['images'][0]) }}" data-action="zoom" class="w-full rounded-md">
+                                <img alt="Fundz" src="{{ asset('dist/images/' . $fakers[0]['images'][0]) }}" data-action="zoom" class="w-full rounded-md">
                             </div>
                             <p class="mb-5">
                                 Thundercats freegan Truffaut, four loko twee Austin scenester
@@ -92,7 +92,7 @@
                                 Shoreditch swag selfies stumptown +1.
                             </p>
                             <div class="w-3/5 h-64 mr-6 float-left image-fit">
-                                <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[0]['images'][1]) }}" data-action="zoom" class="w-full rounded-md">
+                                <img alt="Fundz" src="{{ asset('dist/images/' . $fakers[0]['images'][1]) }}" data-action="zoom" class="w-full rounded-md">
                             </div>
                             <p class="mb-5">
                                 Scenester chambray slow-carb, trust fund biodiesel ugh bicycle
@@ -171,7 +171,7 @@
                                                 readymade authentic plaid pickled hashtag biodiesel.
                                             </p>
                                             <div class="w-full h-64 my-5 image-fit">
-                                                <img alt="Rubick Tailwind HTML Admin Template" src="' . asset('dist/images/' . $fakers[0]['images'][0]) . '" data-action="zoom" class="w-full rounded-md">
+                                                <img alt="Fundz" src="' . asset('dist/images/' . $fakers[0]['images'][0]) . '" data-action="zoom" class="w-full rounded-md">
                                             </div>
                                             <p class="mb-5">
                                                 Thundercats freegan Truffaut, four loko twee Austin scenester
@@ -213,7 +213,7 @@
                                                 Shoreditch swag selfies stumptown +1.
                                             </p>
                                             <div class="w-3/5 h-64 mr-6 float-left image-fit">
-                                                <img alt="Rubick Tailwind HTML Admin Template" src="' . asset('dist/images/' . $fakers[0]['images'][1]) . '" data-action="zoom" class="w-full rounded-md">
+                                                <img alt="Fundz" src="' . asset('dist/images/' . $fakers[0]['images'][1]) . '" data-action="zoom" class="w-full rounded-md">
                                             </div>
                                             <p class="mb-5">
                                                 Scenester chambray slow-carb, trust fund biodiesel ugh bicycle

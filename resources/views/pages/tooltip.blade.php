@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Tooltip - Rubick - Tailwind HTML Admin Template</title>
+    <title>Tooltip - Fundz</title>
 @endsection
 
 @section('subcontent')
@@ -134,7 +134,7 @@
                         <div class="tooltip-content">
                             <div id="custom-content-tooltip" class="relative flex items-center py-1">
                                 <div class="w-12 h-12 image-fit">
-                                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="{{ asset('dist/images/' . $fakers[0]['photos'][0]) }}">
+                                    <img alt="Fundz" class="rounded-full" src="{{ asset('dist/images/' . $fakers[0]['photos'][0]) }}">
                                 </div>
                                 <div class="ml-4 mr-auto">
                                     <div class="font-medium dark:text-gray-300 leading-relaxed">{{ $fakers[0]['users'][0]['name'] }}</div>
@@ -161,7 +161,7 @@
                                         <div class="tooltip-content">
                                             <div id="custom-content-tooltip" class="relative flex items-center py-1">
                                                 <div class="w-12 h-12 image-fit">
-                                                    <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="' . asset('dist/images/' . $fakers[0]['photos'][0]) . '">
+                                                    <img alt="Fundz" class="rounded-full" src="' . asset('dist/images/' . $fakers[0]['photos'][0]) . '">
                                                 </div>
                                                 <div class="ml-4 mr-auto">
                                                     <div class="font-medium dark:text-gray-300 leading-relaxed">' . $fakers[0]['users'][0]['name'] . '</div>

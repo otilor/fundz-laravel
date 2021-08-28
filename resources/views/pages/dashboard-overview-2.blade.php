@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Dashboard - Rubick - Tailwind HTML Admin Template</title>
+    <title>Dashboard - Fundz</title>
 @endsection
 
 @section('subcontent')
@@ -224,7 +224,7 @@
                             <div class="intro-y">
                                 <div class="box px-4 py-4 mb-3 flex items-center zoom-in">
                                     <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
-                                        <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $faker['photos'][0]) }}">
+                                        <img alt="Fundz" src="{{ asset('dist/images/' . $faker['photos'][0]) }}">
                                     </div>
                                     <div class="ml-4 mr-auto">
                                         <div class="font-medium">{{ $faker['users'][0]['name'] }}</div>
@@ -244,7 +244,7 @@
                         <div class="ads-box__title w-full sm:w-72 text-white text-xl -mt-3">Transact safely with Lender’s Fund Account (RDL)</div>
                         <div class="w-full sm:w-72 leading-relaxed text-white text-opacity-70 dark:text-gray-600 dark:text-opacity-100 mt-3">Apply now, quick registration</div>
                         <button class="btn w-32 bg-white dark:bg-dark-2 dark:text-white mt-6 sm:mt-10">Start Now</button>
-                        <img class="hidden sm:block absolute top-0 right-0 w-2/5 -mt-3 mr-2" alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/woman-illustration.svg') }}">
+                        <img class="hidden sm:block absolute top-0 right-0 w-2/5 -mt-3 mr-2" alt="Fundz" src="{{ asset('dist/images/woman-illustration.svg') }}">
                     </div>
                 </div>
                 <!-- END: Ads 1 -->
@@ -257,7 +257,7 @@
                             <input class="form-control" value="https://dashboard.in">
                             <i data-feather="copy" class="absolute right-0 top-0 bottom-0 my-auto mr-4 w-4 h-4"></i>
                         </div>
-                        <img class="hidden sm:block absolute top-0 right-0 w-1/2 mt-1 -mr-12" alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/phone-illustration.svg') }}">
+                        <img class="hidden sm:block absolute top-0 right-0 w-1/2 mt-1 -mr-12" alt="Fundz" src="{{ asset('dist/images/phone-illustration.svg') }}">
                     </div>
                 </div>
                 <!-- END: Ads 2 -->
@@ -291,13 +291,13 @@
                                         <td class="w-40">
                                             <div class="flex">
                                                 <div class="w-10 h-10 image-fit zoom-in">
-                                                    <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="{{ asset('dist/images/' . $faker['images'][0]) }}" title="Uploaded at {{ $faker['dates'][0] }}">
+                                                    <img alt="Fundz" class="tooltip rounded-full" src="{{ asset('dist/images/' . $faker['images'][0]) }}" title="Uploaded at {{ $faker['dates'][0] }}">
                                                 </div>
                                                 <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                    <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="{{ asset('dist/images/' . $faker['images'][1]) }}" title="Uploaded at {{ $faker['dates'][1] }}">
+                                                    <img alt="Fundz" class="tooltip rounded-full" src="{{ asset('dist/images/' . $faker['images'][1]) }}" title="Uploaded at {{ $faker['dates'][1] }}">
                                                 </div>
                                                 <div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                    <img alt="Rubick Tailwind HTML Admin Template" class="tooltip rounded-full" src="{{ asset('dist/images/' . $faker['images'][2]) }}" title="Uploaded at {{ $faker['dates'][2] }}">
+                                                    <img alt="Fundz" class="tooltip rounded-full" src="{{ asset('dist/images/' . $faker['images'][2]) }}" title="Uploaded at {{ $faker['dates'][2] }}">
                                                 </div>
                                             </div>
                                         </td>
@@ -434,7 +434,7 @@
                             <div class="intro-x relative flex items-center mb-3">
                                 <div class="report-timeline__image">
                                     <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                        <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[9]['photos'][0]) }}">
+                                        <img alt="Fundz" src="{{ asset('dist/images/' . $fakers[9]['photos'][0]) }}">
                                     </div>
                                 </div>
                                 <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
@@ -448,7 +448,7 @@
                             <div class="intro-x relative flex items-center mb-3">
                                 <div class="report-timeline__image">
                                     <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                        <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[8]['photos'][0]) }}">
+                                        <img alt="Fundz" src="{{ asset('dist/images/' . $fakers[8]['photos'][0]) }}">
                                     </div>
                                 </div>
                                 <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
@@ -460,13 +460,13 @@
                                         <div class="mt-1">Added 3 new photos</div>
                                         <div class="flex mt-2">
                                             <div class="tooltip w-8 h-8 image-fit mr-1 zoom-in" title="{{ $fakers[0]['products'][0]['name'] }}">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-md border border-white" src="{{ asset('dist/images/' . $fakers[8]['images'][0]) }}">
+                                                <img alt="Fundz" class="rounded-md border border-white" src="{{ asset('dist/images/' . $fakers[8]['images'][0]) }}">
                                             </div>
                                             <div class="tooltip w-8 h-8 image-fit mr-1 zoom-in" title="{{ $fakers[1]['products'][0]['name'] }}">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-md border border-white" src="{{ asset('dist/images/' . $fakers[8]['images'][1]) }}">
+                                                <img alt="Fundz" class="rounded-md border border-white" src="{{ asset('dist/images/' . $fakers[8]['images'][1]) }}">
                                             </div>
                                             <div class="tooltip w-8 h-8 image-fit mr-1 zoom-in" title="{{ $fakers[2]['products'][0]['name'] }}">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-md border border-white" src="{{ asset('dist/images/' . $fakers[8]['images'][2]) }}">
+                                                <img alt="Fundz" class="rounded-md border border-white" src="{{ asset('dist/images/' . $fakers[8]['images'][2]) }}">
                                             </div>
                                         </div>
                                     </div>
@@ -476,7 +476,7 @@
                             <div class="intro-x relative flex items-center mb-3">
                                 <div class="report-timeline__image">
                                     <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                        <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[7]['photos'][0]) }}">
+                                        <img alt="Fundz" src="{{ asset('dist/images/' . $fakers[7]['photos'][0]) }}">
                                     </div>
                                 </div>
                                 <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
@@ -490,7 +490,7 @@
                             <div class="intro-x relative flex items-center mb-3">
                                 <div class="report-timeline__image">
                                     <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                        <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[6]['photos'][0]) }}">
+                                        <img alt="Fundz" src="{{ asset('dist/images/' . $fakers[6]['photos'][0]) }}">
                                     </div>
                                 </div>
                                 <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
@@ -514,7 +514,7 @@
                                 <div class="intro-x">
                                     <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
                                         <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                            <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $faker['photos'][0]) }}">
+                                            <img alt="Fundz" src="{{ asset('dist/images/' . $faker['photos'][0]) }}">
                                         </div>
                                         <div class="ml-4 mr-auto">
                                             <div class="font-medium">{{ $faker['users'][0]['name'] }}</div>

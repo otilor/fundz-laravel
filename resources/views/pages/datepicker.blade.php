@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Datepicker - Rubick - Tailwind HTML Admin Template</title>
+    <title>Datepicker - Fundz</title>
 @endsection
 
 @section('subcontent')

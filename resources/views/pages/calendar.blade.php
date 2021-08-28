@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Calendar - Rubick - Tailwind HTML Admin Template</title>
+    <title>Calendar - Fundz</title>
 @endsection
 
 @section('subcontent')

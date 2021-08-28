@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Users Layout - Rubick - Tailwind HTML Admin Template</title>
+    <title>Users Layout - Fundz</title>
 @endsection
 
 @section('subcontent')
@@ -41,7 +41,7 @@
                     <div class="flex items-start px-5 pt-5">
                         <div class="w-full flex flex-col lg:flex-row items-center">
                             <div class="w-16 h-16 image-fit">
-                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="{{ asset('dist/images/' . $faker['photos'][0]) }}">
+                                <img alt="Fundz" class="rounded-full" src="{{ asset('dist/images/' . $faker['photos'][0]) }}">
                             </div>
                             <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0">
                                 <a href="" class="font-medium">{{ $faker['users'][0]['name'] }}</a>

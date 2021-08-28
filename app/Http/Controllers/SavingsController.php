@@ -110,7 +110,7 @@ class SavingsController extends Controller
     {
         $transactionID = Flutterwave::getTransactionIDFromCallback();
         if (!$transactionID) {
-            session()->flash('error', 'O ti fuck up!');
+            session()->flash('error', 'An error has occurred!');
             return redirect('/');
         }
         $transactionDetails = Flutterwave::verifyTransaction($transactionID);
@@ -147,10 +147,11 @@ class SavingsController extends Controller
      */
     public function getWithdrawalPayload(WithdrawRequest $request, $reference): array
     {
+        $withdrawableFundz = (98 * $request->amount) / 100;
         return [
             "account_bank" => $request->bank_code,
             "account_number" => $request->account_number,
-            "amount" => $request->amount,
+            "amount" => $withdrawableFundz,
             "narration" => "Transfer from Fundz",
             "currency" => "NGN",
             "debit_currency" => "NGN",

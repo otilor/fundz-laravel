@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Modal - Rubick - Tailwind HTML Admin Template</title>
+    <title>Modal - Fundz</title>
 @endsection
 
 @section('subcontent')
@@ -976,22 +976,22 @@
                                             <div class="center-mode">
                                                 <div class="h-56 px-2">
                                                     <div class="h-full image-fit rounded-md overflow-hidden">
-                                                        <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[0]['images'][0]) }}" />
+                                                        <img alt="Fundz" src="{{ asset('dist/images/' . $fakers[0]['images'][0]) }}" />
                                                     </div>
                                                 </div>
                                                 <div class="h-56 px-2">
                                                     <div class="h-full image-fit rounded-md overflow-hidden">
-                                                        <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[0]['images'][1]) }}" />
+                                                        <img alt="Fundz" src="{{ asset('dist/images/' . $fakers[0]['images'][1]) }}" />
                                                     </div>
                                                 </div>
                                                 <div class="h-56 px-2">
                                                     <div class="h-full image-fit rounded-md overflow-hidden">
-                                                        <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[0]['images'][2]) }}" />
+                                                        <img alt="Fundz" src="{{ asset('dist/images/' . $fakers[0]['images'][2]) }}" />
                                                     </div>
                                                 </div>
                                                 <div class="h-56 px-2">
                                                     <div class="h-full image-fit rounded-md overflow-hidden">
-                                                        <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[0]['images'][3]) }}" />
+                                                        <img alt="Fundz" src="{{ asset('dist/images/' . $fakers[0]['images'][3]) }}" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -1024,22 +1024,22 @@
                                                             <div class="center-mode">
                                                                 <div class="h-56 px-2">
                                                                     <div class="h-full image-fit rounded-md overflow-hidden">
-                                                                        <img alt="Rubick Tailwind HTML Admin Template" src="' . asset('dist/images/' . $fakers[0]['images'][0]) . '" />
+                                                                        <img alt="Fundz" src="' . asset('dist/images/' . $fakers[0]['images'][0]) . '" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="h-56 px-2">
                                                                     <div class="h-full image-fit rounded-md overflow-hidden">
-                                                                        <img alt="Rubick Tailwind HTML Admin Template" src="' . asset('dist/images/' . $fakers[0]['images'][1]) . '" />
+                                                                        <img alt="Fundz" src="' . asset('dist/images/' . $fakers[0]['images'][1]) . '" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="h-56 px-2">
                                                                     <div class="h-full image-fit rounded-md overflow-hidden">
-                                                                        <img alt="Rubick Tailwind HTML Admin Template" src="' . asset('dist/images/' . $fakers[0]['images'][2]) . '" />
+                                                                        <img alt="Fundz" src="' . asset('dist/images/' . $fakers[0]['images'][2]) . '" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="h-56 px-2">
                                                                     <div class="h-full image-fit rounded-md overflow-hidden">
-                                                                        <img alt="Rubick Tailwind HTML Admin Template" src="' . asset('dist/images/' . $fakers[0]['images'][3]) . '" />
+                                                                        <img alt="Fundz" src="' . asset('dist/images/' . $fakers[0]['images'][3]) . '" />
                                                                     </div>
                                                                 </div>
                                                             </div>

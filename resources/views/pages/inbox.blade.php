@@ -1,7 +1,7 @@
 @extends('../layout/' . $layout)
 
 @section('subhead')
-    <title>Inbox - Rubick - Tailwind HTML Admin Template</title>
+    <title>Inbox - Fundz</title>
 @endsection
 
 @section('subcontent')
@@ -178,7 +178,7 @@
                                             <i class="w-4 h-4" data-feather="bookmark"></i>
                                         </a>
                                         <div class="w-6 h-6 flex-none image-fit relative ml-5">
-                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-full" src="{{ asset('dist/images/' . $faker['photos'][0]) }}">
+                                            <img alt="Fundz" class="rounded-full" src="{{ asset('dist/images/' . $faker['photos'][0]) }}">
                                         </div>
                                         <div class="inbox__item--sender truncate ml-3">{{ $faker['users'][0]['name'] }}</div>
                                     </div>
