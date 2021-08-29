@@ -81,9 +81,11 @@
                             <div class="col-span-12 xl:col-span-6">
                                 <div class="h-40 relative image-fit cursor-pointer zoom-in mx-auto">
                                     @if (auth()->user()->photo !== null)
-                                        <img alt="{{auth()->user()->name. ' picture'}}" class="rounded-full" src="{{asset('storage/image/'.auth()->user()->photo)}} ">
+                                        <img alt="{{auth()->user()->name. ' picture'}}" class="w-full rounded-md" data-action="zoom" src="{{asset('storage/image/'.auth()->user()->photo)}} ">
                                     @else
-                                        <img alt="Picture" class="rounded-full" src="{{asset('storage/image/default.jpeg')}} ">
+                                    <div class="w-3/5 h-64 mr-6 float-left image-fit">
+                                        <img alt="Picture" class="w-full rounded-md" data-action="zoom" src="{{asset('storage/image/default.jpeg')}} ">
+                                    </div>
                                     @endif
                                     <div class="tooltip w-5 h-5 flex items-center justify-center absolute rounded-full text-white bg-theme-6 right-0 top-0 -mr-2 -mt-2"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x w-4 h-4"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> </div>
                                 </div>
