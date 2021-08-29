@@ -83,7 +83,7 @@ Route::middleware('auth')->group(function () {
         //     Route::get('/store', [GroupController::class,'store']);
         // });
 
-        Route::get('/send',[ProfileController::class,'send']);
+        // Route::get('/send',[ProfileController::class,'send']);
         // Saving and Withdraw routes
         Route::get('savings', [SavingsController::class, 'index'])->name('savings');
         Route::post('savings', [SavingsController::class, 'save'])->name('savings');
@@ -157,5 +157,5 @@ Route::middleware('auth')->group(function () {
 
 
 Route::fallback(function () {
-    return 'Route not found!';
+    return 'This Feature is coming soon';
 });
