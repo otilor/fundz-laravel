@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ChangePasswordRequest;
+use App\Mail\SendReminderMail;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class ProfileController extends Controller
 {
@@ -59,6 +62,19 @@ class ProfileController extends Controller
         {
             session()->flash('error',"Password failed to change");
             return back();
+        }
+    }
+    public function send()
+    {
+        $users = User::whereemail_verified_at(null)->get();
+        // dd($users);
+        // Send email to users
+        $data = [
+            'users' => $users,
+        ];
+        // mail to each user
+        foreach ($users as $user) {
+            Mail::to($user->email)->send(new SendReminderMail($user));
         }
     }
 }
