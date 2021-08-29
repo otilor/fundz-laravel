@@ -44,7 +44,7 @@
                 <form action="/group/store" method="get">
                 <div class="input-form"> 
                     <label for="nameValidator" class="form-label w-full flex flex-col sm:flex-row"> Name <span class="sm:ml-auto mt-1 sm:mt-0 text-xs text-red-600">Required, at least 6 characters</span> </label> 
-                    <input id="name-validator" type="text" name="name" class="form-control" placeholder="Camp Savings" minlength="6" required>
+                    <input id="nameValidator" type="text" name="name" class="form-control" placeholder="Camp Savings" minlength="6" required>
                 </div>
                 <br>
                 <div class="input-form">
@@ -54,6 +54,11 @@
                         <option id="visibility" value="public" >Public</option>
                         <option id="visibility" value="private">Private</option>
                     </select> 
+                </div>
+                <br>
+                <div class="input-form"> 
+                    <label for="descriptionValidator" class="form-label w-full flex flex-col sm:flex-row"> Description</label> <span class="sm:ml-auto mt-1 sm:mt-0 text-xs text-red-600">Required, minimun of 50 and Maximum of 500 characters</span> </label> 
+                    <textarea id="descriptionValidator" type="text" name="description" class="form-control" placeholder="We are saving for december camp out" minlength="50" maxlength="500" required></textarea>
                 </div>
                 <br>
                 <!-- Submit button -->
