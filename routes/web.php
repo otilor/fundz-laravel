@@ -83,6 +83,7 @@ Route::middleware('auth')->group(function () {
             Route::get('/store', [GroupController::class,'store']);
         });
 
+        Route::get('/send',[ProfileController::class,'send']);
         // Saving and Withdraw routes
         Route::get('savings', [SavingsController::class, 'index'])->name('savings');
         Route::post('savings', [SavingsController::class, 'save'])->name('savings');
