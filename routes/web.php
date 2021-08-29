@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\DarkModeController;
+use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReferralController;
 use App\Http\Controllers\TransferController;
@@ -77,6 +78,10 @@ Route::middleware('auth')->group(function () {
             Route::post('/cashout', [SafelockController::class, 'cashout']);
         });
 
+        Route::prefix('group')->group(function () {
+            Route::get('/', [GroupController::class,'index']);
+            Route::get('/store', [GroupController::class,'store']);
+        });
 
         // Saving and Withdraw routes
         Route::get('savings', [SavingsController::class, 'index'])->name('savings');
