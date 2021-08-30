@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Group;
+use App\Repositories\GroupRepository;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
 {
+    public function __construct(Public GroupRepository $group)
+    {
+    }
     /**
      * Display a listing of the resource.
      *
@@ -35,7 +39,12 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $request['admin'] = auth()->user()->id;
+        $request['group_id'] = md5(auth()->user()->id . time());
+        
+        // dd($request->all());
+        $store = $this->group->create($request->all());
+        dd($store['status']);
     }
 
     /**

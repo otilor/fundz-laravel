@@ -78,10 +78,10 @@ Route::middleware('auth')->group(function () {
             Route::post('/cashout', [SafelockController::class, 'cashout']);
         });
 
-        // Route::prefix('group')->group(function () {
-        //     Route::get('/', [GroupController::class,'index']);
-        //     Route::get('/store', [GroupController::class,'store']);
-        // });
+        Route::prefix('group')->group(function () {
+            Route::get('/', [GroupController::class,'index']);
+            Route::get('/store', [GroupController::class,'store']);
+        });
 
         // Route::get('/send',[ProfileController::class,'send']);
         // Saving and Withdraw routes

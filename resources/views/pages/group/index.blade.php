@@ -61,6 +61,11 @@
                     <textarea id="descriptionValidator" type="text" name="description" class="form-control" placeholder="We are saving for december camp out" minlength="50" maxlength="500" required></textarea>
                 </div>
                 <br>
+                <div class="input-form">
+                    <label for="targetValidator" class="form-label w-full flex flex-col sm:flex-row">Target</label> <span class="sm:ml-auto mt-1 sm:mt-0 text-xs text-red-600">Required, Enter Group target</span></label>
+                    <input id="targetValidator" type="number" name="target" class="form-control" placeholder="Enter Group target" min="1" max="100000000" required>
+                </div>
+                <br>
                 <!-- Submit button -->
                 <div class="input-form">
                     <button type="submit" class="btn btn-primary w-full">Create Group</button>

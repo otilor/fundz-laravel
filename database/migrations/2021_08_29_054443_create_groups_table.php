@@ -16,9 +16,11 @@ class CreateGroupsTable extends Migration
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
             $table->string('group_id');
+            $table->string('admin');
             $table->string('name');
             $table->string('visibility');
             $table->string('description');
+            $table->integer('target');
             $table->timestamps();
         });
     }
