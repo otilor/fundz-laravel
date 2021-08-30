@@ -8,7 +8,7 @@
     <div class="intro-y flex items-center mt-8">
         <h2 class="text-lg font-medium mr-auto">Withdraw money 🤑</h2>
     </div>
-    <h4 class="mb-4 text-bold text-blue-600 text-lg">Withdrawing from this wallet outside the set withdrawal days will attacto a fee of 2%</h4>
+    <!-- <h4 class="mb-4 text-bold text-blue-600 text-lg">Withdrawing from this wallet outside the set withdrawal days will attacto a fee of 1%</h4> -->
     <form method="post" action="/withdraw">
         @csrf
         <div class="grid grid-cols-12 gap-6 mt-5">

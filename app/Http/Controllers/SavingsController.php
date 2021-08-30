@@ -147,11 +147,11 @@ class SavingsController extends Controller
      */
     public function getWithdrawalPayload(WithdrawRequest $request, $reference): array
     {
-        $withdrawableFundz = (99 * $request->amount) / 100;
+        // $withdrawableFundz = $request->amount;
         return [
             "account_bank" => $request->bank_code,
             "account_number" => $request->account_number,
-            "amount" => $withdrawableFundz,
+            "amount" => $request->amount,
             "narration" => "Transfer from Fundz",
             "currency" => "NGN",
             "debit_currency" => "NGN",
