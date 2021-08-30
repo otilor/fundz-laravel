@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GroupRequest;
 use App\Models\Group;
 use App\Repositories\GroupRepository;
+use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
 {
-    public function __construct(Public GroupRepository $group)
+    public function __construct(Public GroupRepository $group, public UserRepository $user)
     {
     }
     /**
@@ -18,7 +20,12 @@ class GroupController extends Controller
      */
     public function index()
     {
-        return view('pages.group.index');
+        // All the group the user is participating in.
+        $groups = $this->user->getUserGroups(auth()->user()->id)['groups'];
+        // Get all public groups
+        $publicGroups = $this->group->getPublicGroups();
+        // Return the view with the groups and public groups
+        return view('pages.group.index',)->with('groups', $groups)->with('publicGroups', $publicGroups);
     }
 
     /**
@@ -37,14 +44,23 @@ class GroupController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GroupRequest $request)
     {
         $request['admin'] = auth()->user()->id;
         $request['group_id'] = md5(auth()->user()->id . time());
-        
-        // dd($request->all());
+        if($request->visibility == 'private'){
+            $request['members'] = $request->privateMails;
+        }
+        else {
+            $request->privateMails = null;
+        }
         $store = $this->group->create($request->all());
-        dd($store['status']);
+        if ($store['status'] == true) {
+            return redirect()->route('group.index')->with('success', 'Group Created Successfully');
+        } 
+        else {
+            return redirect()->route('group.index')->with('error', 'Something went wrong');
+        }
     }
 
     /**

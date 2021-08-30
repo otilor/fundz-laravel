@@ -25,7 +25,9 @@ use App\Http\Controllers\TransferController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/land', function () {
+    return view('pages.landing');
+});
 Route::get('dark-mode-switcher', [DarkModeController::class, 'switch'])->name('dark-mode-switcher');
 
 Route::middleware('loggedin')->group(function () {
@@ -82,6 +84,8 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [GroupController::class,'index']);
             Route::get('/store', [GroupController::class,'store']);
         });
+
+        ;
 
         // Route::get('/send',[ProfileController::class,'send']);
         // Saving and Withdraw routes

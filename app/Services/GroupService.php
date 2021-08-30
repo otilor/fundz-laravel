@@ -15,4 +15,10 @@ class GroupService implements GroupRepository
         }
         return ['status' => false, 'message' => 'Group not created'];
     }
+
+    public function getPublicGroups()
+    {
+        $groups = Group::wherevisibility('public')->get();
+        return $groups;
+    }
 }

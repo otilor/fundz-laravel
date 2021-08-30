@@ -31,4 +31,6 @@ interface UserRepository
     public function topupSafelock($safelockId,$amount);
 
     public function deletesafelock($safelockId);
+
+    public function getUserGroups($userId);
 }

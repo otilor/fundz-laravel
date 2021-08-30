@@ -7,8 +7,10 @@ namespace App\Services;
 use App\Models\User;
 use App\Repositories\UserRepository;
 use App\Facades\UpdatedRave as Flutterwave;
+use App\Models\Group;
 use App\Models\Safelock;
 use Bavix\Wallet\Models\Wallet;
+use Illuminate\Support\Facades\DB;
 
 class UserService implements UserRepository
 {
@@ -153,7 +155,20 @@ class UserService implements UserRepository
         }
         else 
         {
-            return ['message' => '😞😞😞CashOut failed!!!😞😞😞', 'status' =>false];
+            return ['message' => '😞😞😞Cash out failed!!!😞😞😞', 'status' =>false];
         }
+    }
+
+    public function getUserGroups($id)
+    {
+        $groups = [];
+        $groupsavings = DB::table('group_savings')->where('saver',$id)->get();
+        
+        foreach($groupsavings as $groupsaving)
+        {
+            $group = Group::whereId($groupsaving->group_id)->first()->toArray();
+            array_push($groups,$group);
+        }
+        return ['groups' => $groups];
     }
 }

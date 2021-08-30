@@ -29,11 +29,36 @@
                     </div>
                 </div>
                 <!-- END: Intro -->
+                <!-- Begin: Card to display groups -->
+                <div class="col-span-12">
+                    <div class="grid grid-cols-12 gap-6">
+                    @foreach ($groups as $group)
+            <div class="intro-y col-span-12 md:col-span-6 xl:col-span-4 box">
+            <div class="flex items-center border-b border-gray-200 dark:border-dark-5 px-5 py-4">
+                <div class="ml-3 mr-auto">
+                    <a class="font-medium">{{$group['name']}}</a> 
+                    <div class="flex text-gray-600 truncate text-xs mt-0.5"> {{$group['created_at']}}</div>
+                </div>
+            </div>
+            <div class="p-5">
+                <a href="" class="block font-bold text-base mt-5">Target : ₦{{ number_format($group['target'],0,'.',',') }}</a>
+                <Br>
+                <h4 class="block font-bold truncate mr-6">Description:</h4>
+                <div class="block text-gray-700 dark:text-gray-600 mt-2">{{$group['description']}}</div>
+            </div>
+            
+            <div>
+
+            </div>
+        </div>
+                    <!-- BEGIN: top up modal -->
+            
+        @endforeach
             </div>
         </div>
     </div>
     <!-- END: Header-->
-      <!-- BEGIN: Large Slide Over Content -->
+      <!-- BEGIN: Create Group Modal -->
  <div id="large-slide-over-size-preview" class="modal modal-slide-over" tabindex="-1" aria-hidden="true">
      <div class="modal-dialog modal-lg">
          <div class="modal-content">
@@ -50,10 +75,15 @@
                 <div class="input-form">
                     <label for="visibilityValidator" class="form-label w-full flex flex-col sm:flex-row">Visibility</label> <span class="sm:ml-auto mt-1 sm:mt-0 text-xs text-red-600">Select a visibility</span></label>
                     <select id="visibilityValidator" name="visibility"class="form-select mt-2 sm:mr-2" aria-label="Default select example" required>\
-                        <option id="visibility" value="" active><-- select a visibility --></option>
-                        <option id="visibility" value="public" >Public</option>
-                        <option id="visibility" value="private">Private</option>
+                        <option id="visibility" value="" onclick="emailform('')" active><-- select a visibility --></option>
+                        <option id="visibility" onclick="emailform('public')" value="public" >Public</option>
+                        <option id="visibility" onclick="emailform('private')" value="private">Private</option>
                     </select> 
+                </div>
+                <br>
+                <div class="input-form" id="privateMails" hidden>
+                    <label for="privateMail" class="form-label w-full flex flex-col sm:flex-row">Email of Participants<span class="sm:ml-auto mt-1 sm:mt-0 text-xs text-red-600">Seperate emails with a comma '<b>,</b>'</span></label>
+                    <input id="privateMail" type="text" name="privateMails" class="form-control" placeholder="first@mail.com,second@mail.com" required multiple>
                 </div>
                 <br>
                 <div class="input-form"> 
@@ -63,7 +93,7 @@
                 <br>
                 <div class="input-form">
                     <label for="targetValidator" class="form-label w-full flex flex-col sm:flex-row">Target</label> <span class="sm:ml-auto mt-1 sm:mt-0 text-xs text-red-600">Required, Enter Group target</span></label>
-                    <input id="targetValidator" type="number" name="target" class="form-control" placeholder="Enter Group target" min="1" max="100000000" required>
+                    <input id="targetValidator" type="number" name="target" class="form-control" placeholder="Enter Group target" min="1000" required>
                 </div>
                 <br>
                 <!-- Submit button -->
@@ -76,6 +106,23 @@
              </div>
          </div>
      </div>
- </div> <!-- END: Large Slide Over Content -->
+ </div> <!-- END: Create Group Modal -->
+
+<!-- Js function emailform -->
+<script>
+    // if document is ready
+        function emailform(value) {
+        // if the select option is public
+        // console.log(value);
+            if (value == 'private') {
+                document.getElementById('privateMails').hidden = false;
+            } else {
+                document.getElementById('privateMails').hidden = true;
+            }
+        
+        }
+</script>
+    
+</script>
 
 @endsection
