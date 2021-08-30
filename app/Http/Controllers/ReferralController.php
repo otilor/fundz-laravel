@@ -26,7 +26,7 @@ class ReferralController extends Controller
         }
         else
         {
-            $this->user->topupWallet(amount: 1000, userId: auth()->id());
+            $this->user->topupWallet(amount: 100, userId: auth()->id());
             $payUser = $this->user->payReferrar($ReferredUserDetails, $affiliateId);
             if($payUser['status'] == true)
             {
