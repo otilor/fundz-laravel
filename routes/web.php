@@ -27,7 +27,7 @@ use App\Http\Controllers\TransferController;
 */
 Route::get('/', [PageController::class,'home'])->name('home');
 // Contact post route with name
-Route::post('/contact', [PageController::class,'contact'])->name('contact');
+Route::post('/send-contact', [PageController::class,'contact'])->name('contact.send');
 
 Route::get('dark-mode-switcher', [DarkModeController::class, 'switch'])->name('dark-mode-switcher');
 

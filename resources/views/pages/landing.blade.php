@@ -37,7 +37,7 @@
                 <hr class="space m" />
                 <!-- contact from -->
                 <div class="contact-form">
-                    <form id="contact-form" method="post" action="{{route('contact')}}">
+                    <form id="contact-form" method="post" action="{{route('contact.send')}}">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
