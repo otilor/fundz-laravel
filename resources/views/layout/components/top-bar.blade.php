@@ -67,9 +67,6 @@
                     <a href="/transfer" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md">
                         <i data-feather="send" class="w-4 h-4 mr-2"></i> Transfer Fundz
                     </a>
-                    <a href="{{route('group.index')}}" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md">
-                        <i data-feather="circle" class="w-4 h-4 mr-2"></i> Groups
-                    </a>
                 </div>
                 <div class="p-2 border-t border-theme-27 dark:border-dark-3">
                     <a href="{{ route('logout') }}" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md">
