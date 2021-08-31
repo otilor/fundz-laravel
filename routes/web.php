@@ -25,6 +25,9 @@ use App\Http\Controllers\TransferController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [PageController::class,'home']);
+// Contact post route
+Route::post('/contact', [PageController::class,'contact']);
 
 Route::get('dark-mode-switcher', [DarkModeController::class, 'switch'])->name('dark-mode-switcher');
 
@@ -54,7 +57,7 @@ Route::middleware('auth')->group(function () {
     Route::post('changePassword', [ProfileController::class, 'changePassword'])->name('changePassword');
     // Profile routes ends
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
+    Route::get('/dasboard', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
 
     // Referral Routes Begin
     Route::get('referral',[ReferralController::class,'index'])->name('referral');
