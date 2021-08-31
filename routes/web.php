@@ -162,5 +162,5 @@ Route::middleware('auth')->group(function () {
 
 
 Route::fallback(function () {
-    return 'This Feature is coming soon';
+    return view('pages.404');
 });
