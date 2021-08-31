@@ -57,7 +57,7 @@ Route::middleware('auth')->group(function () {
     Route::post('changePassword', [ProfileController::class, 'changePassword'])->name('changePassword');
     // Profile routes ends
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/dasboard', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
+    Route::get('/dashboard', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
 
     // Referral Routes Begin
     Route::get('referral',[ReferralController::class,'index'])->name('referral');
