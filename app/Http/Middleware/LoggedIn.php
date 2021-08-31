@@ -15,7 +15,7 @@ class LoggedIn
     public function handle($request, Closure $next)
     {
         if (!is_null(request()->user())) {
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard-overview-1');
         } else {
             return $next($request);
         }
