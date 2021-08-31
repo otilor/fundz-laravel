@@ -25,7 +25,7 @@ class PageController extends Controller
 
     public function contact(ContactRequest $request)
     {
-        $send = Mail::to('akiodetimothy2017@gmail.com')->send(new ContactMail($request->all()));
+        $send = Mail::to('fundzng@gmail.com')->send(new ContactMail($request->all()));
         if ($send) {
             Session::flash('success', 'Your message has been sent successfully');
             return redirect()->back();
