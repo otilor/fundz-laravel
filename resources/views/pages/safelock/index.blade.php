@@ -85,13 +85,14 @@
 
             </div>
         </div>
-                    <!-- BEGIN: Medium Slide Over Content -->
+                    <!-- BEGIN: top up modal -->
             <div id="topup-slide-over-{{$safelock->id}}" class="modal modal-slide-over" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header p-5">
                             <h2 class="font-medium text-base mr-auto">Top-Up Safelock ({{$safelock->name}})</h2>
                         </div>
+                        <div class="modal-body">
                         <form action="/safelock/topup" method="post">
                             @csrf
                             <div class="mt-3"> 
@@ -111,7 +112,9 @@
                                 <div class="flex justify-center">
                                     <button type="submit" class="btn btn-primary">Top Up now</button>
                                 </div>
-                            </form>
+                            
+                        </form>
+                        </div>
                         </div>
                     </div>
                 </div>
