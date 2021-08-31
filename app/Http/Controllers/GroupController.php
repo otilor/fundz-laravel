@@ -49,7 +49,7 @@ class GroupController extends Controller
         $request['admin'] = auth()->user()->id;
         $request['group_id'] = md5(auth()->user()->id . time());
         if($request->visibility == 'private'){
-            $request['members'] = $request->privateMails;
+            $request['privateMails'] = $request->privateMails;
         }
         else {
             $request->privateMails = null;

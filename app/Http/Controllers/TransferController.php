@@ -39,7 +39,7 @@ class TransferController extends Controller
                 ->log("Transfered ₦{$request->amount} to {$request->email}");
 
             session()->flash('success','Transfer of '. $request->amount . ' 🤑 to ' . $request->email. ' was successful🙌🏻. ');
-            return redirect('/');
+            return redirect()->route('dashboard');
         }
         else{
             session()->flash('error','Transfer of '. $request->amount . '🤑 to' . $request->email. 'Failed.😞');

@@ -25,9 +25,9 @@ use App\Http\Controllers\TransferController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [PageController::class,'home']);
-// Contact post route
-Route::post('/contact', [PageController::class,'contact']);
+Route::get('/', [PageController::class,'home'])->name('home');
+// Contact post route with name
+Route::post('/send-contact', [PageController::class,'contact'])->name('contact.send');
 
 Route::get('dark-mode-switcher', [DarkModeController::class, 'switch'])->name('dark-mode-switcher');
 
@@ -57,7 +57,7 @@ Route::middleware('auth')->group(function () {
     Route::post('changePassword', [ProfileController::class, 'changePassword'])->name('changePassword');
     // Profile routes ends
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/dasboard', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
+    Route::get('/dashboard', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
 
     // Referral Routes Begin
     Route::get('referral',[ReferralController::class,'index'])->name('referral');
@@ -82,8 +82,8 @@ Route::middleware('auth')->group(function () {
         });
 
         Route::prefix('group')->group(function () {
-            Route::get('/', [GroupController::class,'index']);
-            Route::get('/store', [GroupController::class,'store']);
+            Route::get('/', [GroupController::class,'index'])->name('group.index');
+            Route::get('/store', [GroupController::class,'store'])->name('group.store');
         });
 
         ;
@@ -162,5 +162,5 @@ Route::middleware('auth')->group(function () {
 
 
 Route::fallback(function () {
-    return 'This Feature is coming soon';
+    return view('pages.404');
 });

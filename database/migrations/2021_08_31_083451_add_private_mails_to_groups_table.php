@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddEmailsOfMembersToGroupsTables extends Migration
+class AddPrivateMailsToGroupsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddEmailsOfMembersToGroupsTables extends Migration
      */
     public function up()
     {
-        Schema::table('group_savings', function (Blueprint $table) {
-            $table->string('members')->nullable();
+        Schema::table('groups', function (Blueprint $table) {
+            $table->string('privateMails')->nullable(); // comma separated list of emails
         });
     }
 
@@ -25,7 +25,7 @@ class AddEmailsOfMembersToGroupsTables extends Migration
      */
     public function down()
     {
-        Schema::table('groups_tables', function (Blueprint $table) {
+        Schema::table('groups', function (Blueprint $table) {
             //
         });
     }

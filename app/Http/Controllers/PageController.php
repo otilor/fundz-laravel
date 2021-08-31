@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
-use App\Jobs\SendContactMail;
+use App\Jobs\SendContactJob;
 use App\Mail\ContactMail;
 use App\Repositories\UserRepository;
 use Illuminate\Support\Facades\Mail;
@@ -25,13 +25,18 @@ class PageController extends Controller
 
     public function contact(ContactRequest $request)
     {
-        $send = Mail::to('akiodetimothy2017@gmail.com')->send(new ContactMail($request->all()));
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $request->message,
+        ];
+        $send = Mail::to('fundzng@gmail.com')->send(new ContactMail($data));
         if ($send) {
             Session::flash('success', 'Your message has been sent successfully');
-            return redirect()->back();
+            return redirect()->route('home');
         } else {
             Session::flash('error', 'Your message could not be sent');
-            return redirect()->back();
+            return redirect()->route('home');
         }
     }
         

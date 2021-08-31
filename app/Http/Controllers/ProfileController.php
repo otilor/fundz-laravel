@@ -67,8 +67,6 @@ class ProfileController extends Controller
     public function send()
     {
         $users = User::whereemail_verified_at(null)->get();
-        // dd($users);
-        // Send email to users
         $data = [
             'users' => $users,
         ];
