@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ContactRequest;
+use App\Jobs\SendContactMail;
+use App\Mail\ContactMail;
 use App\Repositories\UserRepository;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Spatie\Activitylog\Models\Activity;
 
@@ -13,6 +17,25 @@ class PageController extends Controller
     {
         // $this->middleware(['auth','verified']);
     }
+
+    public function home()
+    {
+        return view('pages.landing');
+    }
+
+    public function contact(ContactRequest $request)
+    {
+        $send = Mail::to('akiodetimothy2017@gmail.com')->send(new ContactMail($request->all()));
+        if ($send) {
+            Session::flash('success', 'Your message has been sent successfully');
+            return redirect()->back();
+        } else {
+            Session::flash('error', 'Your message could not be sent');
+            return redirect()->back();
+        }
+    }
+        
+    
 
     /**
      * Show specified view.
