@@ -131,16 +131,16 @@
         <div class="flexslider carousel outer-navs" data-options="minWidth:200,itemMargin:15,numItems:3,controlNav:false,directionNav:true">
             <ul class="slides">
                 <li>
-                    <a class="img-box lightbox shadow-1" href="{{asset('/landing/images/gallery/gabriel.jpeg')}}" data-lightbox-anima="fade-right">
-                        <img src="{{asset('/landing/images/gallery/gabriel.jpeg')}}" alt="">
+                    <a class="img-box lightbox shadow-1" href="{{asset('/landing/images/gallery/gabriel.jpg')}}" data-lightbox-anima="fade-right">
+                        <img src="{{asset('/landing/images/gallery/gabriel.jpg')}}" alt="" width="100%" height="100%">
                     </a>
                     <hr class="space s" />
                     <p class="text-color text-s">Gabriel Akinyosoye (<a href="https://github.com/humaneguy" target="_blank">Humaneguy</a>)</p>
                     <p class="text-normal text-xs">CEO and Founder of Fundz</p>
                 </li>
                 <li>
-                    <a class="img-box lightbox shadow-1" href="{{asset('/landing/images/gallery/timothy.jpeg')}}" data-lightbox-anima="fade-right">
-                        <img src="{{asset('/landing/images/gallery/timothy.jpeg')}}" alt="">
+                    <a class="img-box lightbox shadow-1" href="{{asset('/landing/images/gallery/timothy.jpg')}}" data-lightbox-anima="fade-right">
+                        <img src="{{asset('/landing/images/gallery/timothy.jpg')}}" alt="">
                     </a>
                     <hr class="space s" />
                     <p class="text-color text-s">Timothy Akiode (<a href="https://github.com/timbaron" target="_blank">Timbaron</a>)</p>
