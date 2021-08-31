@@ -81,7 +81,7 @@
                             <h3>$ Fundz</h3>
                         </div>
                         <div class="col-md-6 footer-left text-left">
-                            <p>Anchor University Lagos</p>
+                            <p>Lagos</p>
                             <div class="tag-row">
                                 <span><a href="mailto:support@fundz.com">support@fundz.com</a></span>
                                 <span><a href="tel:+2348181801589"> +234 8181801589</a></span>
@@ -96,9 +96,6 @@
                                 <a target="_blank" href="#" data-social="share-twitter">
                                     <i class="fa fa-twitter text-xs circle"></i>
                                 </a>
-                                <a target="_blank" href="#" data-social="share-google">
-                                    <i class="fa fa-google-plus text-xs circle"></i>
-                                </a>
                                 <a target="_blank" href="#" data-social="share-linkedin">
                                     <i class="fa fa-linkedin text-xs circle"></i>
                                 </a>
@@ -108,7 +105,7 @@
                 </div>
                 <div class="row copy-row">
                     <div class="col-md-12 copy-text">
-                        © 2021💲Fundz💲 - Manage all your Fundz in one place.<span>Developed by <a href="http://github.com/humaneguy" target="_blank">Akinyosoye Gabriel</a> and <a href="http://github.com/timbaron" target="_blank">Akiode Timothy</a></span>
+                        © 2021💲Fundz💲 - Manage all your Fundz in one place.<span>Developed with 💙 </span>
                     </div>
                 </div>
             </div>
