@@ -66,20 +66,20 @@
                  <h2 class="font-medium text-base mr-auto">Create New group</h2>
              </div>
              <div class="modal-body"> 
-                <form action="/group/store" method="get">
+                <form action="{{route('group.store')}}" method="get">
                 <div class="input-form"> 
                     <label for="nameValidator" class="form-label w-full flex flex-col sm:flex-row"> Name <span class="sm:ml-auto mt-1 sm:mt-0 text-xs text-red-600">Required, at least 6 characters</span> </label> 
                     <input id="nameValidator" type="text" name="name" class="form-control" placeholder="Camp Savings" minlength="6" required>
                 </div>
                 <br>
-                <div class="input-form">
-                    <label for="visibilityValidator" class="form-label w-full flex flex-col sm:flex-row">Visibility</label> <span class="sm:ml-auto mt-1 sm:mt-0 text-xs text-red-600">Select a visibility</span></label>
-                    <select id="visibilityValidator" name="visibility"class="form-select mt-2 sm:mr-2" aria-label="Default select example" required>\
-                        <option id="visibility" value="" onclick="emailform('')" active><-- select a visibility --></option>
-                        <option id="visibility" onclick="emailform('public')" value="public" >Public</option>
-                        <option id="visibility" onclick="emailform('private')" value="private">Private</option>
-                    </select> 
-                </div>
+                <div class="input-form">                                                                                         
+                    <label for="visibilityValidator" class="form-label w-full flex flex-col sm:flex-row">Visibility</label> <span class="sm:ml-auto mt-1 sm:mt-0 text-xs text-red-600">Select a visibility</span></label>                                         
+                    <select id="visibilityValidator" name="visibility"class="form-select mt-2 sm:mr-2" aria-label="Default select example" required>                                                                                                          
+                        <option id="visibility" value="" onclick="emailform('')" active><-- select a visibility --></option>     
+                        <option id="visibility" onclick="emailform('public')" value="public" >Public</option>                    
+                        <option id="visibility" onclick="emailform('private')" value="private">Private</option>                  
+                    </select>                                                                                                    
+                </div>                                                                                                           
                 <br>
                 <div class="input-form" id="privateMails" hidden>
                     <label for="privateMail" class="form-label w-full flex flex-col sm:flex-row">Email of Participants<span class="sm:ml-auto mt-1 sm:mt-0 text-xs text-red-600">Seperate emails with a comma '<b>,</b>'</span></label>

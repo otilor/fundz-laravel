@@ -42,7 +42,7 @@
                     </a>
                 </div>
                 <div class="p-5 border-t border-gray-200 dark:border-dark-5 flex">
-                    <a href="/group" class="btn btn-primary w-20 mr-auto">Groups</a>
+                    <a href="{{route('group.index')}}" class="btn btn-primary w-20 mr-auto">Groups</a>
                 </div>
             </div>
 

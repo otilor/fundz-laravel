@@ -111,12 +111,12 @@ class SavingsController extends Controller
         $transactionID = Flutterwave::getTransactionIDFromCallback();
         if (!$transactionID) {
             session()->flash('error', 'An error has occurred!');
-            return redirect('/');
+            return redirect()->route('dashboard');
         }
         $transactionDetails = Flutterwave::verifyTransaction($transactionID);
         $this->user->topupWallet(amount: $transactionDetails['data']['amount'], userId: auth()->id());
         \session()->flash('success', 'Payment compeleted successfully!');
-        return redirect('/');
+        return redirect()->route('dashboard');
 //        dd($transactionDetails);
         // Get the transaction from your DB using the transaction reference (txref)
         // Check if you have previously given value for the transaction. If you have, redirect to your successpage else, continue

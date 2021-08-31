@@ -25,9 +25,9 @@ use App\Http\Controllers\TransferController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [PageController::class,'home']);
-// Contact post route
-Route::post('/contact', [PageController::class,'contact']);
+Route::get('/', [PageController::class,'home'])->name('home');
+// Contact post route with name
+Route::post('/contact', [PageController::class,'contact'])->name('contact');
 
 Route::get('dark-mode-switcher', [DarkModeController::class, 'switch'])->name('dark-mode-switcher');
 
@@ -82,8 +82,8 @@ Route::middleware('auth')->group(function () {
         });
 
         Route::prefix('group')->group(function () {
-            Route::get('/', [GroupController::class,'index']);
-            Route::get('/store', [GroupController::class,'store']);
+            Route::get('/', [GroupController::class,'index'])->name('group.index');
+            Route::get('/store', [GroupController::class,'store'])->name('group.store');
         });
 
         ;
