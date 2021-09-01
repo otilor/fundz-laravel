@@ -20,7 +20,10 @@ class PageController extends Controller
 
     public function home()
     {
-        return view('pages.landing');
+        if (!request()->user()) {
+            return view('pages.landing');
+        }
+        return redirect()->route('dashboard-overview-1');
     }
 
     public function contact(ContactRequest $request)
@@ -39,8 +42,8 @@ class PageController extends Controller
             return redirect()->route('home');
         }
     }
-        
-    
+
+
 
     /**
      * Show specified view.
