@@ -31,9 +31,9 @@
                                     <div class="flex">
                                         <i data-feather="credit-card" class="report-box__icon text-theme-11"></i>
                                         <div class="ml-auto">
-                                            <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="33% Higher than last month">
-                                                33% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i>
-                                            </div>
+{{--                                            <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="33% Higher than last month">--}}
+{{--                                                33% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i>--}}
+{{--                                            </div>--}}
                                         </div>
                                     </div>
                                     <div class="text-3xl font-bold leading-8 mt-6">₦{{ number_format($balance,0,'.',',') }}</div>
@@ -56,17 +56,17 @@
                                                 <line x1="1" y1="10" x2="23" y2="10"></line>
                                             </svg>
                                             <div class="ml-auto">
-                                                <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer"
-                                                     title="Percentage increase">
-                                                    2%
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                         stroke-width="1.5" stroke-linecap="round"
-                                                         stroke-linejoin="round"
-                                                         class="feather feather-chevron-down w-4 h-4 ml-0.5">
-                                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                                    </svg>
-                                                </div>
+{{--                                                <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer"--}}
+{{--                                                     title="Percentage increase">--}}
+{{--                                                    2%--}}
+{{--                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"--}}
+{{--                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"--}}
+{{--                                                         stroke-width="1.5" stroke-linecap="round"--}}
+{{--                                                         stroke-linejoin="round"--}}
+{{--                                                         class="feather feather-chevron-down w-4 h-4 ml-0.5">--}}
+{{--                                                        <polyline points="6 9 12 15 18 9"></polyline>--}}
+{{--                                                    </svg>--}}
+{{--                                                </div>--}}
                                             </div>
                                         </div>
                                         <div class="text-3xl break-all font-bold leading-8 mt-6">
@@ -103,9 +103,9 @@
                                         <div class="flex">
                                             <i data-feather="credit-card" class="report-box__icon text-theme-11"></i>
                                             <div class="ml-auto">
-                                                <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="33% Higher than last month">
-                                                    33% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i>
-                                                </div>
+{{--                                                <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="33% Higher than last month">--}}
+{{--                                                    33% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i>--}}
+{{--                                                </div>--}}
                                             </div>
                                         </div>
                                         <div class="text-3xl font-bold leading-8 mt-6">₦{{ number_format($Safelockbalance,0,'.',',') }}</div>
@@ -122,9 +122,9 @@
                                         <div class="flex">
                                             <i data-feather="credit-card" class="report-box__icon text-theme-11"></i>
                                             <div class="ml-auto">
-                                                <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="33% Higher than last month">
-                                                    33% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i>
-                                                </div>
+{{--                                                <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="33% Higher than last month">--}}
+{{--                                                    33% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i>--}}
+{{--                                                </div>--}}
                                             </div>
                                         </div>
                                         <div class="text-3xl font-bold leading-8 mt-6">₦{{ number_format($Safelockbalance,0,'.',',') }}</div>
