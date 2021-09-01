@@ -9,7 +9,7 @@
             <!-- BEGIN: Error Page -->
             <div class="error-page flex flex-col lg:flex-row items-center justify-center h-screen text-center lg:text-left">
                 <div class="-intro-x lg:mr-20">
-                    <img alt="Rubick Tailwind HTML Admin Template" class="h-48 lg:h-auto" src="dist/images/error-illustration.svg">
+                    <img alt="Rubick Tailwind HTML Admin Template" class="h-48 lg:h-auto" src="{{asset('dist/images/error-illustration.svg')}}">
                 </div>
                 <div class="text-white mt-10 lg:mt-0">
                     <div class="intro-x text-8xl font-medium">404</div>
@@ -19,5 +19,5 @@
                 </div>
             </div>
             <!-- END: Error Page -->
-        
+
 @endsection
