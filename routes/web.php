@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\InvestmentController;
 use App\Http\Controllers\PaymentLinkController;
 use App\Http\Controllers\SafelockController;
 use App\Http\Controllers\SavingsController;
@@ -71,14 +72,16 @@ Route::middleware('auth')->group(function () {
         // Route::group(['middleware' => ['auth','verified']], function (){
 
 
-        // Safelock Route (Currently Disabled)
-
         Route::group(['prefix' => 'safelock'], function () {
             Route::get('/', [SafelockController::class, 'index'])->name('safelock.index');
             Route::get('/create', [SafelockController::class, 'create'])->name('safelock.create');
             Route::post('/lock', [SafelockController::class, 'lock'])->name('safelock.lock');
             Route::post('/topup', [SafelockController::class, 'topup']);
             Route::post('/cashout', [SafelockController::class, 'cashout']);
+        });
+
+        Route::group(['prefix' => 'investments'], function () {
+            Route::get('/', [InvestmentController::class, 'index']);
         });
 
         // Route::get('/send',[ProfileController::class,'send']);
