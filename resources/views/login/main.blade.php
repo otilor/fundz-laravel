@@ -29,7 +29,7 @@
                     <div class="intro-x mt-2 text-gray-500 xl:hidden text-center">A few more clicks to sign in to your account. Manage all your e-commerce accounts in one place</div>
                     <div class="intro-x mt-8">
                         <form id="login-form">
-                            <input id="email" type="text" class="intro-x login__input form-control py-3 px-4 border-gray-300 block" placeholder="Email">
+                            <input id="email" type="text" class="intro-x login__input form-control py-3 px-4 border-gray-300 block" placeholder="Email" autofcus>
                             <div id="error-email" class="login__input-error w-5/6 text-theme-6 mt-2"></div>
                             <input id="password" type="password" class="intro-x login__input form-control py-3 px-4 border-gray-300 block mt-4" placeholder="Password">
                             <div id="error-password" class="login__input-error w-5/6 text-theme-6 mt-2"></div>
