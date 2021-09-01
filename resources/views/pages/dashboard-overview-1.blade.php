@@ -61,7 +61,7 @@
                             </div>
                         </a>
 
-                        <a class="col-span-3 sm:col-span-3 xl:col-span-3 intro-y" href="/investments">
+                        <a class="col-span-3 sm:col-span-3 xl:col-span-3 intro-y" href="/investment">
                             <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
                                 <div class="report-box zoom-in">
                                     <div class="box p-5">

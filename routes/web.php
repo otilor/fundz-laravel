@@ -80,7 +80,7 @@ Route::middleware('auth')->group(function () {
             Route::post('/cashout', [SafelockController::class, 'cashout']);
         });
 
-        Route::group(['prefix' => 'investments'], function () {
+        Route::group(['prefix' => 'investment'], function () {
             Route::get('/', [InvestmentController::class, 'index']);
         });
 
