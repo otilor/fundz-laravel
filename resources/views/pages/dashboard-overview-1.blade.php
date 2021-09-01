@@ -42,59 +42,6 @@
                         </div>
 
 
-                        <a class="col-span-3 sm:col-span-3 xl:col-span-3 intro-y" href="/referral">
-                            <div>
-                                <div class="report-box zoom-in">
-                                    <div class="box p-5">
-                                        <div class="flex">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                                                 class="feather feather-credit-card report-box__icon text-theme-11">
-                                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                                                <line x1="1" y1="10" x2="23" y2="10"></line>
-                                            </svg>
-                                            <div class="ml-auto">
-{{--                                                <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer"--}}
-{{--                                                     title="Percentage increase">--}}
-{{--                                                    2%--}}
-{{--                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"--}}
-{{--                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"--}}
-{{--                                                         stroke-width="1.5" stroke-linecap="round"--}}
-{{--                                                         stroke-linejoin="round"--}}
-{{--                                                         class="feather feather-chevron-down w-4 h-4 ml-0.5">--}}
-{{--                                                        <polyline points="6 9 12 15 18 9"></polyline>--}}
-{{--                                                    </svg>--}}
-{{--                                                </div>--}}
-                                            </div>
-                                        </div>
-                                        <div class="text-3xl break-all font-bold leading-8 mt-6">
-                                            ₦{{ number_format(auth()->user()->referral_earning, 0, '.', ',')}}</div>
-                                        <div class="text-base text-gray-600 mt-1">Referral Earnings</div>
-                                    </div>
-                                </div>
-                                {{--                        </div><div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">--}}
-                                {{--                            <div class="report-box zoom-in">--}}
-                                {{--                                <div class="box p-5">--}}
-                                {{--                                    <div class="flex">--}}
-                                {{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card report-box__icon text-theme-11"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>--}}
-                                {{--                                        <div class="ml-auto">--}}
-                                {{--                                            <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer">--}}
-                                {{--                                                2% <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down w-4 h-4 ml-0.5"><polyline points="6 9 12 15 18 9"></polyline></svg>--}}
-                                {{--                                            </div>--}}
-                                {{--                                        </div>--}}
-                                {{--                                    </div>--}}
-                                {{--                                    <div class="text-3xl font-bold leading-8 mt-6">$0.00</div>--}}
-                                {{--                                    <div class="text-base text-gray-600 mt-1">Fundz dollar</div>--}}
-                                {{--                                </div>--}}
-                                {{--                            </div>--}}
-                                {{--                        </div>--}}
-                            </div>
-
-
-                        </a>
-
-
                         <a class="col-span-3 sm:col-span-3 xl:col-span-3 intro-y" href="/safelock">
                             <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
                                 <div class="report-box zoom-in">
@@ -130,6 +77,56 @@
                                         <div class="text-base text-gray-600 mt-1">Invest Fundz</div>
                                     </div>
                                 </div>
+                            </div>
+                        </a>
+
+                        <a class="col-span-3 sm:col-span-3 xl:col-span-3 intro-y" href="/referral">
+                            <div>
+                                <div class="report-box zoom-in">
+                                    <div class="box p-5">
+                                        <div class="flex">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                                 class="feather feather-credit-card report-box__icon text-theme-11">
+                                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                                <line x1="1" y1="10" x2="23" y2="10"></line>
+                                            </svg>
+                                            <div class="ml-auto">
+                                                {{--                                                <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer"--}}
+                                                {{--                                                     title="Percentage increase">--}}
+                                                {{--                                                    2%--}}
+                                                {{--                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"--}}
+                                                {{--                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"--}}
+                                                {{--                                                         stroke-width="1.5" stroke-linecap="round"--}}
+                                                {{--                                                         stroke-linejoin="round"--}}
+                                                {{--                                                         class="feather feather-chevron-down w-4 h-4 ml-0.5">--}}
+                                                {{--                                                        <polyline points="6 9 12 15 18 9"></polyline>--}}
+                                                {{--                                                    </svg>--}}
+                                                {{--                                                </div>--}}
+                                            </div>
+                                        </div>
+                                        <div class="text-3xl break-all font-bold leading-8 mt-6">
+                                            ₦{{ number_format(auth()->user()->referral_earning, 0, '.', ',')}}</div>
+                                        <div class="text-base text-gray-600 mt-1">Referral Earnings</div>
+                                    </div>
+                                </div>
+                                {{--                        </div><div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">--}}
+                                {{--                            <div class="report-box zoom-in">--}}
+                                {{--                                <div class="box p-5">--}}
+                                {{--                                    <div class="flex">--}}
+                                {{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card report-box__icon text-theme-11"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>--}}
+                                {{--                                        <div class="ml-auto">--}}
+                                {{--                                            <div class="report-box__indicator bg-theme-6 tooltip cursor-pointer">--}}
+                                {{--                                                2% <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down w-4 h-4 ml-0.5"><polyline points="6 9 12 15 18 9"></polyline></svg>--}}
+                                {{--                                            </div>--}}
+                                {{--                                        </div>--}}
+                                {{--                                    </div>--}}
+                                {{--                                    <div class="text-3xl font-bold leading-8 mt-6">$0.00</div>--}}
+                                {{--                                    <div class="text-base text-gray-600 mt-1">Fundz dollar</div>--}}
+                                {{--                                </div>--}}
+                                {{--                            </div>--}}
+                                {{--                        </div>--}}
                             </div>
                         </a>
                 </div>
