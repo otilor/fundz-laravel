@@ -120,7 +120,7 @@
                                 <div class="report-box zoom-in">
                                     <div class="box p-5">
                                         <div class="flex">
-                                            <i data-feather="credit-card" class="report-box__icon text-theme-11"></i>
+                                            <i data-feather="percent" class="report-box__icon text-theme-11"></i>
                                             <div class="ml-auto">
 {{--                                                <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer" title="33% Higher than last month">--}}
 {{--                                                    33% <i data-feather="chevron-up" class="w-4 h-4 ml-0.5"></i>--}}
@@ -128,7 +128,7 @@
                                             </div>
                                         </div>
                                         <div class="text-3xl font-bold leading-8 mt-6">₦{{ number_format($Safelockbalance,0,'.',',') }}</div>
-                                        <div class="text-base text-gray-600 mt-1">Investments</div>
+                                        <div class="text-base text-gray-600 mt-1">Invest Fundz</div>
                                     </div>
                                 </div>
                             </div>
