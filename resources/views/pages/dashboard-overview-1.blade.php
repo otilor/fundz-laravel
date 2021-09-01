@@ -25,7 +25,7 @@
                         </button>
                     </div>
                     <div class="grid grid-cols-12 gap-6 mt-5">
-                        <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+                        <div class="col-span-3 sm:col-span-3 xl:col-span-3 intro-y">
                             <div class="report-box zoom-in">
                                 <div class="box p-5">
                                     <div class="flex">
@@ -43,7 +43,7 @@
                         </div>
 
 
-                        <a class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y" href="/referral">
+                        <a class="col-span-3 sm:col-span-3 xl:col-span-3 intro-y" href="/referral">
                             <div>
                                 <div class="report-box zoom-in">
                                     <div class="box p-5">
@@ -96,7 +96,7 @@
                         </a>
 
 
-                        <a class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y" href="/safelock">
+                        <a class="col-span-3 sm:col-span-3 xl:col-span-3 intro-y" href="/safelock">
                             <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
                                 <div class="report-box zoom-in">
                                     <div class="box p-5">
