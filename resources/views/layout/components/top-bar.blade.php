@@ -27,7 +27,7 @@
         <div class="notification-content pt-2 dropdown-menu">
             <div class="notification-content__box dropdown-menu__content box dark:bg-dark-6">
                 <div class="notification-content__title">Notifications</div>
-                @foreach ($activities ?? [] as $activity)
+                <!-- @foreach ($activities ?? [] as $activity)
                     <div class="cursor-pointer relative flex items-center">
                         
                         <div class="ml-2 overflow-hidden">
@@ -37,7 +37,7 @@
                             <div class="w-full truncate text-gray-600 mt-0.5">{{ $activity->created_at->toDayDateTimeString() }}</div>
                         </div>
                     </div>
-                @endforeach
+                @endforeach -->
             </div>
         </div>
     </div>
