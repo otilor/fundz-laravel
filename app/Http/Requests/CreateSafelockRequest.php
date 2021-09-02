@@ -19,8 +19,7 @@ class CreateSafelockRequest extends FormRequest
             'name' => 'required',
             'amount' => ['required', new SafelocksSourceCheck()],
             'source' => 'required',
-            'return_date' => 'required|after:today',
-            'description' => 'required',
+            'duration' => 'required',
         ];
     }
 

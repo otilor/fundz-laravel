@@ -22,8 +22,6 @@ interface UserRepository
 
     public function getUserWithPaymentHash($paymentHash);
 
-    public function createSafelock($data);
-
     public function getUserSafelocks($userId);
 
     public function getUserSafelockbalance($userId);

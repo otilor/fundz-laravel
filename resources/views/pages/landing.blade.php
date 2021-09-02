@@ -80,7 +80,7 @@
     <div class="container content box-middle">
         <div class="row">
             <div class="col-md-6 col-sm-12">
-                <h1>Crazy team</h1>
+                <h1>Meet the Team</h1>
                 <p>
                     Fundz is not a one man Job, It was a team effort. Here are the list of our valuable team members.
                 </p>
