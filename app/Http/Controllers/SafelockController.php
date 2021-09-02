@@ -6,13 +6,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateSafelockRequest;
 use App\Http\Requests\TopupRequest;
+use App\Repositories\SafelockRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
 use Spatie\Activitylog\Facades\CauserResolver;
 
 class SafelockController
 {
-    public function __construct(public UserRepository $user)
+    public function __construct(public UserRepository $user, public SafelockRepository $safelock)
     {
 
     }
@@ -30,7 +31,7 @@ class SafelockController
     }
 
     public function lock(CreateSafelockRequest $request){
-        $createsafelock = $this->user->createSafelock($request);
+        $createsafelock = $this->safelock->createSafelock($request->toArray());
         if($createsafelock['status'] == true) {
             $this->user->withdraw($request->input('amount'), auth()->user()->id);
             // Log the activity
@@ -44,7 +45,7 @@ class SafelockController
         }
         else{
             session()->flash('error', $createsafelock['message']);
-            return back();
+            return redirect('safelock');
         }
         
     }

@@ -53,40 +53,62 @@
                     <div class="flex text-gray-600 truncate text-xs mt-0.5"> {{($safelock->created_at->diffForHumans())}}</div>
                 </div>
             </div>
-            <div class="p-5">
-                <a href="" class="block font-bold text-base mt-5">Amount : ₦{{ number_format($safelock->amount,0,'.',',') }}</a> 
-                <a href="" class="block font-bold text-base mt-5">Interest Amount : ₦ {{number_format($safelock->interest_amount,0,'.',',') }}</a>
-                <a href="" class="block font-bold text-base mt-5">Total Amount : ₦ {{number_format(($safelock->interest_amount + $safelock->amount),0,'.',',') }}</a>
+            <div class="p-4">
+                <a class="block font-bold text-base mt-5">Amount : ₦{{ number_format($safelock->amount,0,'.',',') }}</a> 
+                <a class="block font-bold text-base mt-5">Duration : 
+                @if(($safelock->duration == 10))
+                        10 Days
+                    @elseif(($safelock->duration == 30))
+                       1 Month
+                    @elseif(($safelock->duration == 60))
+                        2 Months
+                    @elseif(($safelock->duration == 180))
+                        6 Months
+                    @elseif(($safelock->duration == 365))
+                        1 Year
+                    @elseif(($safelock->duration == 730))
+                        2 Years
+                    @elseif(($safelock->duration >= 1095))
+                        Over 2 Years
+                    @else
+                        NA
+                    @endif
+                </a>
+                <a class="block font-bold text-base mt-5">Interest : 
+                    @if(($safelock->duration == 10))
+                        3.5%
+                    @elseif(($safelock->duration == 30))
+                        7%
+                    @elseif(($safelock->duration == 60))
+                        12%
+                    @elseif(($safelock->duration == 180))
+                        25%
+                    @elseif(($safelock->duration == 365))
+                        50% Per Annum
+                    @elseif(($safelock->duration == 730))
+                        55% Per Annum
+                    @elseif(($safelock->duration >= 1095))
+                        60% Per Annum
+                    @else
+                        NA
+                    @endif
+
+                </a>
+                <a class="block font-bold text-base mt-5"> Withdraw Day: 
+                    <?php
+                        echo date("d-m-Y", strtotime("+".$safelock->duration." days"));
+                    ?>
+                </a>
                 <Br>
                 <h4 class="block font-bold truncate mr-6">Description:</h4>
                 <div class="block text-gray-700 dark:text-gray-600 mt-2">{{$safelock->description}}</div>
-            </div>
-            <div class="flex justify-around">
-                <div class="">
-                    <a data-toggle="modal" data-target="#topup-slide-over-{{$safelock->id}}" class="btn btn-primary"> Top Up</a>
-                </div>
-                <div>
-                    @if (($safelock->return_date) <= date('Y-m-d'))
-                    <form method="post" action="/safelock/cashout">
-                    @csrf
-                        <input type="hidden" name="amount" value="{{$safelock->interest_amount + $safelock->amount}}">
-                        <input type="hidden" name="safelock_id" value="{{$safelock->id}}">
-                        <button type="submit" class="btn btn-success">Cash Out</button>  
-                    </form>
-                    @else
-                        <a  class="btn btn-primary">
-                            Due Date is {{$safelock->return_date}}
-                        </a>
-                    @endif
-                   
-                </div>
             </div>
             <div>
 
             </div>
         </div>
                     <!-- BEGIN: top up modal -->
-            <div id="topup-slide-over-{{$safelock->id}}" class="modal modal-slide-over" tabindex="-1" aria-hidden="true">
+            <div id="topup-slide-over" class="modal modal-slide-over" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header p-5">
